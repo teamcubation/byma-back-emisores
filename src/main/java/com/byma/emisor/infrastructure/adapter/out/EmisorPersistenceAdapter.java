@@ -42,4 +42,9 @@ public class EmisorPersistenceAdapter implements EmisorOutPort {
     public boolean existeEmisorPorEmailIgnorarMayusculas(String email) {
         return emisorRepository.existsByEmailIgnoreCase(email);
     }
+
+    @Override
+    public Emisor actualizar(Emisor emisor) {
+        return EmisorPersistenceMapper.emisorEntityToEmisorModel(emisorRepository.save(EmisorPersistenceMapper.emisorModelToEmisorEntity(emisor)));
+    }
 }

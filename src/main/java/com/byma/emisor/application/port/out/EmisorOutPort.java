@@ -17,4 +17,6 @@ public interface EmisorOutPort {
 
     boolean existeEmisorPorEmailIgnorarMayusculas(String email);
 
+    Emisor actualizar(Emisor emisor);
+
 }
