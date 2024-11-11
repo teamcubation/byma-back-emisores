@@ -7,14 +7,14 @@ import java.util.Optional;
 
 public interface EmisorOutPort {
 
-    Optional<Emisor> findById(long id);
+    Optional<Emisor> obtenerPorId(long id);
 
-    List<Emisor> getAll();
+    List<Emisor> listarEmisores();
 
-    Emisor save(Emisor emisor);
+    Emisor crear(Emisor emisor);
 
-    void deleteById(long id);
+    void eliminarPorId(long id);
 
-    boolean existByEmailIgnoreCase(String email);
+    boolean existeEmisorPorEmailIgnorarMayusculas(String email);
 
 }

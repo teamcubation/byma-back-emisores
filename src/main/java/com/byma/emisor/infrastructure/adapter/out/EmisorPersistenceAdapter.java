@@ -17,29 +17,29 @@ public class EmisorPersistenceAdapter implements EmisorOutPort {
     private final EmisorRepository emisorRepository;
 
     @Override
-    public Optional<Emisor> findById(long id) {
+    public Optional<Emisor> obtenerPorId(long id) {
         return emisorRepository.findById(id).map(EmisorPersistenceMapper::emisorEntityToEmisorModel);
     }
 
     @Override
-    public List<Emisor> getAll() {
+    public List<Emisor> listarEmisores() {
         return EmisorPersistenceMapper.emisorEntitiesToEmisorModels(emisorRepository.findAll());
     }
 
     @Override
-    public Emisor save(Emisor emisor) {
+    public Emisor crear(Emisor emisor) {
         //agregar validacion de nulo y si no se encuentra lanzar excepcion cutomizada
         return EmisorPersistenceMapper.emisorEntityToEmisorModel(emisorRepository.save(EmisorPersistenceMapper.emisorModelToEmisorEntity(emisor)));
     }
 
     @Override
-    public void deleteById(long id) {
+    public void eliminarPorId(long id) {
         //buscarlo por id y si no se encuentra lanzar excepcion customizada
         emisorRepository.deleteById(id);
     }
 
     @Override
-    public boolean existByEmailIgnoreCase(String email) {
+    public boolean existeEmisorPorEmailIgnorarMayusculas(String email) {
         return emisorRepository.existsByEmailIgnoreCase(email);
     }
 }
