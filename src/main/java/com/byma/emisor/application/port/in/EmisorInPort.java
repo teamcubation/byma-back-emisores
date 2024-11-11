@@ -10,9 +10,9 @@ public interface EmisorInPort {
 
     List<Emisor> listarEmisores();
 
-    Emisor obtenerPorId(Long idEmisor);
+    Emisor obtenerPorId(long idEmisor);
 
     Emisor actualizar(Emisor emisorRequestDTO, Long idEmisor);
 
-    void eliminar(Long idEmisor);
+    void eliminar(long idEmisor);
 }
