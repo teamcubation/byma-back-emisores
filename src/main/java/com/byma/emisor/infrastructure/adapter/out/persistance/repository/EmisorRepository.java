@@ -4,4 +4,5 @@ import com.byma.emisor.infrastructure.adapter.out.persistance.entity.EmisorEntit
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface EmisorRepository extends JpaRepository<EmisorEntity, Long> {
+    boolean existsByEmailIgnoreCase(String email);
 }

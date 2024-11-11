@@ -12,7 +12,7 @@ public class Emisor {
 
     private String denominacion;
 
-    private String mail;
+    private String email;
 
     private LocalDate fechaAlta;
 

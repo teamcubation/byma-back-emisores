@@ -15,6 +15,6 @@ public interface EmisorOutPort {
 
     void deleteById(long id);
 
-    boolean existsByNameIgnoreCase(String name);
+    boolean existByEmailIgnoreCase(String email);
 
 }

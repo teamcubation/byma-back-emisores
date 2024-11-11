@@ -20,7 +20,7 @@ public class EmisorEntity {
 
     private String denominacion;
 
-    private String mail;
+    private String email;
 
     private LocalDate fechaAlta;
 
