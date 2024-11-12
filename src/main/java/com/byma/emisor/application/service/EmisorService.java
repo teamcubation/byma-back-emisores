@@ -23,7 +23,7 @@ public class EmisorService implements EmisorInPort {
     private final EmisorOutPort emisorOutPort;
 
     @Override
-    public Emisor crear(Emisor emisor) throws ParametroNuloException, EmisorDuplicadoException {
+    public Emisor crear(Emisor emisor) throws ParametroNuloException, EmisorDuplicadoException, EmisorNoEncontradoException {
         ValidacionService.validarParametrosNull(emisor);
         validarEmisorDuplicado(emisor.getEmail());
         emisor.setFechaAlta(LocalDateTime.now());

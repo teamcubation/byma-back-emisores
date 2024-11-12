@@ -1,5 +1,7 @@
 package com.byma.emisor.application.port.out;
 
+import com.byma.emisor.application.exception.EmisorDuplicadoException;
+import com.byma.emisor.application.exception.EmisorNoEncontradoException;
 import com.byma.emisor.domain.model.Emisor;
 
 import java.util.List;
@@ -11,12 +13,12 @@ public interface EmisorOutPort {
 
     List<Emisor> listarEmisores();
 
-    Emisor crear(Emisor emisor);
+    Emisor crear(Emisor emisor) throws EmisorNoEncontradoException, EmisorDuplicadoException;
 
-    void eliminarPorId(long id);
+    void eliminarPorId(long id) throws EmisorNoEncontradoException;
 
     boolean existeEmisorPorEmailIgnorarMayusculas(String email);
 
-    Emisor actualizar(Emisor emisor);
+    Emisor actualizar(Emisor emisor) throws EmisorNoEncontradoException, EmisorDuplicadoException;
 
 }

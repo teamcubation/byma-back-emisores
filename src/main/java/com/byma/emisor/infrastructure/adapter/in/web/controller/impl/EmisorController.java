@@ -24,7 +24,7 @@ public class EmisorController {
     private final EmisorInPort emisorInPort;
 
     @PostMapping()
-    public ResponseEntity<?> crear(@RequestBody @Valid EmisorRequestDTO emisorRequestDTO) throws ParametroNuloException, EmisorDuplicadoException {
+    public ResponseEntity<?> crear(@RequestBody @Valid EmisorRequestDTO emisorRequestDTO) throws ParametroNuloException, EmisorDuplicadoException, EmisorNoEncontradoException {
         ValidacionController.validarParametrosNull(emisorRequestDTO);
         Emisor emisorCreado = emisorInPort.crear(EmisorControllerMapper.emisorRequestDtoAEmisor(emisorRequestDTO));
         return ResponseEntity.status(HttpStatus.CREATED).body(EmisorControllerMapper.emisorAEmisorResponseDto(emisorCreado));

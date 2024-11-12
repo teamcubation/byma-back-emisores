@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface EmisorInPort {
 
-    Emisor crear(Emisor emisorRequestDTO) throws ParametroNuloException, EmisorDuplicadoException;
+    Emisor crear(Emisor emisorRequestDTO) throws ParametroNuloException, EmisorDuplicadoException, EmisorNoEncontradoException;
 
     List<Emisor> listarEmisores();
 
