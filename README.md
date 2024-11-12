@@ -85,6 +85,6 @@ A continuación, algunos ejemplos para interactuar con la API utilizando Postman
 }
 ```
 
-5. Eliminar un Gerente (DELETE /api/emisores/{id})
+5. Eliminar un Emisor (DELETE /api/emisores/{id})
 
 **DELETE** `http://localhost:8080/api/emisores/{id}`
