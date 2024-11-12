@@ -1,5 +1,7 @@
 package com.byma.emisor.infrastructure.adapter.out;
 
+import com.byma.emisor.application.exception.EmisorDuplicadoException;
+import com.byma.emisor.application.exception.EmisorNoEncontradoException;
 import com.byma.emisor.application.port.out.EmisorOutPort;
 import com.byma.emisor.domain.model.Emisor;
 import com.byma.emisor.infrastructure.adapter.out.persistance.mapper.EmisorPersistenceMapper;
@@ -27,14 +29,21 @@ public class EmisorPersistenceAdapter implements EmisorOutPort {
     }
 
     @Override
-    public Emisor crear(Emisor emisor) {
-        //agregar validacion de nulo y si no se encuentra lanzar excepcion cutomizada
+    public Emisor crear(Emisor emisor) throws EmisorNoEncontradoException, EmisorDuplicadoException {
+        if (emisor == null) {
+            throw new EmisorNoEncontradoException();
+        }
+        if (emisorRepository.existsByEmailIgnoreCase(emisor.getEmail())) {
+            throw new EmisorDuplicadoException();
+        }
         return EmisorPersistenceMapper.emisorEntityToEmisorModel(emisorRepository.save(EmisorPersistenceMapper.emisorModelToEmisorEntity(emisor)));
     }
 
     @Override
-    public void eliminarPorId(long id) {
-        //buscarlo por id y si no se encuentra lanzar excepcion customizada
+    public void eliminarPorId(long id) throws EmisorNoEncontradoException {
+        if (emisorRepository.findById(id).isEmpty()) {
+            throw new EmisorNoEncontradoException();
+        }
         emisorRepository.deleteById(id);
     }
 
@@ -44,7 +53,13 @@ public class EmisorPersistenceAdapter implements EmisorOutPort {
     }
 
     @Override
-    public Emisor actualizar(Emisor emisor) {
+    public Emisor actualizar(Emisor emisor) throws EmisorNoEncontradoException, EmisorDuplicadoException {
+        if (emisor == null) {
+            throw new EmisorNoEncontradoException();
+        }
+        if (emisorRepository.existsByEmailIgnoreCase(emisor.getEmail())) {
+            throw new EmisorDuplicadoException();
+        }
         return EmisorPersistenceMapper.emisorEntityToEmisorModel(emisorRepository.save(EmisorPersistenceMapper.emisorModelToEmisorEntity(emisor)));
     }
 }
