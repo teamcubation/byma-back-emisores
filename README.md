@@ -1,7 +1,5 @@
 # byma-back-emisores
 
-# byma-fondos-up-back - Emisores
-
 ## Descripción General
 Esta es una API basada en Spring Boot que permite administrar emisores. Puedes crear, obtener, actualizar y eliminar emisores utilizando esta API. La API está documentada con Swagger y puedes interactuar con ella a través de la interfaz de usuario de Swagger.
 
