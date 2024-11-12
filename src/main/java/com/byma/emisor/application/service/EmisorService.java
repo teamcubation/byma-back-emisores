@@ -1,5 +1,7 @@
 package com.byma.emisor.application.service;
 
+import com.byma.emisor.application.exception.EmisorDuplicadoException;
+import com.byma.emisor.application.exception.EmisorNoEncontradoException;
 import com.byma.emisor.application.port.in.EmisorInPort;
 import com.byma.emisor.application.port.out.EmisorOutPort;
 import com.byma.emisor.domain.model.Emisor;
@@ -15,9 +17,10 @@ public class EmisorService implements EmisorInPort {
     private final EmisorOutPort emisorOutPort;
 
     @Override
-    public Emisor crear(Emisor emisor) {
-        // TODO: validar que los parametros no sean null
-        //  y que no tenga email duplicado (custom exception)
+    public Emisor crear(Emisor emisor) throws EmisorDuplicadoException {
+        if (emisorOutPort.existeEmisorPorEmailIgnorarMayusculas(emisor.getEmail())) {
+            throw new EmisorDuplicadoException("El email ya existe");
+        }
         return emisorOutPort.crear(emisor);
     }
 
@@ -27,13 +30,13 @@ public class EmisorService implements EmisorInPort {
     }
 
     @Override
-    public Emisor obtenerPorId(long idEmisor) {
+    public Emisor obtenerPorId(long idEmisor) throws EmisorNoEncontradoException {
         // TODO: validar que exista el emisor con ese id (custom exception)
-        return emisorOutPort.obtenerPorId(idEmisor).orElseThrow(RuntimeException::new);
+        return emisorOutPort.obtenerPorId(idEmisor).orElseThrow();
     }
 
     @Override
-    public Emisor actualizar(Emisor emisor, Long idEmisor) {
+    public Emisor actualizar(Emisor emisor, Long idEmisor) throws EmisorNoEncontradoException, EmisorDuplicadoException {
         // TODO: validar que los parametros no sean null,
         //  que el email no sea duplicado (custom exception)
         //  y que exista el emisor con ese id (custom exception)
@@ -42,7 +45,7 @@ public class EmisorService implements EmisorInPort {
     }
 
     @Override
-    public void eliminar(long idEmisor) {
+    public void eliminar(long idEmisor) throws EmisorNoEncontradoException {
         //TODO: validar que el emisor a eliminar exista
         emisorOutPort.eliminarPorId(idEmisor);
     }
