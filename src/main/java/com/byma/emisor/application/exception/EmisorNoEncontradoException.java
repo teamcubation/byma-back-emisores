@@ -4,4 +4,8 @@ public class EmisorNoEncontradoException extends Exception {
     public EmisorNoEncontradoException(String message) {
         super(message);
     }
+
+    public EmisorNoEncontradoException() {
+        super();
+    }
 }
