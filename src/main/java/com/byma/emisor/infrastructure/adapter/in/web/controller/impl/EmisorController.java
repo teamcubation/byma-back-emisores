@@ -6,7 +6,9 @@ import com.byma.emisor.application.exception.ParametroNuloException;
 import com.byma.emisor.application.port.in.EmisorInPort;
 import com.byma.emisor.domain.model.Emisor;
 import com.byma.emisor.infrastructure.adapter.in.web.dto.request.EmisorRequestDTO;
+import com.byma.emisor.infrastructure.adapter.in.web.dto.response.EmisorResponseDTO;
 import com.byma.emisor.infrastructure.adapter.in.web.mapper.EmisorControllerMapper;
+import com.byma.emisor.infrastructure.adapter.in.web.swagger.ApiEmisor;
 import com.byma.emisor.infrastructure.adapter.in.web.validation.ValidacionController;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -21,12 +23,12 @@ import java.util.List;
 @RequiredArgsConstructor
 @Slf4j
 @RequestMapping("/api/emisores")
-public class EmisorController {
+public class EmisorController implements ApiEmisor {
 
     private final EmisorInPort emisorInPort;
 
     @PostMapping()
-    public ResponseEntity<?> crear(@RequestBody @Valid EmisorRequestDTO emisorRequestDTO) throws ParametroNuloException, EmisorDuplicadoException, EmisorNoEncontradoException {
+    public ResponseEntity<EmisorResponseDTO> crear(@RequestBody @Valid EmisorRequestDTO emisorRequestDTO) throws ParametroNuloException, EmisorDuplicadoException, EmisorNoEncontradoException {
         log.info("Solicitud para crear un emisor: {}", emisorRequestDTO);
         ValidacionController.validarParametrosNull(emisorRequestDTO);
         Emisor emisorCreado = emisorInPort.crear(EmisorControllerMapper.emisorRequestDtoAEmisor(emisorRequestDTO));
@@ -35,7 +37,7 @@ public class EmisorController {
     }
 
     @GetMapping()
-    public ResponseEntity<?> listarEmisores() {
+    public ResponseEntity<List<EmisorResponseDTO>> listarEmisores() {
         log.info("Solicitud para obtener todos los emisores");
         List<Emisor> emisores = emisorInPort.listarEmisores();
         log.info("Finalizacion de la solicitud para obtener todos los emisores");
@@ -43,7 +45,7 @@ public class EmisorController {
     }
 
     @GetMapping("/{idEmisor}")
-    public ResponseEntity<?> obtener(@PathVariable Long idEmisor) throws ParametroNuloException, EmisorNoEncontradoException {
+    public ResponseEntity<EmisorResponseDTO> obtener(@PathVariable Long idEmisor) throws ParametroNuloException, EmisorNoEncontradoException {
         log.info("Solicitud para obtener emisor por id: {}", idEmisor);
         ValidacionController.validarParametrosNull(idEmisor);
         Emisor emisor = emisorInPort.obtenerPorId(idEmisor);
@@ -52,17 +54,18 @@ public class EmisorController {
     }
 
     @PutMapping("/{idEmisor}")
-    public ResponseEntity<?> actualizar(@RequestBody EmisorRequestDTO emisorRequestDTO, @PathVariable Long idEmisor) throws ParametroNuloException, EmisorNoEncontradoException, EmisorDuplicadoException {
+    public ResponseEntity<EmisorResponseDTO> actualizar(@RequestBody EmisorRequestDTO emisorRequestDTO, @PathVariable Long idEmisor) throws ParametroNuloException, EmisorNoEncontradoException, EmisorDuplicadoException {
         log.info("Solicitud para actualizar un emisor por id de emisor: {}, datos a actualizar {}", idEmisor, emisorRequestDTO);
         ValidacionController.validarParametrosNull(emisorRequestDTO);
         ValidacionController.validarParametrosNull(idEmisor);
         Emisor emisorActualizado = emisorInPort.actualizar(EmisorControllerMapper.emisorRequestDtoAEmisor(emisorRequestDTO), idEmisor);
+        EmisorResponseDTO emisorResponseDTO = EmisorControllerMapper.emisorAEmisorResponseDto(emisorActualizado);
         log.info("Finalizacion de actualizacion de emisor, emisor actualizado: {}", emisorActualizado);
-        return ResponseEntity.status(HttpStatus.OK).body(emisorActualizado);
+        return ResponseEntity.status(HttpStatus.OK).body(emisorResponseDTO);
     }
 
     @DeleteMapping("/{idEmisor}")
-    public ResponseEntity<?> eliminar(@PathVariable Long idEmisor) throws ParametroNuloException, EmisorNoEncontradoException {
+    public ResponseEntity<Void> eliminar(@PathVariable Long idEmisor) throws ParametroNuloException, EmisorNoEncontradoException {
         log.info("Solicitud para eliminar un emisor por id de emisor: {}", idEmisor);
         ValidacionController.validarParametrosNull(idEmisor);
         emisorInPort.eliminar(idEmisor);
