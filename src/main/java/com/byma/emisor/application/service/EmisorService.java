@@ -3,18 +3,16 @@ package com.byma.emisor.application.service;
 import com.byma.emisor.application.port.in.EmisorInPort;
 import com.byma.emisor.application.port.out.EmisorOutPort;
 import com.byma.emisor.domain.model.Emisor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class EmisorService implements EmisorInPort {
 
     private final EmisorOutPort emisorOutPort;
-
-    public EmisorService(EmisorOutPort emisorOutPort) {
-        this.emisorOutPort = emisorOutPort;
-    }
 
     @Override
     public Emisor crear(Emisor emisor) {
