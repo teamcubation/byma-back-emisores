@@ -59,8 +59,9 @@ public class EmisorController implements ApiEmisor {
         ValidacionController.validarParametrosNull(emisorRequestDTO);
         ValidacionController.validarParametrosNull(idEmisor);
         Emisor emisorActualizado = emisorInPort.actualizar(EmisorControllerMapper.emisorRequestDtoAEmisor(emisorRequestDTO), idEmisor);
+        EmisorResponseDTO emisorResponseDTO = EmisorControllerMapper.emisorAEmisorResponseDto(emisorActualizado);
         log.info("Finalizacion de actualizacion de emisor, emisor actualizado: {}", emisorActualizado);
-        return ResponseEntity.status(HttpStatus.OK).body(emisorActualizado);
+        return ResponseEntity.status(HttpStatus.OK).body(emisorResponseDTO);
     }
 
     @DeleteMapping("/{idEmisor}")
