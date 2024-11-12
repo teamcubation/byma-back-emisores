@@ -3,7 +3,7 @@ package com.byma.emisor.domain.model;
 import lombok.Builder;
 import lombok.Data;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 @Builder
@@ -14,11 +14,11 @@ public class Emisor {
 
     private String email;
 
-    private LocalDate fechaAlta;
+    private LocalDateTime fechaAlta;
 
     private String cuentaEmisor;
 
-    private long idOrganizacion;
+    private Long idOrganizacion;
 
-    private long idEntidadLegal;
+    private Long idEntidadLegal;
 }

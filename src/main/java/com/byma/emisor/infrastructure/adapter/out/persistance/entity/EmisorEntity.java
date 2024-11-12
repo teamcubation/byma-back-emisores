@@ -3,7 +3,7 @@ package com.byma.emisor.infrastructure.adapter.out.persistance.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity(name = "Emisor")
 @Table(name = "emisores")
@@ -22,7 +22,7 @@ public class EmisorEntity {
 
     private String email;
 
-    private LocalDate fechaAlta;
+    private LocalDateTime fechaAlta;
 
     private String cuentaEmisor;
 

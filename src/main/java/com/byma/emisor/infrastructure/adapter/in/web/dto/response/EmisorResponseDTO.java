@@ -5,7 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 @Builder
@@ -18,11 +18,11 @@ public class EmisorResponseDTO {
 
     private String email;
 
-    private LocalDate fechaAlta;
+    private LocalDateTime fechaAlta;
 
     private String cuentaEmisor;
 
-    private long idOrganizacion;
+    private Long idOrganizacion;
 
-    private long idEntidadLegal;
+    private Long idEntidadLegal;
 }

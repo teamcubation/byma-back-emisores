@@ -7,26 +7,30 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class EmisorRequestDTO {
-    @NotNull
-    @NotBlank
+    public static final String CAMPO_OBLIGATORIO = "Es un campo obligatorio";
+    public static final String CAMPO_VACIO = "No puede ser un campo vacio";
+
+    @NotBlank(message = CAMPO_VACIO)
     private String denominacion;
-    @NotNull
-    @NotBlank
+
+    @NotBlank(message = CAMPO_VACIO)
     private String email;
-    @NotNull
-    private LocalDate fechaAlta;
-    @NotNull
-    @NotBlank
+
+    private LocalDateTime fechaAlta;
+
+    @NotBlank(message = CAMPO_VACIO)
     private String cuentaEmisor;
-    @NotNull
-    private long idOrganizacion;
-    @NotNull
-    private long idEntidadLegal;
+
+    @NotNull(message = CAMPO_OBLIGATORIO)
+    private Long idOrganizacion;
+
+    @NotNull(message = CAMPO_OBLIGATORIO)
+    private Long idEntidadLegal;
 }
