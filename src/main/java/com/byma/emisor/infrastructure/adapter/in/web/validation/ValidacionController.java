@@ -1,6 +1,6 @@
 package com.byma.emisor.infrastructure.adapter.in.web.validation;
 
-import com.byma.emisor.application.exception.ParametroNuloException;
+import com.byma.emisor.application.exception.ObjetoNuloException;
 
 public class ValidacionController {
     public static final String PARAMETRO_INVALIDO = "Los parametros no pueden ser null";
@@ -14,9 +14,9 @@ public class ValidacionController {
         return false;
     }
 
-    public static void validarParametrosNull(Object... objects) throws ParametroNuloException {
+    public static void validarParametrosNull(Object... objects) throws ObjetoNuloException {
         if (ValidacionController.nullParams(objects)) {
-            throw new ParametroNuloException(PARAMETRO_INVALIDO);
+            throw new ObjetoNuloException(PARAMETRO_INVALIDO);
         }
     }
 }
