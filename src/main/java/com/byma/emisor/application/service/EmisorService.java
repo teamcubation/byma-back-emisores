@@ -46,7 +46,7 @@ public class EmisorService implements EmisorInPort {
     public Emisor actualizar(Emisor emisor, Long idEmisor) throws ParametroNuloException, EmisorNoEncontradoException, EmisorDuplicadoException {
         ValidacionService.validarParametrosNull(idEmisor);
         validarEmisorNoEncontrado(idEmisor);
-        validarEmisorDuplicado(emisor.getEmail());
+
 
         Emisor emisorAActualizar = emisorOutPort.obtenerPorId(idEmisor).get();
 
@@ -54,6 +54,7 @@ public class EmisorService implements EmisorInPort {
             emisorAActualizar.setDenominacion(emisor.getDenominacion());
         }
         if (emisor.getEmail() != null) {
+            validarEmisorDuplicado(emisor.getEmail());
             emisorAActualizar.setEmail(emisor.getEmail());
         }
         if (emisor.getCuentaEmisor() != null) {
