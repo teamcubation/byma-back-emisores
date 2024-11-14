@@ -2,7 +2,7 @@ package com.byma.emisor.application.service;
 
 import com.byma.emisor.application.exception.EmisorDuplicadoException;
 import com.byma.emisor.application.exception.EmisorNoEncontradoException;
-import com.byma.emisor.application.exception.ParametroNuloException;
+import com.byma.emisor.application.exception.ObjetoNuloException;
 import com.byma.emisor.application.port.in.EmisorInPort;
 import com.byma.emisor.application.port.out.EmisorOutPort;
 import com.byma.emisor.application.validation.ValidacionService;
@@ -23,7 +23,7 @@ public class EmisorService implements EmisorInPort {
     private final EmisorOutPort emisorOutPort;
 
     @Override
-    public Emisor crear(Emisor emisor) throws ParametroNuloException, EmisorDuplicadoException, EmisorNoEncontradoException {
+    public Emisor crear(Emisor emisor) throws ObjetoNuloException, EmisorDuplicadoException, EmisorNoEncontradoException {
         ValidacionService.validarParametrosNull(emisor);
         validarEmisorDuplicado(emisor.getEmail());
         emisor.setFechaAlta(LocalDateTime.now());
@@ -36,17 +36,17 @@ public class EmisorService implements EmisorInPort {
     }
 
     @Override
-    public Emisor obtenerPorId(long idEmisor) throws ParametroNuloException, EmisorNoEncontradoException {
+    public Emisor obtenerPorId(long idEmisor) throws ObjetoNuloException, EmisorNoEncontradoException {
         ValidacionService.validarParametrosNull(idEmisor);
         validarEmisorNoEncontrado(idEmisor);
         return emisorOutPort.obtenerPorId(idEmisor).get();
     }
 
     @Override
-    public Emisor actualizar(Emisor emisor, Long idEmisor) throws ParametroNuloException, EmisorNoEncontradoException, EmisorDuplicadoException {
+    public Emisor actualizar(Emisor emisor, Long idEmisor) throws ObjetoNuloException, EmisorNoEncontradoException, EmisorDuplicadoException {
         ValidacionService.validarParametrosNull(idEmisor);
         validarEmisorNoEncontrado(idEmisor);
-        validarEmisorDuplicado(emisor.getEmail());
+
 
         Emisor emisorAActualizar = emisorOutPort.obtenerPorId(idEmisor).get();
 
@@ -54,6 +54,7 @@ public class EmisorService implements EmisorInPort {
             emisorAActualizar.setDenominacion(emisor.getDenominacion());
         }
         if (emisor.getEmail() != null) {
+            validarEmisorDuplicado(emisor.getEmail());
             emisorAActualizar.setEmail(emisor.getEmail());
         }
         if (emisor.getCuentaEmisor() != null) {

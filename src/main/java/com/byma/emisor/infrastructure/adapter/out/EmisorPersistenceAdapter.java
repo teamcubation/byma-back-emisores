@@ -65,9 +65,6 @@ public class EmisorPersistenceAdapter implements EmisorOutPort {
         if (emisor == null) {
             throw new EmisorNoEncontradoException();
         }
-        if (emisorRepository.existsByEmailIgnoreCase(emisor.getEmail())) {
-            throw new EmisorDuplicadoException();
-        }
         return EmisorPersistenceMapper.emisorEntityToEmisorModel(emisorRepository.save(EmisorPersistenceMapper.emisorModelToEmisorEntity(emisor)));
     }
 }

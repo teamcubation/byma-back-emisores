@@ -2,7 +2,7 @@ package com.byma.emisor.infrastructure.adapter.in.web.swagger;
 
 import com.byma.emisor.application.exception.EmisorDuplicadoException;
 import com.byma.emisor.application.exception.EmisorNoEncontradoException;
-import com.byma.emisor.application.exception.ParametroNuloException;
+import com.byma.emisor.application.exception.ObjetoNuloException;
 import com.byma.emisor.infrastructure.adapter.in.web.dto.request.EmisorRequestDTO;
 import com.byma.emisor.infrastructure.adapter.in.web.dto.response.EmisorResponseDTO;
 import io.swagger.v3.oas.annotations.Operation;
@@ -23,7 +23,7 @@ public interface ApiEmisor {
             @ApiResponse(responseCode = "400", description = "Error: Parametros nulos"),
             @ApiResponse(responseCode = "500", description = "Error interno del servidor")
     })
-    ResponseEntity<EmisorResponseDTO> crear(@RequestBody @Valid EmisorRequestDTO gerenteRequestDTO) throws ParametroNuloException, EmisorDuplicadoException, EmisorNoEncontradoException;
+    ResponseEntity<EmisorResponseDTO> crear(@RequestBody @Valid EmisorRequestDTO gerenteRequestDTO) throws ObjetoNuloException, EmisorDuplicadoException, EmisorNoEncontradoException;
 
     @Operation(summary = "Obtener todos los emisores")
     @ApiResponses(value = {
@@ -39,7 +39,7 @@ public interface ApiEmisor {
             @ApiResponse(responseCode = "400", description = "Error: Parametros nulos"),
             @ApiResponse(responseCode = "500", description = "Error interno del servidor")
     })
-    ResponseEntity<EmisorResponseDTO> obtener(@PathVariable Long idEmisor) throws ParametroNuloException, EmisorNoEncontradoException;
+    ResponseEntity<EmisorResponseDTO> obtener(@PathVariable Long idEmisor) throws ObjetoNuloException, EmisorNoEncontradoException;
 
     @Operation(summary = "Actualizar un emisor por ID")
     @ApiResponses(value = {
@@ -49,7 +49,7 @@ public interface ApiEmisor {
             @ApiResponse(responseCode = "400", description = "Error: Parametros nulos"),
             @ApiResponse(responseCode = "500", description = "Error interno del servidor")
     })
-    ResponseEntity<EmisorResponseDTO> actualizar(@RequestBody EmisorRequestDTO emisorRequestDTO, @PathVariable Long idEmisor) throws ParametroNuloException, EmisorNoEncontradoException, EmisorDuplicadoException;
+    ResponseEntity<EmisorResponseDTO> actualizar(@RequestBody EmisorRequestDTO emisorRequestDTO, @PathVariable Long idEmisor) throws ObjetoNuloException, EmisorNoEncontradoException, EmisorDuplicadoException;
 
     @Operation(summary = "Eliminar un emisor")
     @ApiResponses(value = {
@@ -58,5 +58,5 @@ public interface ApiEmisor {
             @ApiResponse(responseCode = "400", description = "Error: Parametros nulos"),
             @ApiResponse(responseCode = "500", description = "Error interno del servidor")
     })
-    ResponseEntity<Void> eliminar(@PathVariable Long idEmisor) throws ParametroNuloException, EmisorNoEncontradoException;
+    ResponseEntity<Void> eliminar(@PathVariable Long idEmisor) throws ObjetoNuloException, EmisorNoEncontradoException;
 }

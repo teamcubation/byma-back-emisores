@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "30d42b2d-33c2-4d2a-a3c1-5dbef5557616",
+		"name": "Emisores",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21367853"
+	},
+	"item": [
+		{
+			"name": "obtener todos los emisores",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/emisores",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"emisores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener inexistente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/emisores/99",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"emisores",
+						"99"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener emisor por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/emisores/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"emisores",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear emisor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"denominacion\": \"Nombre de la entidad\",\r\n  \"email\": \"correo@ejemplo.com\",\r\n  \"cuentaEmisor\": \"Cuenta123\",\r\n  \"idOrganizacion\": 12345,\r\n  \"idEntidadLegal\": 67890\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/emisores",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"emisores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear emisor duplciado",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"denominacion\": \"Nombre de la entidad\",\r\n  \"email\": \"correo@ejemplo.com\",\r\n  \"cuentaEmisor\": \"Cuenta123\",\r\n  \"idOrganizacion\": 12345,\r\n  \"idEntidadLegal\": 67890\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/emisores",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"emisores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar emisor por id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/emisores/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"emisores",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar emisor inexistente",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/emisores/99",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"emisores",
+						"99"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar emisor por id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2,\r\n    \"denominacion\": \"EDITADO\",\r\n    \"email\": \"ASDASD@ejemplo.com\",\r\n    \"fechaAlta\": \"2024-11-13T16:46:24.75726\",\r\n    \"cuentaEmisor\": \"Cuenta123\",\r\n    \"idOrganizacion\": 999,\r\n    \"idEntidadLegal\": 67890\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/emisores/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"emisores",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
