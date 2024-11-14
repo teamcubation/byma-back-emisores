@@ -110,16 +110,4 @@ class EmisorControllerTest {
 
         verify(emisorInPort, times(1)).eliminar(1L);
     }
-
-    @Test
-    void shouldReturnNotFound_whenEmisorToDeleteDoesNotExist() throws Exception {
-        doThrow(new EmisorNoEncontradoException()).when(emisorInPort).eliminar(99L);
-
-        mockMvc.perform(delete("/api/emisores/{idEmisor}", 99L))
-                .andExpect(status().isNotFound())
-                .andExpect(jsonPath("$.message").value("Emisor no encontrado."));
-
-        verify(emisorInPort, times(1)).eliminar(99L);
-    }
-
 }

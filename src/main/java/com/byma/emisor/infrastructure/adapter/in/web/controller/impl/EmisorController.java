@@ -60,7 +60,7 @@ public class EmisorController implements ApiEmisor {
     }
 
     @PutMapping("/{idEmisor}")
-    public ResponseEntity<EmisorResponseDTO> actualizar(@RequestBody EmisorRequestDTO emisorRequestDTO, @PathVariable Long idEmisor) throws ObjetoNuloException, EmisorNoEncontradoException, EmisorDuplicadoException {
+    public ResponseEntity<EmisorResponseDTO> actualizar(@RequestBody @Valid EmisorRequestDTO emisorRequestDTO, @PathVariable Long idEmisor) throws ObjetoNuloException, EmisorNoEncontradoException, EmisorDuplicadoException {
         log.info("Solicitud para actualizar un emisor por id de emisor: {}, datos a actualizar {}", idEmisor, emisorRequestDTO);
 
         ValidacionController.validarParametrosNull(emisorRequestDTO, idEmisor);
