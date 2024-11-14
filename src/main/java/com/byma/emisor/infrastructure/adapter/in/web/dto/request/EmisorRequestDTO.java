@@ -15,17 +15,16 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class EmisorRequestDTO {
     public static final String CAMPO_OBLIGATORIO = "Es un campo obligatorio";
-    public static final String CAMPO_VACIO = "No puede ser un campo vacio";
 
-    @NotBlank(message = CAMPO_VACIO)
+    @NotBlank(message = CAMPO_OBLIGATORIO)
     private String denominacion;
 
-    @NotBlank(message = CAMPO_VACIO)
+    @NotBlank(message = CAMPO_OBLIGATORIO)
     private String email;
 
     private LocalDateTime fechaAlta;
 
-    @NotBlank(message = CAMPO_VACIO)
+    @NotBlank(message = CAMPO_OBLIGATORIO)
     private String cuentaEmisor;
 
     @NotNull(message = CAMPO_OBLIGATORIO)
