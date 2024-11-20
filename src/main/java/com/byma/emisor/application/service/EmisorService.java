@@ -47,6 +47,8 @@ public class EmisorService implements EmisorInPort {
         ValidacionService.validarParametrosNull(idEmisor);
         validarEmisorNoEncontrado(idEmisor);
         validarEmisorDuplicado(emisor.getEmail());
+        Emisor emisorAActualizar = this.obtenerPorId(idEmisor);
+        emisor.setFechaAlta(emisorAActualizar.getFechaAlta());
         emisor.setId(idEmisor);
         return emisorOutPort.actualizar(emisor);
     }
