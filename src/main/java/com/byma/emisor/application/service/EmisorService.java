@@ -44,9 +44,7 @@ public class EmisorService implements EmisorInPort {
 
     @Override
     public Emisor actualizar(Emisor emisor, Long idEmisor) throws ObjetoNuloException, EmisorNoEncontradoException, EmisorDuplicadoException {
-        ValidacionService.validarParametrosNull(idEmisor);
         validarEmisorNoEncontrado(idEmisor);
-        validarEmisorDuplicado(emisor.getEmail());
         Emisor emisorAActualizar = this.obtenerPorId(idEmisor);
         emisor.setFechaAlta(emisorAActualizar.getFechaAlta());
         emisor.setId(idEmisor);
