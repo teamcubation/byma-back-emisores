@@ -22,7 +22,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @Slf4j
-@RequestMapping("/api/emisores")
+@RequestMapping("/api/v1/emisores")
 public class EmisorController implements ApiEmisor {
 
     private final EmisorInPort emisorInPort;
