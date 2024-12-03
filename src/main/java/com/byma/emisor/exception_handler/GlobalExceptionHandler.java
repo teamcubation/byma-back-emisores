@@ -1,8 +1,6 @@
 package com.byma.emisor.exception_handler;
 
-import com.byma.emisor.application.exception.EmisorDuplicadoException;
-import com.byma.emisor.application.exception.EmisorNoEncontradoException;
-import com.byma.emisor.application.exception.ObjetoNuloException;
+import com.byma.emisor.application.exception.*;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpHeaders;
@@ -39,7 +37,16 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     public ErrorMessageResponse handleObjetoNuloException(ObjetoNuloException exception, HttpServletRequest request) {
         return this.createErrorMessageResponse(exception, request, HttpStatus.BAD_REQUEST);
     }
-
+    @ExceptionHandler(IdNuloException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ErrorMessageResponse handleIdNuloException(ObjetoNuloException exception, HttpServletRequest request) {
+        return this.createErrorMessageResponse(exception, request, HttpStatus.BAD_REQUEST);
+    }
+    @ExceptionHandler(SuscripcionNoEncontradaException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ErrorMessageResponse handleSuscripcionNoEncontradaException(ObjetoNuloException exception, HttpServletRequest request) {
+        return this.createErrorMessageResponse(exception, request, HttpStatus.BAD_REQUEST);
+    }
 
     @Override
     public ResponseEntity<Object> handleMethodArgumentNotValid(
