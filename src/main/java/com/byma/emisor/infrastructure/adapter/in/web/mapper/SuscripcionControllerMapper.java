@@ -10,7 +10,7 @@ public class SuscripcionControllerMapper {
         return SuscripcionResponseDTO.builder()
                 .idSuscripcion(suscripcion.getIdSuscripcion())
                 .estado(suscripcion.getEstado())
-                .fechaAlta(suscripcion.getFechaAlta())
+                .fechaAlta(String.valueOf(suscripcion.getFechaAlta()))
                 .nroCertificado(suscripcion.getNroCertificado())
                 .idEspecie(suscripcion.getIdEspecie())
                 .cantCuotapartes(suscripcion.getCantCuotapartes())

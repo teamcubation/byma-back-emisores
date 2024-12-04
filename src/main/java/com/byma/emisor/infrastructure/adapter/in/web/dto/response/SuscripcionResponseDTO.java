@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 public class SuscripcionResponseDTO {
     private long idSuscripcion;
     private String estado;
-    private LocalDateTime fechaAlta;
+    private String fechaAlta;
     private int nroCertificado;
     private long idEspecie;
     private int cantCuotapartes;
