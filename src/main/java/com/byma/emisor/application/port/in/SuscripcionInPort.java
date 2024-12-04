@@ -9,6 +9,6 @@ public interface SuscripcionInPort {
     SuscripcionModel crear(SuscripcionModel suscripcionRequestDTO);
     List<SuscripcionModel> listarSuscripciones();
     SuscripcionModel obtenerPorId(long idSuscripcion) throws IdNuloException, SuscripcionNoEncontradaException;
-    SuscripcionModel actualizar(SuscripcionModel suscripcionRequestDTO, Long idSuscripcion) throws IdNuloException, SuscripcionNoEncontradaException;
+    SuscripcionModel actualizar(SuscripcionModel suscripcionRequestDTO, long idSuscripcion) throws IdNuloException, SuscripcionNoEncontradaException;
     void eliminar(long idSuscripcion) throws SuscripcionNoEncontradaException;
 }

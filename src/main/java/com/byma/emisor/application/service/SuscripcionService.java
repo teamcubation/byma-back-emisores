@@ -38,7 +38,7 @@ public class SuscripcionService implements SuscripcionInPort {
     }
 
     @Override
-    public SuscripcionModel actualizar(SuscripcionModel suscripcion, Long idSuscripcion) throws IdNuloException, SuscripcionNoEncontradaException {
+    public SuscripcionModel actualizar(SuscripcionModel suscripcion, long idSuscripcion) throws IdNuloException, SuscripcionNoEncontradaException {
         ValidacionSuscripcion.validarSuscripcion(suscripcion);
         ValidacionSuscripcion.validarIdNotNull(idSuscripcion);
         SuscripcionModel suscripcionAActualizar = this.obtenerPorId(idSuscripcion);
