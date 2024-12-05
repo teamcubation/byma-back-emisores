@@ -52,7 +52,7 @@ public class SuscripcionService implements SuscripcionInPort {
         validarSuscripcionNoEncontrada(idSuscripcion);
         suscripcionOutPort.eliminarPorId(idSuscripcion);
     }
-    private void validarSuscripcionNoEncontrada(Long id) throws SuscripcionNoEncontradaException {
+    private void validarSuscripcionNoEncontrada(long id) throws SuscripcionNoEncontradaException {
         if (suscripcionOutPort.obtenerPorId(id).isEmpty())
             throw new SuscripcionNoEncontradaException("La suscripcion no ha sido encontrada.");
     }

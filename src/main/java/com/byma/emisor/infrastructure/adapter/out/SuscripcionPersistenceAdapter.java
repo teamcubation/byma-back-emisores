@@ -35,27 +35,34 @@ public class SuscripcionPersistenceAdapter implements SuscripcionOutPort {
     @Override
     public SuscripcionModel crear(SuscripcionModel suscripcion) {
         log.info("Creando suscripcion: {}", suscripcion);
-        if (suscripcion == null) {
-            throw new ObjetoNuloException("La suscripcion no puede ser nula");
-        }
+        validarSuscripcionNula(suscripcion);
         return SuscripcionPersistenceMapper.SuscripcionEntityToModel(suscripcionRepository.save(SuscripcionPersistenceMapper.SuscripcionModelToEntity(suscripcion)));
     }
 
     @Override
     public void eliminarPorId(long id) throws SuscripcionNoEncontradaException {
         log.info("Eliminando suscripcion por id: {}", id);
-        if (suscripcionRepository.findById(id).isEmpty()) {
-            throw new SuscripcionNoEncontradaException("La suscripcion no ha sido encontrada.");
-        }
+        validarSuscripcionEncontrada(id);
         suscripcionRepository.deleteById(id);
     }
+
+
 
     @Override
     public SuscripcionModel actualizar(SuscripcionModel suscripcion) {
         log.info("Actualizando suscripcion: {}", suscripcion);
+        validarSuscripcionNula(suscripcion);
+        return SuscripcionPersistenceMapper.SuscripcionEntityToModel(suscripcionRepository.save(SuscripcionPersistenceMapper.SuscripcionModelToEntity(suscripcion)));
+    }
+    private void validarSuscripcionEncontrada(long id) throws SuscripcionNoEncontradaException {
+        if (suscripcionRepository.findById(id).isEmpty()) {
+            throw new SuscripcionNoEncontradaException("La suscripcion no ha sido encontrada.");
+        }
+    }
+
+    private static void validarSuscripcionNula(SuscripcionModel suscripcion) {
         if (suscripcion == null) {
             throw new ObjetoNuloException("La suscripcion no puede ser nula");
         }
-        return SuscripcionPersistenceMapper.SuscripcionEntityToModel(suscripcionRepository.save(SuscripcionPersistenceMapper.SuscripcionModelToEntity(suscripcion)));
     }
 }

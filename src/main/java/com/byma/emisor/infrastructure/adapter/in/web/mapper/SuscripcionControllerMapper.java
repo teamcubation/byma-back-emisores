@@ -3,10 +3,11 @@ package com.byma.emisor.infrastructure.adapter.in.web.mapper;
 import com.byma.emisor.domain.model.SuscripcionModel;
 import com.byma.emisor.infrastructure.adapter.in.web.dto.request.SuscripcionRequestDTO;
 import com.byma.emisor.infrastructure.adapter.in.web.dto.response.SuscripcionResponseDTO;
+import com.byma.emisor.infrastructure.adapter.in.web.validation.ValidacionController;
 
 public class SuscripcionControllerMapper {
     public static SuscripcionResponseDTO suscripcionASuscripcionResponseDto(SuscripcionModel suscripcion) {
-
+        ValidacionController.validarObjetoNotNull(suscripcion);
         return SuscripcionResponseDTO.builder()
                 .idSuscripcion(suscripcion.getIdSuscripcion())
                 .estado(suscripcion.getEstado())
@@ -40,6 +41,7 @@ public class SuscripcionControllerMapper {
                 .build();
     }
     public static SuscripcionModel suscripcionRequestDTOASuscripcionModel(SuscripcionRequestDTO requestDTO) {
+        ValidacionController.validarObjetoNotNull(requestDTO);
         return SuscripcionModel.builder()
                 .estado(requestDTO.getEstado())
                 .fechaAlta(requestDTO.getFechaAlta())
