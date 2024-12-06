@@ -1,12 +1,15 @@
 package com.byma.emisor.exception_handler;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
-@Data
+@Getter
 @Builder
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ErrorMessageResponse {
     private final String exception;
     private final int status;
@@ -15,4 +18,5 @@ public class ErrorMessageResponse {
     private final String method;
     @Builder.Default
     private final LocalDateTime timestamp = LocalDateTime.now();
+    private List<String> details;
 }

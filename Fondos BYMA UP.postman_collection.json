@@ -1,0 +1,878 @@
+{
+	"info": {
+		"_postman_id": "2309b1d0-e1ca-4757-ae85-9605420753d5",
+		"name": "Fondos BYMA UP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21121081",
+		"_collection_link": "https://interstellar-space-411031.postman.co/workspace/BYMA~5838488f-5370-4c26-9df5-0a600aada286/collection/21121081-2309b1d0-e1ca-4757-ae85-9605420753d5?action=share&source=collection_link&creator=21121081"
+	},
+	"item": [
+		{
+			"name": "Emisor",
+			"item": [
+				{
+					"name": "obtener todos los emisores",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/emisores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"emisores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtener inexistente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/emisores/99",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"emisores",
+								"99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtener emisor por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/emisores/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"emisores",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crear emisor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"denominacion\": \"Nombre de la entidad\",\r\n  \"email\": \"correo@ejemplo.com\",\r\n  \"cuentaEmisor\": \"Cuenta123\",\r\n  \"idOrganizacion\": 12345,\r\n  \"idEntidadLegal\": 67890\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/emisores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"emisores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crear emisor duplciado",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"denominacion\": \"Nombre de la entidad\",\r\n  \"email\": \"correo@ejemplo.com\",\r\n  \"cuentaEmisor\": \"Cuenta123\",\r\n  \"idOrganizacion\": 12345,\r\n  \"idEntidadLegal\": 67890\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/emisores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"emisores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminar emisor por id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/emisores/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"emisores",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminar emisor inexistente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/emisores/99",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"emisores",
+								"99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actualizar emisor por id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"denominacion\": \"EDITADO\",\r\n    \"email\": \"ASDASD@ejemplo.com\",\r\n    \"fechaAlta\": \"2024-11-13T16:46:24.75726\",\r\n    \"cuentaEmisor\": \"Cuenta123\",\r\n    \"idOrganizacion\": 999,\r\n    \"idEntidadLegal\": 67890\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/emisores/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"emisores",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Especies",
+			"item": [
+				{
+					"name": "obtener todas las especies",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/especies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"especies"
+							]
+						},
+						"description": "Generated from cURL: curl -X GET \"http://localhost:8080/api/especies\" -H \"accept: application/json\"\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "obtener especie inexistente por id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/especies/9999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"especies",
+								"9999"
+							]
+						},
+						"description": "Generated from cURL: curl -X GET \"http://localhost:8080/api/especies/1\" -H \"accept: application/json\"\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "crear especie",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"codigoCVSA\": \"1234\",\r\n  \"denominacion\": \"Especie A\",\r\n  \"laminaMinima\": 100,\r\n  \"precio\": 200.5,\r\n  \"cafci\": \"CAF123\",\r\n  \"cuentaDeEmision\": \"CTA456\",\r\n  \"estado\": \"ACTIVO\",\r\n  \"idEmisor\": 1,\r\n  \"idGerente\": 2,\r\n  \"vigencia\": \"2024-12-31\",\r\n  \"plazoDeLiquidacion\": \"2024-12-15\",\r\n  \"codigoCNV\": \"CNV001\",\r\n  \"isin\": \"ISIN123456789\",\r\n  \"familiaDeFondos\": \"FONDO1\",\r\n  \"observaciones\": \"Observación ejemplo\",\r\n  \"idMoneda\": 1,\r\n  \"fechaAlta\": \"2024-12-01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/especies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"especies"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST \"http://localhost:8080/api/especies\" \\\r\n-H \"accept: application/json\" \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"codigoCVSA\": \"1234\",\r\n  \"denominacion\": \"Especie A\",\r\n  \"laminaMinima\": 100,\r\n  \"precio\": 200.5,\r\n  \"cafci\": \"CAF123\",\r\n  \"cuentaDeEmision\": \"CTA456\",\r\n  \"estado\": \"ACTIVO\",\r\n  \"idEmisor\": 1,\r\n  \"idGerente\": 2,\r\n  \"vigencia\": \"2024-12-31\",\r\n  \"plazoDeLiquidacion\": \"2024-12-15\",\r\n  \"codigoCNV\": \"CNV001\",\r\n  \"isin\": \"ISIN123456789\",\r\n  \"familiaDeFondos\": \"FONDO1\",\r\n  \"observaciones\": \"Observación ejemplo\",\r\n  \"idMoneda\": 1,\r\n  \"fechaAlta\": \"2024-12-01\"\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Error: crear especie con plazo nulo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"codigoCVSA\": null,\r\n  \"denominacion\": \"\",\r\n  \"laminaMinima\": -100,\r\n  \"precio\": -200.5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/especies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"especies"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST \"http://localhost:8080/api/especies\" \\\r\n-H \"accept: application/json\" \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"codigoCVSA\": null,\r\n  \"denominacion\": \"\",\r\n  \"laminaMinima\": -100,\r\n  \"precio\": -200.5\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "actualizar especie por id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"codigoCVSA\": \"5678\",\r\n  \"denominacion\": \"Especie B\",\r\n  \"laminaMinima\": 200,\r\n  \"precio\": 300.75,\r\n  \"cafci\": \"CAF567\",\r\n  \"cuentaDeEmision\": \"CTA789\",\r\n  \"estado\": \"INACTIVO\",\r\n  \"idEmisor\": 3,\r\n  \"idGerente\": 4,\r\n  \"vigencia\": \"2025-01-01\",\r\n  \"plazoDeLiquidacion\": \"2025-01-10\",\r\n  \"codigoCNV\": \"CNV002\",\r\n  \"isin\": \"ISIN987654321\",\r\n  \"familiaDeFondos\": \"FONDO2\",\r\n  \"observaciones\": \"Actualización ejemplo\",\r\n  \"idMoneda\": 2,\r\n  \"fechaAlta\": \"2024-11-01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/especies/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"especies",
+								"1"
+							]
+						},
+						"description": "Generated from cURL: curl -X PUT \"http://localhost:8080/api/especies/1\" \\\r\n-H \"accept: application/json\" \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"codigoCVSA\": \"5678\",\r\n  \"denominacion\": \"Especie B\",\r\n  \"laminaMinima\": 200,\r\n  \"precio\": 300.75,\r\n  \"cafci\": \"CAF567\",\r\n  \"cuentaDeEmision\": \"CTA789\",\r\n  \"estado\": \"INACTIVO\",\r\n  \"idEmisor\": 3,\r\n  \"idGerente\": 4,\r\n  \"vigencia\": \"2025-01-01\",\r\n  \"plazoDeLiquidacion\": \"2025-01-10\",\r\n  \"codigoCNV\": \"CNV002\",\r\n  \"isin\": \"ISIN987654321\",\r\n  \"familiaDeFondos\": \"FONDO2\",\r\n  \"observaciones\": \"Actualización ejemplo\",\r\n  \"idMoneda\": 2,\r\n  \"fechaAlta\": \"2024-11-01\"\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Error: editar especie con parametros null",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"codigoCVSA\": \"5678\",\r\n  \"denominacion\": \"Especie B\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/especies/99999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"especies",
+								"99999"
+							]
+						},
+						"description": "Generated from cURL: curl -X PUT \"http://localhost:8080/api/especies/99999\" \\\r\n-H \"accept: application/json\" \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"codigoCVSA\": \"5678\",\r\n  \"denominacion\": \"Especie B\"\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "eliminar especie por id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/especies/999999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"especies",
+								"999999"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Acdi",
+			"item": [
+				{
+					"name": "Crear ACDI",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idOrganizacion\": \"ORG003\", \r\n    \"denominacion\": \"Denominación 3\", \r\n    \"liquidaEnByma\": true, \r\n    \"habilitado\": true,  \r\n    \"billeteras\": false, \r\n    \"observaciones\": \"Observaciones\", \r\n    \"mail\": \"pauDeJoseCPaz@email.com\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/acdis",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"acdis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar ACDI",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"mail\": \"gustavoDeBalvnera@email.com\", \"liquidaEnByma\": true}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/acdis/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"acdis",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Todos los ACDIs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/acdis",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"acdis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener ACDI por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/acdis/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"acdis",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar ACDI",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/acdis/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"acdis",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dar de Baja ACDI",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/acdis/1/baja",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"acdis",
+								"1",
+								"baja"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gerente",
+			"item": [
+				{
+					"name": "Obtener todos los gerentes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/gerentes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"gerentes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtener gerente por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/gerentes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"gerentes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crear gerente",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"denominacion\": \"Gerente General\",\r\n  \"liquidaEnByma\": true,\r\n  \"habilitado\": true,\r\n  \"observaciones\": \"Gerente principal con permisos completos\",\r\n  \"mailGerente\": \"gerente@empresa.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/gerentes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"gerentes"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST \"http://localhost:8080/api/gerentes\" \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"denominacion\": \"Gerente General\",\r\n  \"liquidaEnByma\": true,\r\n  \"habilitado\": true,\r\n  \"observaciones\": \"Gerente principal con permisos completos\",\r\n  \"mailGerente\": \"gerente@empresa.com\"\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Error: crear gerente con mail vacio",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"denominacion\": \"Gerente General\",\r\n  \"liquidaEnByma\": true,\r\n  \"habilitado\": true,\r\n  \"observaciones\": \"Gerente principal con permisos completos\",\r\n  \"mailGerente\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/gerentes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"gerentes"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST \"http://localhost:8080/api/gerentes\" \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"denominacion\": \"Gerente General\",\r\n  \"liquidaEnByma\": true,\r\n  \"habilitado\": true,\r\n  \"observaciones\": \"Gerente principal con permisos completos\",\r\n  \"mailGerente\": \"\"\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "actualizar gerente por id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idGerente\": 1,\r\n  \"denominacion\": \"Gerente Regional\",\r\n  \"liquidaEnByma\": false,\r\n  \"habilitado\": true,\r\n  \"observaciones\": \"Gerente actualizado\",\r\n  \"mailGerente\": \"nuevo.gerente@empresa.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/gerentes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"gerentes",
+								"1"
+							]
+						},
+						"description": "Generated from cURL: curl -X PUT \"http://localhost:8080/api/gerentes/1\" \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"idGerente\": 1,\r\n  \"denominacion\": \"Gerente Regional\",\r\n  \"liquidaEnByma\": false,\r\n  \"habilitado\": true,\r\n  \"observaciones\": \"Gerente actualizado\",\r\n  \"mailGerente\": \"nuevo.gerente@empresa.com\"\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Error: actualizar con denominacion null",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idGerente\": 1,\r\n  \"denominacion\": null,\r\n  \"liquidaEnByma\": true,\r\n  \"habilitado\": true,\r\n  \"observaciones\": \"Gerente actualizado\",\r\n  \"mailGerente\": \"nuevo.gerente@empresa.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/gerentes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"gerentes",
+								"1"
+							]
+						},
+						"description": "Generated from cURL: curl -X PUT \"http://localhost:8080/api/gerentes/1\" \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"idGerente\": 1,\r\n  \"denominacion\": null,\r\n  \"liquidaEnByma\": true,\r\n  \"habilitado\": true,\r\n  \"observaciones\": \"Gerente actualizado\",\r\n  \"mailGerente\": \"nuevo.gerente@empresa.com\"\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "eliminar gerente por id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/gerentes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"gerentes",
+								"1"
+							]
+						},
+						"description": "Generated from cURL: curl -X DELETE \"http://localhost:8080/api/gerentes/1\" \\\r\n-H \"Accept: application/json\"\r\n"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
