@@ -1,6 +1,7 @@
 package com.byma.emisor.infrastructure.adapter.in.web.controller.impl;
 
 
+import com.byma.emisor.application.exception.acdi.AcdiNoEncontradoException;
 import com.byma.emisor.application.port.in.AcdiInPort;
 import com.byma.emisor.domain.model.Acdi;
 import com.byma.emisor.infrastructure.adapter.in.web.dto.request.ActualizarAcdiRequest;
@@ -37,7 +38,7 @@ public class AcdiController implements ApiAcdi {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<AcdiResponseDTO> actualizar(@PathVariable Long id, @RequestBody @Valid ActualizarAcdiRequest actualizarAcdiRequest) {
+    public ResponseEntity<AcdiResponseDTO> actualizar(@PathVariable Long id, @RequestBody @Valid ActualizarAcdiRequest actualizarAcdiRequest) throws AcdiNoEncontradoException {
         log.info("Iniciando actualizacion de ACDI con ID: {} y datos: {}", id, actualizarAcdiRequest);
         Validador.validarNoNulo(id, actualizarAcdiRequest);
         Acdi acdiActualizado = acdiInPort.actualizarAcdi(id, AcdiControllerMapper.acdiActualizarSolicitudAAcdiModel(actualizarAcdiRequest));
@@ -55,7 +56,7 @@ public class AcdiController implements ApiAcdi {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<AcdiResponseDTO> obtenerPorId(@PathVariable Long id) {
+    public ResponseEntity<AcdiResponseDTO> obtenerPorId(@PathVariable Long id) throws AcdiNoEncontradoException {
         log.info("Iniciando obtencion del ACDI con ID: {}", id);
         Validador.validarNoNulo(id);
         Acdi acdi = acdiInPort.obtenerAcdiPorId(id);
@@ -64,7 +65,7 @@ public class AcdiController implements ApiAcdi {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> eliminar(@PathVariable Long id) {
+    public ResponseEntity<Void> eliminar(@PathVariable Long id) throws AcdiNoEncontradoException {
         log.info("Iniciando eliminacion del ACDI con ID: {}", id);
         Validador.validarNoNulo(id);
         acdiInPort.eliminarAcdi(id);
@@ -73,7 +74,7 @@ public class AcdiController implements ApiAcdi {
     }
 
     @PutMapping("/{id}/baja")
-    public ResponseEntity<AcdiResponseDTO> darDeBaja(@PathVariable Long id) {
+    public ResponseEntity<AcdiResponseDTO> darDeBaja(@PathVariable Long id) throws AcdiNoEncontradoException {
         log.info("Iniciando baja del ACDI con ID: {}", id);
         Validador.validarNoNulo(id);
         Acdi acdiBajado = acdiInPort.darDeBajaAcdi(id);

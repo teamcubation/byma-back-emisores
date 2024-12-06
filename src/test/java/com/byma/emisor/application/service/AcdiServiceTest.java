@@ -78,7 +78,7 @@ public class AcdiServiceTest {
     }
 
     @Test
-    void deberiaActualizarAcdiExitosamente() {
+    void deberiaActualizarAcdiExitosamente() throws AcdiNoEncontradoException {
         Acdi acdiActualizado = Acdi.builder()
                 .mail(MAIL_NUEVO)
                 .liquidaEnByma(LIQUIDA_EN_BYMA)
@@ -98,7 +98,7 @@ public class AcdiServiceTest {
     }
 
     @Test
-    void deberiaLanzarExcepcionCuandoAcdiNoExisteParaActualizar() {
+    void deberiaLanzarExcepcionCuandoAcdiNoExisteParaActualizar() throws AcdiNoEncontradoException {
         when(acdiOutPort.obtenerAcdiPorId(ACDI_ID_999)).thenReturn(Optional.empty());
 
         assertThrows(AcdiNoEncontradoException.class, () -> acdiService.actualizarAcdi(ACDI_ID_999, acdiMock));
@@ -118,7 +118,7 @@ public class AcdiServiceTest {
     }
 
     @Test
-    void deberiaObtenerAcdiPorIdExitosamente() {
+    void deberiaObtenerAcdiPorIdExitosamente() throws AcdiNoEncontradoException {
         when(acdiOutPort.obtenerAcdiPorId(ACDI_ID_1)).thenReturn(Optional.of(acdiMock));
 
         Acdi resultado = acdiService.obtenerAcdiPorId(ACDI_ID_1);
@@ -130,14 +130,14 @@ public class AcdiServiceTest {
     }
 
     @Test
-    void deberiaLanzarExcepcionCuandoAcdiNoExisteParaObtener() {
+    void deberiaLanzarExcepcionCuandoAcdiNoExisteParaObtener() throws AcdiNoEncontradoException {
         when(acdiOutPort.obtenerAcdiPorId(ACDI_ID_999)).thenReturn(Optional.empty());
 
         assertThrows(AcdiNoEncontradoException.class, () -> acdiService.obtenerAcdiPorId(ACDI_ID_999));
     }
 
     @Test
-    void deberiaEliminarAcdiExitosamente() {
+    void deberiaEliminarAcdiExitosamente() throws AcdiNoEncontradoException {
         when(acdiOutPort.obtenerAcdiPorId(ACDI_ID_1)).thenReturn(Optional.of(acdiMock));
         doNothing().when(acdiOutPort).eliminarAcdi(ACDI_ID_1);
 
@@ -147,14 +147,14 @@ public class AcdiServiceTest {
     }
 
     @Test
-    void deberiaLanzarExcepcionCuandoNoSeEncuentraAcdiParaEliminar() {
+    void deberiaLanzarExcepcionCuandoNoSeEncuentraAcdiParaEliminar() throws AcdiNoEncontradoException {
         when(acdiOutPort.obtenerAcdiPorId(ACDI_ID_999)).thenReturn(Optional.empty());
 
         assertThrows(AcdiNoEncontradoException.class, () -> acdiService.eliminarAcdi(ACDI_ID_999));
     }
 
     @Test
-    void deberiaDarDeBajaAcdiExitosamente() {
+    void deberiaDarDeBajaAcdiExitosamente() throws AcdiNoEncontradoException {
         Acdi acdiBajado = Acdi.builder()
                 .habilitado(DESHABILITADO)
                 .estado(ESTADO_DESHABILITADA)
@@ -173,7 +173,7 @@ public class AcdiServiceTest {
     }
 
     @Test
-    void deberiaLanzarExcepcionCuandoNoSeEncuentraAcdiParaBaja() {
+    void deberiaLanzarExcepcionCuandoNoSeEncuentraAcdiParaBaja() throws AcdiNoEncontradoException {
         when(acdiOutPort.obtenerAcdiPorId(ACDI_ID_999)).thenReturn(Optional.empty());
 
         assertThrows(AcdiNoEncontradoException.class, () -> acdiService.darDeBajaAcdi(ACDI_ID_999));

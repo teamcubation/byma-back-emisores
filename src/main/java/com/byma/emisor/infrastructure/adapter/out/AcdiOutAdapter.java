@@ -34,7 +34,7 @@ public class AcdiOutAdapter implements AcdiOutPort {
     }
 
     @Override
-    public Optional<Acdi> obtenerAcdiPorId(Long idAcdi) {
+    public Optional<Acdi> obtenerAcdiPorId(Long idAcdi) throws AcdiNoEncontradoException {
         log.info("Iniciando obtención de ACDI con ID: {}", idAcdi);
         Validador.validarNoNulo(idAcdi);
         Optional<AcdiEntity> acdiEntityOpt = acdiRepository.findById(idAcdi);
@@ -56,7 +56,7 @@ public class AcdiOutAdapter implements AcdiOutPort {
     }
 
     @Override
-    public void eliminarAcdi(Long idAcdi) {
+    public void eliminarAcdi(Long idAcdi) throws AcdiNoEncontradoException {
         log.info("Iniciando eliminacion de ACDI con ID: {}", idAcdi);
         Validador.validarNoNulo(idAcdi);
         if (!acdiRepository.existsById(idAcdi)) {

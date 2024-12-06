@@ -81,7 +81,7 @@ public class AcdiOutAdapterTest {
     }
 
     @Test
-    void deberiaObtenerAcdiPorIdExitosamente() {
+    void deberiaObtenerAcdiPorIdExitosamente() throws AcdiNoEncontradoException {
         Long acdiId = 1L;
 
         when(acdiRepository.findById(acdiId)).thenReturn(Optional.of(acdiEntity));
@@ -128,7 +128,7 @@ public class AcdiOutAdapterTest {
     }
 
     @Test
-    void deberiaEliminarAcdiExitosamente() {
+    void deberiaEliminarAcdiExitosamente() throws AcdiNoEncontradoException {
         Long idAcdi = 1L;
 
         when(acdiRepository.existsById(idAcdi)).thenReturn(true);

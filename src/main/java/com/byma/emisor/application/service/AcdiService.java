@@ -26,7 +26,7 @@ public class AcdiService implements AcdiInPort {
     }
 
     @Override
-    public Acdi actualizarAcdi(Long idAcdi, Acdi acdi) {
+    public Acdi actualizarAcdi(Long idAcdi, Acdi acdi) throws AcdiNoEncontradoException {
         Validador.validarNoNulo(idAcdi, acdi);
         Acdi acdiActualizado = acdiOutPort.obtenerAcdiPorId(idAcdi)
                 .orElseThrow(() -> new AcdiNoEncontradoException(ErrorMessages.ACDI_NO_ENCOTRADO));
@@ -45,14 +45,14 @@ public class AcdiService implements AcdiInPort {
     }
 
     @Override
-    public Acdi obtenerAcdiPorId(Long idAcdi) {
+    public Acdi obtenerAcdiPorId(Long idAcdi) throws AcdiNoEncontradoException {
         Validador.validarNoNulo(idAcdi);
         return acdiOutPort.obtenerAcdiPorId(idAcdi)
                 .orElseThrow(() -> new AcdiNoEncontradoException(ErrorMessages.ACDI_NO_ENCOTRADO));
     }
 
     @Override
-    public void eliminarAcdi(Long idAcdi) {
+    public void eliminarAcdi(Long idAcdi) throws AcdiNoEncontradoException {
         Validador.validarNoNulo(idAcdi);
         if (acdiOutPort.obtenerAcdiPorId(idAcdi).isEmpty()) {
             throw new AcdiNoEncontradoException(ErrorMessages.ACDI_NO_ENCOTRADO);
@@ -61,7 +61,7 @@ public class AcdiService implements AcdiInPort {
     }
 
     @Override
-    public Acdi darDeBajaAcdi(Long idAcdi) {
+    public Acdi darDeBajaAcdi(Long idAcdi) throws AcdiNoEncontradoException {
         Validador.validarNoNulo(idAcdi);
         Acdi acdi = acdiOutPort.obtenerAcdiPorId(idAcdi)
                 .orElseThrow(() -> new AcdiNoEncontradoException(ErrorMessages.ACDI_NO_ENCOTRADO));
