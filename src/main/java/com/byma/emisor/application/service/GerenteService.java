@@ -19,7 +19,6 @@ public class GerenteService implements GerenteInPort {
 
     private final GerenteOutPort gerenteOutPort;
 
-
     @Override
     public Gerente crear(Gerente gerenteRequestDTO) {
         log.info("Crear gerente: {}", gerenteRequestDTO);

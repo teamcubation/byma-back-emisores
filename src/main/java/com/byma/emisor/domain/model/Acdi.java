@@ -13,12 +13,12 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class Acdi {
 
-    private Long idAcdi;
+    private long idAcdi;
     private String idOrganizacionAcdi;
     private String denominacion;
-    private Boolean liquidaEnByma = true;
-    private Boolean habilitado;
-    private Boolean billeteras;
+    private boolean liquidaEnByma = true;
+    private boolean habilitado;
+    private boolean billeteras;
     private String observaciones;
     private LocalDateTime fechaAlta;
     private String mail;
