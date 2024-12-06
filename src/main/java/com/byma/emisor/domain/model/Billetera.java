@@ -17,8 +17,8 @@ public class Billetera {
     private String mail;
     private String idCuenta;
     private String denominacion;
-    private Boolean liquidaEnByma;
-    private Boolean habilitado;
+    private boolean liquidaEnByma;
+    private boolean habilitado;
     private LocalDateTime fechaAlta;
     private String observaciones;
     private String idAcdi;

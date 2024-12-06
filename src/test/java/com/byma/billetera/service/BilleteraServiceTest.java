@@ -111,8 +111,8 @@ class BilleteraServiceTest {
         assertEquals(billetera.getMail(), resultado.getMail());
         assertEquals(billetera.getIdCuenta(), resultado.getIdCuenta());
         assertEquals(billetera.getDenominacion(), resultado.getDenominacion());
-        assertEquals(billetera.getLiquidaEnByma(), resultado.getLiquidaEnByma());
-        assertEquals(billetera.getHabilitado(), resultado.getHabilitado());
+        assertEquals(billetera.isLiquidaEnByma(), resultado.isLiquidaEnByma());
+        assertEquals(billetera.isHabilitado(), resultado.isHabilitado());
         assertEquals(billetera.getFechaAlta(), resultado.getFechaAlta());
         assertEquals(billetera.getObservaciones(), resultado.getObservaciones());
         assertEquals(billetera.getIdAcdi(), resultado.getIdAcdi());
@@ -148,8 +148,8 @@ class BilleteraServiceTest {
         assertEquals(billetera.getMail(), resultado.getMail());
         assertEquals(billetera.getIdCuenta(), resultado.getIdCuenta());
         assertEquals(billetera.getDenominacion(), resultado.getDenominacion());
-        assertEquals(billetera.getLiquidaEnByma(), resultado.getLiquidaEnByma());
-        assertEquals(billetera.getHabilitado(), resultado.getHabilitado());
+        assertEquals(billetera.isLiquidaEnByma(), resultado.isLiquidaEnByma());
+        assertEquals(billetera.isHabilitado(), resultado.isHabilitado());
         assertEquals(billetera.getFechaAlta(), resultado.getFechaAlta());
         assertEquals(billetera.getObservaciones(), resultado.getObservaciones());
         assertEquals(billetera.getIdAcdi(), resultado.getIdAcdi());
@@ -186,8 +186,8 @@ class BilleteraServiceTest {
         assertEquals(billetera.getMail(), resultado.getMail());
         assertEquals(billetera.getIdCuenta(), resultado.getIdCuenta());
         assertEquals(billetera.getDenominacion(), resultado.getDenominacion());
-        assertEquals(billetera.getLiquidaEnByma(), resultado.getLiquidaEnByma());
-        assertEquals(billetera.getHabilitado(), resultado.getHabilitado());
+        assertEquals(billetera.isLiquidaEnByma(), resultado.isLiquidaEnByma());
+        assertEquals(billetera.isHabilitado(), resultado.isHabilitado());
         assertEquals(billetera.getFechaAlta(), resultado.getFechaAlta());
         assertEquals(billetera.getObservaciones(), resultado.getObservaciones());
         assertEquals(billetera.getIdAcdi(), resultado.getIdAcdi());

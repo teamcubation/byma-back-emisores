@@ -1,7 +1,15 @@
 package com.byma.emisor.infrastructure.adapter.out.persistance.entity;
 
-import jakarta.persistence.*;
-import lombok.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.GenerationType;
+import lombok.NoArgsConstructor;
+import lombok.Builder;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
@@ -20,8 +28,8 @@ public class BilleteraEntity {
     private String mail;
     private String idCuenta;
     private String denominacion;
-    private Boolean liquidaEnByma;
-    private Boolean habilitado;
+    private boolean liquidaEnByma;
+    private boolean habilitado;
     private LocalDateTime fechaAlta;
     private String observaciones;
     private String idAcdi;
