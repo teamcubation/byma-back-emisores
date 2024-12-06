@@ -86,3 +86,84 @@ A continuación, algunos ejemplos para interactuar con la API utilizando Postman
 5. Eliminar un Emisor (DELETE /api/emisores/{id})
 
 **DELETE** `http://localhost:8080/api/emisores/{id}`
+
+
+*****SUSCRIPCION*****
+
+1. Crear una Suscripción (POST /api/v1/suscripcion)
+   POST http://localhost:10001/api/v1/suscripcion
+
+
+
+```json{
+"estado": "ACTIVO",
+"nroCertificado": 12345,
+"idEspecie": 1,
+"cantCuotapartes": 100,
+"idAcdi": 50,
+"idEmisor": 10,
+"nroPedido": 7890,
+"nroSecuencia": 5,
+"fechaCambioDeEstado": "2024-12-02",
+"rolIngresante": "ADMIN",
+"monto": 10000,
+"liquidaEnByma": true,
+"numeroReferencia": 98765,
+"procesadoCustodia": false,
+"ultimoError": "",
+"command": "CREATE",
+"procesadoLiquidacionesSlyq": false,
+"idGerente": 7,
+"obligacionDePagoGenerada": true,
+"idBilletera": 101,
+"fechaSincronizacion": "2024-12-03T15:30:00",
+"nasdaqSiStatusReason": "",
+"mdwStatusCode": 200,
+"mdwBusinessMessageId": "ABC123",
+"mdwResponseMessage": "OK",
+"mdwResponseDatetime": "2024-12-03T15:30:00",
+"nasdaqSiStatus": "COMPLETED"
+}
+```
+2. Obtener todas las Suscripciones (GET /api/v1/suscripcion)
+   GET http://localhost:10001/api/v1/suscripcion
+
+3. Obtener Suscripción por ID (GET /api/v1/suscripcion/{id})
+   GET http://localhost:10001/api/v1/suscripcion/{id}
+
+4. Actualizar una Suscripción (PUT /api/v1/suscripciones/{id})
+   PUT http://localhost:10001/api/v1/suscripciones/{id}
+
+
+```json{
+"estado": "INACTIVO",
+"nroCertificado": 12345,
+"idEspecie": 1,
+"cantCuotapartes": 50,
+"idAcdi": 50,
+"idEmisor": 20,
+"nroPedido": 7891,
+"nroSecuencia": 6,
+"fechaCambioDeEstado": "2024-12-02",
+"rolIngresante": "USUARIO",
+"monto": 5000,
+"liquidaEnByma": false,
+"numeroReferencia": 98766,
+"procesadoCustodia": true,
+"ultimoError": "Error desconocido",
+"command": "UPDATE",
+"procesadoLiquidacionesSlyq": true,
+"idGerente": 8,
+"obligacionDePagoGenerada": false,
+"idBilletera": 102,
+"fechaSincronizacion": "2024-12-03T16:00:00",
+"nasdaqSiStatusReason": "Pendiente de confirmación",
+"mdwStatusCode": 400,
+"mdwBusinessMessageId": "DEF456",
+"mdwResponseMessage": "Error",
+"mdwResponseDatetime": "2024-12-03T16:00:00",
+"nasdaqSiStatus": "FAILED"
+}
+```
+5. Eliminar una Suscripción (DELETE /api/v1/suscripcion/{id})
+   DELETE http://localhost:10001/api/v1/suscripcion/{id}

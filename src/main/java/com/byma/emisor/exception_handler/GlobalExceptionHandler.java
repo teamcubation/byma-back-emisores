@@ -1,13 +1,7 @@
 package com.byma.emisor.exception_handler;
 
-import com.byma.emisor.application.exception.EmisorDuplicadoException;
-import com.byma.emisor.application.exception.EmisorNoEncontradoException;
-import com.byma.emisor.application.exception.ObjetoNuloException;
-import com.byma.emisor.application.exception.acdi.AcdiNoEncontradoException;
-import com.byma.emisor.application.exception.especie.EspecieConIdExistenteException;
-import com.byma.emisor.application.exception.especie.EspecieNoEncontradaException;
-import com.byma.emisor.application.exception.especie.ObjetoEnviadoNuloException;
-import com.byma.emisor.application.exception.gerente.GerenteNoEncontradoException;
+
+import com.byma.emisor.application.exception.*;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpHeaders;
@@ -64,11 +58,20 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler(ObjetoNuloException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ResponseStatus(HttpStatus.CONFLICT)
     public ErrorMessageResponse handleObjetoNuloException(ObjetoNuloException exception, HttpServletRequest request) {
-        return this.createErrorMessageResponse(exception, request, HttpStatus.BAD_REQUEST);
+        return this.createErrorMessageResponse(exception, request, HttpStatus.CONFLICT);
     }
-
+    @ExceptionHandler(IdNuloException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public ErrorMessageResponse handleIdNuloException(ObjetoNuloException exception, HttpServletRequest request) {
+    return this.createErrorMessageResponse(exception, request, HttpStatus.CONFLICT);
+    }
+    @ExceptionHandler(SuscripcionNoEncontradaException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ErrorMessageResponse handleSuscripcionNoEncontradaException(ObjetoNuloException exception, HttpServletRequest request) {
+        return this.createErrorMessageResponse(exception, request, HttpStatus.NOT_FOUND);
+    }
 
     @Override
     public ResponseEntity<Object> handleMethodArgumentNotValid(
