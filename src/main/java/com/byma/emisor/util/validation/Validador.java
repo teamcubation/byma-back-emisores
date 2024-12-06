@@ -7,6 +7,8 @@ import com.byma.emisor.domain.model.Especie;
 
 public class Validador {
 
+    public static final String CAMPO_NO_NULO = "Los campos no pueden ser nulos";
+
     public static void validarIdNull(Long idEspecie) throws AtributosNulosException {
         if (idEspecie == null) {
             throw new AtributosNulosException("El id no puede ser null");
@@ -28,6 +30,21 @@ public class Validador {
         if (especie.getCodigoCVSA() == null || especie.getDenominacion() == null
                 || especie.getPlazoDeLiquidacion() == null) {
             throw new AtributosNulosException("Error. atributos nulos");
+        }
+    }
+
+    public static boolean tieneCamposNulos(Object... objects) {
+        for (Object object : objects) {
+            if (object == null) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void validarNoNulo(Object... objects) {
+        if (tieneCamposNulos(objects)) {
+            throw new IllegalArgumentException(CAMPO_NO_NULO);
         }
     }
 }
