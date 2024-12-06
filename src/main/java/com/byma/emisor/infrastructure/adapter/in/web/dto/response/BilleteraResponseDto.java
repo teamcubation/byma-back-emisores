@@ -17,8 +17,8 @@ public class BilleteraResponseDto {
     private String mail;
     private String idCuenta;
     private String denominacion;
-    private boolean liquidaEnByma;
-    private boolean habilitado;
+    private Boolean liquidaEnByma;
+    private Boolean habilitado;
     private String fechaAlta;
     private String observaciones;
     private String idAcdi;
