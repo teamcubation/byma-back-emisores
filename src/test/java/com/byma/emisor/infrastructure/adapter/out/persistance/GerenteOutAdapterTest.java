@@ -37,7 +37,7 @@ class GerenteOutAdapterTest {
         MockitoAnnotations.openMocks(this);
 
         gerenteMock = Gerente.builder()
-                .idGerente(1L)
+                .id(1L)
                 .denominacion("Gerente Test")
                 .liquidaEnByma(true)
                 .habilitado(true)
@@ -64,7 +64,7 @@ class GerenteOutAdapterTest {
         Gerente resultado = gerenteOutAdapter.crear(gerenteMock);
 
         assertNotNull(resultado);
-        assertEquals(gerenteMock.getIdGerente(), resultado.getIdGerente());
+        assertEquals(gerenteMock.getId(), resultado.getId());
         assertEquals(gerenteMock.getEmailGerente(), resultado.getEmailGerente());
         verify(gerenteRepository, times(1)).save(any(GerenteEntity.class));
     }
@@ -87,7 +87,7 @@ class GerenteOutAdapterTest {
         assertNotNull(resultado);
         assertFalse(resultado.isEmpty());
         assertEquals(1, resultado.size());
-        assertEquals(gerenteEntityMock.getIdGerente(), resultado.get(0).getIdGerente());
+        assertEquals(gerenteEntityMock.getIdGerente(), resultado.get(0).getId());
         verify(gerenteRepository, times(1)).findAll();
     }
 
@@ -99,7 +99,7 @@ class GerenteOutAdapterTest {
         Gerente resultado = gerenteOutAdapter.obtenerPorIdOrganizacionGerente(idRegistro);
 
         assertNotNull(resultado);
-        assertEquals(gerenteEntityMock.getIdGerente(), resultado.getIdGerente());
+        assertEquals(gerenteEntityMock.getIdGerente(), resultado.getId());
         assertEquals(gerenteEntityMock.getMailGerente(), resultado.getEmailGerente());
         verify(gerenteRepository, times(1)).findById(idRegistro);
     }
@@ -129,7 +129,7 @@ class GerenteOutAdapterTest {
         Gerente resultado = gerenteOutAdapter.actualizar(gerenteMock);
 
         assertNotNull(resultado);
-        assertEquals(gerenteMock.getIdGerente(), resultado.getIdGerente());
+        assertEquals(gerenteMock.getId(), resultado.getId());
         assertEquals(gerenteMock.getEmailGerente(), resultado.getEmailGerente());
         verify(gerenteRepository, times(1)).save(any(GerenteEntity.class));
     }
