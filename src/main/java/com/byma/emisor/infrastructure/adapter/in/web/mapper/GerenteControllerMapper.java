@@ -10,7 +10,6 @@ import com.byma.emisor.util.validation.Validador;
 public class GerenteControllerMapper {
 
     public static Gerente aGerente(GerenteRequestDTO gerenteRequestDTO) {
-
         Validador.validadorParametrosNull(gerenteRequestDTO);
         return Gerente.builder()
                 .denominacion(gerenteRequestDTO.getDenominacion())
@@ -26,10 +25,10 @@ public class GerenteControllerMapper {
 
         Validador.validadorParametrosNull(gerente);
         return GerenteResponseDTO.builder()
-                .idGerente(gerente.getIdGerente())
+                .id(gerente.getId())
                 .denominacion(gerente.getDenominacion())
-                .liquidaEnByma(gerente.getLiquidaEnByma())
-                .habilitado(gerente.getHabilitado())
+                .liquidaEnByma(gerente.liquidaEnByma())
+                .habilitado(gerente.estaHabilitado())
                 .observaciones(gerente.getObservaciones())
                 .mailGerente(gerente.getEmailGerente())
                 .fechaDeAlta(gerente.getFechaDeAlta())

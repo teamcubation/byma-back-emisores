@@ -45,7 +45,7 @@ public class GerenteService implements GerenteInPort {
         Validador.validadorParametrosNull(idRegistro, gerenteRequestDTO);
         Gerente gerenteDb = this.gerenteOutPort.obtenerPorIdOrganizacionGerente(idRegistro);
         gerenteDb.setEmailGerente(gerenteRequestDTO.getEmailGerente());
-        gerenteDb.setLiquidaEnByma(gerenteRequestDTO.getLiquidaEnByma());
+        gerenteDb.setLiquidaEnByma(gerenteRequestDTO.liquidaEnByma());
 
         return gerenteOutPort.actualizar(gerenteDb);
     }
@@ -55,7 +55,7 @@ public class GerenteService implements GerenteInPort {
         log.info("Eliminar gerente");
         Validador.validadorParametrosNull(idRegistro);
         Gerente gerenteDb = this.gerenteOutPort.obtenerPorIdOrganizacionGerente(idRegistro);
-        gerenteDb.setHabilitado(!gerenteDb.getHabilitado());
+        gerenteDb.setHabilitado(!gerenteDb.estaHabilitado());
         return gerenteOutPort.actualizar(gerenteDb);
     }
 }

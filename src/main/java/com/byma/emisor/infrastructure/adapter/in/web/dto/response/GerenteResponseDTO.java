@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 public class GerenteResponseDTO {
-    private Long idGerente;
+    private Long id;
     private String denominacion;
     private Boolean liquidaEnByma;
     private Boolean habilitado;

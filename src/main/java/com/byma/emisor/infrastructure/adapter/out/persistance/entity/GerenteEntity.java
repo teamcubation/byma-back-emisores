@@ -22,9 +22,9 @@ public class GerenteEntity {
     @Column(nullable = false)
     private String denominacion;
     @Column(nullable = false)
-    private boolean liquidaEnByma = true;
+    private Boolean liquidaEnByma = true;
     @Column(nullable = false)
-    private boolean habilitado;
+    private Boolean habilitado;
     @Column(nullable = false)
     private String observaciones;
     private String mailGerente;

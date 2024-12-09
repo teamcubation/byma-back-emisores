@@ -33,8 +33,8 @@ public class AcdiService implements AcdiInPort {
         if (acdi.getMail() != null) {
             acdiActualizado.setMail(acdi.getMail());
         }
-        if (acdi.getLiquidaEnByma() != null) {
-            acdiActualizado.setLiquidaEnByma(acdi.getLiquidaEnByma());
+        if (acdi.acdiLiquidaEnByma()) {
+            acdiActualizado.setLiquidaEnByma(acdi.acdiLiquidaEnByma());
         }
         return acdiOutPort.guardarAcdi(acdiActualizado);
     }

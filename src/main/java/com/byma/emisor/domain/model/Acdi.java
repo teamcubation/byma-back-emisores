@@ -24,4 +24,16 @@ public class Acdi {
     private String mail;
     private EstadoAcdi estado = EstadoAcdi.CREADA;
 
+    public boolean acdiLiquidaEnByma() {
+        return liquidaEnByma;
+    }
+
+    public boolean acdiEstaHabilitado() {
+        return habilitado;
+    }
+
+    public boolean acdiTieneBilleteras() {
+        return billeteras;
+    }
+
 }

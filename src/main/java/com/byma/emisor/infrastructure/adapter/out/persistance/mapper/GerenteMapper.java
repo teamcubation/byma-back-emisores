@@ -14,10 +14,10 @@ public class GerenteMapper {
         Validador.validadorParametrosNull(gerente);
 
         return GerenteEntity.builder()
-                .idGerente(gerente.getIdGerente())
+                .idGerente(gerente.getId())
                 .denominacion(gerente.getDenominacion())
-                .liquidaEnByma(gerente.getLiquidaEnByma())
-                .habilitado(gerente.getHabilitado())
+                .liquidaEnByma(gerente.liquidaEnByma())
+                .habilitado(gerente.estaHabilitado())
                 .observaciones(gerente.getObservaciones())
                 .mailGerente(gerente.getEmailGerente())
                 .fechaDeAlta(gerente.getFechaDeAlta())
@@ -28,10 +28,10 @@ public class GerenteMapper {
     public static Gerente aGerente(GerenteEntity gerenteEntity) {
         Validador.validadorParametrosNull(gerenteEntity);
         return Gerente.builder()
-                .idGerente(gerenteEntity.getIdGerente())
+                .id(gerenteEntity.getIdGerente())
                 .denominacion(gerenteEntity.getDenominacion())
-                .liquidaEnByma(gerenteEntity.isLiquidaEnByma())
-                .habilitado(gerenteEntity.isHabilitado())
+                .liquidaEnByma(gerenteEntity.getLiquidaEnByma())
+                .habilitado(gerenteEntity.getHabilitado())
                 .observaciones(gerenteEntity.getObservaciones())
                 .emailGerente(gerenteEntity.getMailGerente())
                 .fechaDeAlta(gerenteEntity.getFechaDeAlta())
