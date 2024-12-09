@@ -8,6 +8,7 @@ import com.byma.emisor.application.exception.especie.EspecieConIdExistenteExcept
 import com.byma.emisor.application.exception.especie.EspecieNoEncontradaException;
 import com.byma.emisor.application.exception.especie.ObjetoEnviadoNuloException;
 import com.byma.emisor.application.exception.gerente.GerenteNoEncontradoException;
+import com.byma.emisor.application.exception.billetera.BilleteraNoEncontradoException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpHeaders;
@@ -30,6 +31,12 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(EmisorNoEncontradoException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public ErrorMessageResponse handleEmisorNoEncontradoException(EmisorNoEncontradoException exception, HttpServletRequest request) {
+        return this.createErrorMessageResponse(exception, request, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(BilleteraNoEncontradoException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ErrorMessageResponse handleBilleteraNoEncontradoException(BilleteraNoEncontradoException exception, HttpServletRequest request) {
         return this.createErrorMessageResponse(exception, request, HttpStatus.NOT_FOUND);
     }
 
