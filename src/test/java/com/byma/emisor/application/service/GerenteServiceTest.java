@@ -34,7 +34,7 @@ class GerenteServiceTest {
         MockitoAnnotations.openMocks(this);
 
         gerenteMock = Gerente.builder()
-                .idGerente(1L)
+                .id(1L)
                 .denominacion("Gerente Test")
                 .liquidaEnByma(true)
                 .habilitado(true)
@@ -51,7 +51,7 @@ class GerenteServiceTest {
         Gerente resultado = gerenteService.crear(gerenteMock);
 
         assertNotNull(resultado);
-        assertEquals(gerenteMock.getIdGerente(), resultado.getIdGerente());
+        assertEquals(gerenteMock.getId(), resultado.getId());
         assertEquals(gerenteMock.getEmailGerente(), resultado.getEmailGerente());
         verify(gerenteOutPort, times(1)).crear(any(Gerente.class));
     }
@@ -85,7 +85,7 @@ class GerenteServiceTest {
         Gerente resultado = gerenteService.obtenerPorIdOrganizacionGerente(idRegistro);
 
         assertNotNull(resultado);
-        assertEquals(gerenteMock.getIdGerente(), resultado.getIdGerente());
+        assertEquals(gerenteMock.getId(), resultado.getId());
         verify(gerenteOutPort, times(1)).obtenerPorIdOrganizacionGerente(idRegistro);
     }
 
@@ -104,7 +104,7 @@ class GerenteServiceTest {
     void actualizar_DeberiaActualizarGerenteExitosamente() throws GerenteNoEncontradoException {
         Long idRegistro = ID_REGISTRO;
         Gerente gerenteActualizado = Gerente.builder()
-                .idGerente(idRegistro)
+                .id(idRegistro)
                 .emailGerente("nuevo@test.com")
                 .liquidaEnByma(false)
                 .build();
@@ -116,7 +116,7 @@ class GerenteServiceTest {
 
         assertNotNull(resultado);
         assertEquals("nuevo@test.com", resultado.getEmailGerente());
-        assertFalse(resultado.getLiquidaEnByma());
+        assertFalse(resultado.liquidaEnByma());
         verify(gerenteOutPort, times(1)).obtenerPorIdOrganizacionGerente(idRegistro);
         verify(gerenteOutPort, times(1)).actualizar(any(Gerente.class));
     }
@@ -135,9 +135,9 @@ class GerenteServiceTest {
     void toggleHabilitar_DeberiaAlternarEstadoHabilitado() throws GerenteNoEncontradoException {
 
         Long idRegistro = ID_REGISTRO;
-        boolean estadoInicial = gerenteMock.getHabilitado();
+        boolean estadoInicial = gerenteMock.isHabilitado();
         Gerente gerenteDeshabilitado = Gerente.builder()
-                .idGerente(idRegistro)
+                .id(idRegistro)
                 .habilitado(!estadoInicial)
                 .build();
 
@@ -147,7 +147,7 @@ class GerenteServiceTest {
         Gerente resultado = gerenteService.toggleHabilitar(idRegistro);
 
         assertNotNull(resultado);
-        assertNotEquals(estadoInicial, resultado.getHabilitado());
+        assertNotEquals(estadoInicial, resultado.isHabilitado());
         verify(gerenteOutPort, times(1)).obtenerPorIdOrganizacionGerente(idRegistro);
         verify(gerenteOutPort, times(1)).actualizar(any(Gerente.class));
     }

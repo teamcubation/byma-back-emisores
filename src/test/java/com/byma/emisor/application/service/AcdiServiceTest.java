@@ -91,7 +91,7 @@ public class AcdiServiceTest {
 
         assertNotNull(resultado);
         assertEquals(MAIL_NUEVO, resultado.getMail());
-        assertTrue(resultado.getLiquidaEnByma());
+        assertTrue(resultado.acdiLiquidaEnByma());
 
         verify(acdiOutPort, times(1)).obtenerAcdiPorId(ACDI_ID_1);
         verify(acdiOutPort, times(1)).guardarAcdi(any(Acdi.class));
@@ -166,7 +166,7 @@ public class AcdiServiceTest {
         Acdi resultado = acdiService.darDeBajaAcdi(ACDI_ID_1);
 
         assertNotNull(resultado);
-        assertFalse(resultado.getHabilitado());
+        assertFalse(resultado.isHabilitado());
         assertEquals(ESTADO_DESHABILITADA, resultado.getEstado());
 
         verify(acdiOutPort, times(1)).guardarAcdi(any(Acdi.class));

@@ -40,7 +40,7 @@ class GerenteControllerTest {
         MockitoAnnotations.openMocks(this);
 
         gerenteMock = Gerente.builder()
-                .idGerente(1L)
+                .id(1L)
                 .denominacion("Gerente Test")
                 .liquidaEnByma(true)
                 .habilitado(true)
@@ -73,7 +73,7 @@ class GerenteControllerTest {
         assertNotNull(response);
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertNotNull(response.getBody());
-        assertEquals(gerenteMock.getIdGerente(), response.getBody().getIdGerente());
+        assertEquals(gerenteMock.getId(), response.getBody().getId());
         assertEquals(gerenteMock.getEmailGerente(), response.getBody().getMailGerente());
         verify(gerenteInPort, times(1)).crear(any(Gerente.class));
     }
@@ -109,7 +109,7 @@ class GerenteControllerTest {
         assertNotNull(response);
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertNotNull(response.getBody());
-        assertEquals(gerenteMock.getIdGerente(), response.getBody().getIdGerente());
+        assertEquals(gerenteMock.getId(), response.getBody().getId());
         verify(gerenteInPort, times(1)).obtenerPorIdOrganizacionGerente(idRegistro);
     }
 
@@ -130,7 +130,7 @@ class GerenteControllerTest {
         assertNotNull(response);
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertNotNull(response.getBody());
-        assertEquals(gerenteMock.getIdGerente(), response.getBody().getIdGerente());
+        assertEquals(gerenteMock.getId(), response.getBody().getId());
         verify(gerenteInPort, times(1)).actualizar(eq(idRegistro), any(Gerente.class));
     }
 
