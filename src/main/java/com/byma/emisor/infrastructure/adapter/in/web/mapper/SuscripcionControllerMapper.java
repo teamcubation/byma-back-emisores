@@ -44,7 +44,6 @@ public class SuscripcionControllerMapper {
         ValidacionController.validarObjetoNotNull(requestDTO);
         return SuscripcionModel.builder()
                 .estado(requestDTO.getEstado())
-                .fechaAlta(requestDTO.getFechaAlta())
                 .nroCertificado(requestDTO.getNroCertificado())
                 .idEspecie(requestDTO.getIdEspecie())
                 .cantCuotapartes(requestDTO.getCantCuotapartes())
