@@ -1,6 +1,6 @@
 package com.byma.emisor.application.exception;
 
-public class ObjetoNuloException extends RuntimeException {
+public class ObjetoNuloException extends Exception {
     public ObjetoNuloException(String message) {
         super(message);
     }
