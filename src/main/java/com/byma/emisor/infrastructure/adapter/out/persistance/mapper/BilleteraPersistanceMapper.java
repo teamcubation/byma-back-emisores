@@ -11,6 +11,7 @@ public class BilleteraPersistanceMapper {
     public static BilleteraEntity billeteraABilleteraEntity(Billetera billetera) throws ObjetoNuloException {
         ValidacionPersistance.validarParametrosNull(billetera);
         return BilleteraEntity.builder()
+                .id(billetera.getId())
                 .mail(billetera.getMail())
                 .idCuenta(billetera.getIdCuenta())
                 .denominacion(billetera.getDenominacion())

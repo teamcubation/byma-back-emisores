@@ -39,9 +39,7 @@ public class BilleteraService implements BilleteraInPort {
     @Override
     public Billetera actualizar(Billetera billetera, Long idBilletera) throws BilleteraNoEncontradoException, ObjetoNuloException {
         ValidacionService.validarParametrosNull(idBilletera, billetera);
-        Billetera billeteraAActualizadar = billeteraOutPort.obtenerPorId(idBilletera);
-        billetera.setId(billeteraAActualizadar.getId());
-        billetera.setId(billeteraAActualizadar.getId());
+        billetera.setId(idBilletera);
 
         return billeteraOutPort.actualizar(billetera);
     }
