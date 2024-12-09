@@ -3,6 +3,11 @@ package com.byma.emisor.exception_handler;
 import com.byma.emisor.application.exception.EmisorDuplicadoException;
 import com.byma.emisor.application.exception.EmisorNoEncontradoException;
 import com.byma.emisor.application.exception.ObjetoNuloException;
+import com.byma.emisor.application.exception.acdi.AcdiNoEncontradoException;
+import com.byma.emisor.application.exception.especie.EspecieConIdExistenteException;
+import com.byma.emisor.application.exception.especie.EspecieNoEncontradaException;
+import com.byma.emisor.application.exception.especie.ObjetoEnviadoNuloException;
+import com.byma.emisor.application.exception.gerente.GerenteNoEncontradoException;
 import com.byma.emisor.application.exception.billetera.BilleteraNoEncontradoException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
@@ -41,21 +46,36 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return this.createErrorMessageResponse(exception, request, HttpStatus.CONFLICT);
     }
 
-    @ExceptionHandler(ObjetoNuloException.class)
-    @ResponseStatus(HttpStatus.CONFLICT)
-    public ErrorMessageResponse handleObjetoNuloException(ObjetoNuloException exception, HttpServletRequest request) {
-        return this.createErrorMessageResponse(exception, request, HttpStatus.CONFLICT);
-    }
-    @ExceptionHandler(IdNuloException.class)
-    @ResponseStatus(HttpStatus.CONFLICT)
-    public ErrorMessageResponse handleIdNuloException(ObjetoNuloException exception, HttpServletRequest request) {
-    return this.createErrorMessageResponse(exception, request, HttpStatus.CONFLICT);
-    }
-    @ExceptionHandler(SuscripcionNoEncontradaException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    public ErrorMessageResponse handleSuscripcionNoEncontradaException(ObjetoNuloException exception, HttpServletRequest request) {
+    @ExceptionHandler(GerenteNoEncontradoException.class)
+    public ErrorMessageResponse handleGerenteNoEncontrado(GerenteNoEncontradoException exception, HttpServletRequest request) {
         return this.createErrorMessageResponse(exception, request, HttpStatus.NOT_FOUND);
     }
+
+    @ExceptionHandler(AcdiNoEncontradoException.class)
+    public ResponseEntity<?> manejarAcdiNoEcontradoException(Exception exception, HttpServletRequest request) {
+        return ResponseEntity
+                .status(HttpStatus.NOT_FOUND)
+                .body(this.createErrorMessageResponse(exception, request, HttpStatus.NOT_FOUND));
+    }
+
+    @ResponseStatus(HttpStatus.CONFLICT)
+    @ExceptionHandler(EspecieNoEncontradaException.class)
+    public ErrorMessageResponse handleEspecieNoEncontradaException(Exception exception, HttpServletRequest request) throws ObjetoEnviadoNuloException {
+        return this.createErrorMessageResponse(exception, request, HttpStatus.CONFLICT);
+    }
+
+    @ResponseStatus(HttpStatus.CONFLICT)
+    @ExceptionHandler(EspecieConIdExistenteException.class)
+    public ErrorMessageResponse handleEspecieConIdExistenteException(Exception exception, HttpServletRequest request) throws ObjetoEnviadoNuloException {
+        return this.createErrorMessageResponse(exception, request, HttpStatus.CONFLICT);
+    }
+
+    @ExceptionHandler(ObjetoNuloException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ErrorMessageResponse handleObjetoNuloException(ObjetoNuloException exception, HttpServletRequest request) {
+        return this.createErrorMessageResponse(exception, request, HttpStatus.BAD_REQUEST);
+    }
+
 
     @Override
     public ResponseEntity<Object> handleMethodArgumentNotValid(
@@ -97,4 +117,5 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
                 .method(request.getMethod())
                 .build();
     }
+
 }
