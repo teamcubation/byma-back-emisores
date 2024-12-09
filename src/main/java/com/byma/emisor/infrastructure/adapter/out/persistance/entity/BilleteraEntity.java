@@ -24,7 +24,7 @@ public class BilleteraEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     private String mail;
     private String idCuenta;
     private String denominacion;

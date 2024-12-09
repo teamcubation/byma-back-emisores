@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class BilleteraResponseDto {
 
-    private long id;
+    private Long id;
     private String mail;
     private String idCuenta;
     private String denominacion;
