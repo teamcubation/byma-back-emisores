@@ -38,13 +38,13 @@ class BilleteraServiceTest {
     private static final String EMAIL_1 = "email_prueba_1";
     private static final String EMAIL_2 = "email_prueba_1";
     private static final String EMAIL_3 = "email_prueba_1";
-    private static final String CUENTA_1 = "cuenta_1";
-    private static final String CUENTA_2 = "cuenta_2";
-    private static final String CUENTA_3 = "cuenta_3";
+    private static final Long CUENTA_1 = 1L;
+    private static final Long CUENTA_2 = 2L;
+    private static final Long CUENTA_3 = 3L;
     private static final long ID_INEXISTENTE = 8L;
-    private static final String ACDI_1 = "acdi_1";
-    private static final String ACDI_2 = "acdi_2";
-    private static final String ACDI_3 = "acdi_3";
+    private static final Long ACDI_1 = 1L;
+    private static final Long ACDI_2 = 2L;
+    private static final Long ACDI_3 = 3L;
     private static final String OBSERVACIONES_1 = "observaciones_1";
     private static final String OBSERVACIONES_2 = "observaciones_2";
     private static final String OBSERVACIONES_3 = "observaciones_3";
@@ -196,7 +196,6 @@ class BilleteraServiceTest {
     @Test
     void debeRetornarBilleteraNoEncontradoException_cuandoActualizarUnaBilleteraInexistente() throws Exception {
         Billetera billeteraActualizada = Billetera.builder()
-                .id(ID_INEXISTENTE)
                 .mail(EMAIL_2)
                 .idCuenta(CUENTA_2)
                 .denominacion(DENOMINACION_2)
@@ -205,7 +204,7 @@ class BilleteraServiceTest {
                 .idAcdi(ACDI_2)
                 .build();
 
-        when(billeteraOutPort.actualizar(billeteraActualizada)).thenThrow(BilleteraNoEncontradoException.class);
+        when(billeteraOutPort.obtenerPorId(ID_INEXISTENTE)).thenThrow(BilleteraNoEncontradoException.class);
 
         assertThrows(BilleteraNoEncontradoException.class, () -> billeteraService.actualizar(billeteraActualizada, ID_INEXISTENTE));
     }

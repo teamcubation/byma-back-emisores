@@ -15,11 +15,11 @@ public class BilleteraResponseDto {
 
     private Long id;
     private String mail;
-    private String idCuenta;
+    private Long idCuenta;
     private String denominacion;
     private Boolean liquidaEnByma;
     private Boolean habilitado;
     private String fechaAlta;
     private String observaciones;
-    private String idAcdi;
+    private Long idAcdi;
 }
