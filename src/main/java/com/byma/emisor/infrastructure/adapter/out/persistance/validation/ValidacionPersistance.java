@@ -5,6 +5,7 @@ import com.byma.emisor.infrastructure.adapter.in.web.validation.ValidacionContro
 
 public class ValidacionPersistance {
     public static final String PARAMETRO_INVALIDO = "Los parametros no pueden ser null";
+    public static final String OBJETO_NO_ENCONTRADO = "Objeto no encontrado";
 
     public static boolean nullParams(Object ...objects){
         for (Object object : objects) {

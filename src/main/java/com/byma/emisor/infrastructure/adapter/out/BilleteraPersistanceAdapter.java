@@ -28,7 +28,7 @@ public class BilleteraPersistanceAdapter implements BilleteraOutPort {
         log.info("Obteniendo billetera con id: {}", id);
         Optional<BilleteraEntity> billeteraEntity = billeteraRepository.findById(id);
         if (billeteraEntity.isEmpty()) {
-            throw new BilleteraNoEncontradoException();
+            throw new BilleteraNoEncontradoException(ValidacionPersistance.OBJETO_NO_ENCONTRADO);
         }
         return BilleteraPersistanceMapper.billeteraEntityABilletera(billeteraEntity.get());
     }
@@ -58,19 +58,25 @@ public class BilleteraPersistanceAdapter implements BilleteraOutPort {
     @Override
     public void eliminarPorId(long id) throws BilleteraNoEncontradoException {
         log.info("Iniciando eliminacion de billetera con id: {}", id);
-        if (billeteraRepository.findById(id).isEmpty()) {
-            throw new BilleteraNoEncontradoException();
-        }
+        validarExistenciaObjetoPorId(id);
         billeteraRepository.deleteById(id);
         log.info("Finalizacion de la eliminacion de billertera con id: {}", id);
     }
 
     @Override
-    public Billetera actualizar(Billetera billetera) throws ObjetoNuloException {
+    public Billetera actualizar(Billetera billetera) throws ObjetoNuloException, BilleteraNoEncontradoException {
         log.info("Iniciando actualizacion de billetera");
         ValidacionPersistance.validarParametrosNull(billetera);
+        validarExistenciaObjetoPorId(billetera.getId());
         BilleteraEntity billeteraEntity = BilleteraPersistanceMapper.billeteraABilleteraEntity(billetera);
         log.info("Finalizacion de la actualizacion de la billetera");
+
         return BilleteraPersistanceMapper.billeteraEntityABilletera(billeteraRepository.save(billeteraEntity));
+    }
+
+    private void validarExistenciaObjetoPorId(long id) throws BilleteraNoEncontradoException {
+        if (billeteraRepository.findById(id).isEmpty()) {
+            throw new BilleteraNoEncontradoException(ValidacionPersistance.OBJETO_NO_ENCONTRADO);
+        }
     }
 }

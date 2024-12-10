@@ -196,6 +196,7 @@ class BilleteraServiceTest {
     @Test
     void debeRetornarBilleteraNoEncontradoException_cuandoActualizarUnaBilleteraInexistente() throws Exception {
         Billetera billeteraActualizada = Billetera.builder()
+                .id(ID_INEXISTENTE)
                 .mail(EMAIL_2)
                 .idCuenta(CUENTA_2)
                 .denominacion(DENOMINACION_2)
@@ -204,7 +205,7 @@ class BilleteraServiceTest {
                 .idAcdi(ACDI_2)
                 .build();
 
-        when(billeteraOutPort.obtenerPorId(ID_INEXISTENTE)).thenThrow(BilleteraNoEncontradoException.class);
+        when(billeteraOutPort.actualizar(billeteraActualizada)).thenThrow(BilleteraNoEncontradoException.class);
 
         assertThrows(BilleteraNoEncontradoException.class, () -> billeteraService.actualizar(billeteraActualizada, ID_INEXISTENTE));
     }

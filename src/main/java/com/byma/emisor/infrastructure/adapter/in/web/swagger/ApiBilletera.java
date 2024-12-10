@@ -39,7 +39,7 @@ public interface ApiBilletera {
             @ApiResponse(responseCode = BAD_REQUEST, description = MENSAJE_BAD_REQUEST),
             @ApiResponse(responseCode = ERROR, description = MENSAJE_ERROR)
     })
-    ResponseEntity<BilleteraResponseDto> crear(@RequestBody @Valid BilleteraRequestDto billeteraRequestDto) throws ObjetoNuloException, BilleteraNoEncontradoException;
+    ResponseEntity<BilleteraResponseDto> crear(@RequestBody @Valid BilleteraRequestDto billeteraRequestDto) throws ObjetoNuloException;
 
     @Operation(summary = "Obtener todas las billeteras")
     @ApiResponses(value = {
