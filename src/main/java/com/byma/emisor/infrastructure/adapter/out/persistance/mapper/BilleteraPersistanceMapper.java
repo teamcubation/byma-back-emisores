@@ -17,7 +17,7 @@ public class BilleteraPersistanceMapper {
                 .denominacion(billetera.getDenominacion())
                 .liquidaEnByma(billetera.isLiquidaEnByma())
                 .habilitado(billetera.isHabilitado())
-                .fechaAlta(LocalDateTime.now())
+                .fechaAlta(billetera.getFechaAlta())
                 .observaciones(billetera.getObservaciones())
                 .idAcdi(billetera.getIdAcdi())
                 .build();

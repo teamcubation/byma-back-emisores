@@ -15,12 +15,12 @@ public class Billetera {
 
     private long id;
     private String mail;
-    private String idCuenta;
+    private long idCuenta;
     private String denominacion;
     private boolean liquidaEnByma;
     private boolean habilitado;
     private LocalDateTime fechaAlta;
     private String observaciones;
-    private String idAcdi;
+    private long idAcdi;
 
 }

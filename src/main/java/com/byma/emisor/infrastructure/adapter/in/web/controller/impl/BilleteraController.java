@@ -27,7 +27,7 @@ public class BilleteraController implements ApiBilletera {
     private final BilleteraInPort billeteraInPort;
 
     @PostMapping()
-    public ResponseEntity<BilleteraResponseDto> crear(@RequestBody @Valid BilleteraRequestDto billeteraRequestDto) throws ObjetoNuloException, BilleteraNoEncontradoException {
+    public ResponseEntity<BilleteraResponseDto> crear(@RequestBody @Valid BilleteraRequestDto billeteraRequestDto) throws ObjetoNuloException {
         log.info("Solicitud para crear una billetera: {}", billeteraRequestDto);
         Billetera billetera = billeteraInPort.crear(BilleteraControllerMapper.billeteraRequestDtoABilletera(billeteraRequestDto));
         log.info("Finalizacion de la creacion de la billetera: {}", billetera);
