@@ -32,8 +32,8 @@ public class BilleteraAdapterTest {
     private static final Long ID_1 = 1L;
     private static final String DENOMINACION_1 = "nombre_prueba_1";
     private static final String EMAIL_1 = "email_prueba_1";
-    private static final String CUENTA_1 = "cuenta_1";
-    private static final String ACDI_1 = "acdi_1";
+    private static final Long CUENTA_1 = 1L;
+    private static final Long ACDI_1 = 1L;
     private static final String OBSERVACIONES_1 = "observaciones_1";
 
     @BeforeEach

@@ -15,5 +15,5 @@ public interface BilleteraOutPort {
 
     void eliminarPorId(long id) throws BilleteraNoEncontradoException;
 
-    Billetera actualizar(Billetera billetera) throws ObjetoNuloException;
+    Billetera actualizar(Billetera billetera) throws ObjetoNuloException, BilleteraNoEncontradoException;
 }

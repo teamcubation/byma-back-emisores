@@ -16,8 +16,8 @@ public class BilleteraRequestDto {
     @NotBlank(message = "El mail es obligatorio")
     private String mail;
 
-    @NotBlank(message = "El id de la cuenta es obligatorio")
-    private String idCuenta;
+    @NotNull(message = "El id de la cuenta es obligatorio")
+    private Long idCuenta;
 
     @NotBlank(message = "La denominacion es obligatoria")
     private String denominacion;
@@ -30,7 +30,7 @@ public class BilleteraRequestDto {
 
     private String observaciones;
 
-    @NotBlank(message = "El id acdi es obligatorio")
-    private String idAcdi;
+    @NotNull(message = "El id acdi es obligatorio")
+    private Long idAcdi;
 
 }
