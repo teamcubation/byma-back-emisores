@@ -40,6 +40,11 @@ mvn spring-boot:run
 
 Por defecto, la aplicación se ejecuta en `http://localhost:8080`. Puedes acceder a la API a través de esta URL.
 
+#### Docker Run
+```bash
+docker run -d -p 8080:8080 <imageId>
+```
+
 ### 4. Acceder a Swagger UI
 Una vez que la aplicación esté en ejecución, puedes ver la documentación de la API e interactuar con ella a través de Swagger UI:
 ```bash
