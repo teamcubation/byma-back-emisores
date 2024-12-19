@@ -7,8 +7,8 @@ import io.swagger.v3.oas.annotations.servers.ServerVariable;
 
 @OpenAPIDefinition(
         info = @Info(
-                title = "Api emisores",
-                description = "Api para gestionar emisores",
+                title = "Api Fondos BYMA App",
+                description = "Api para gestionar emisores, especies, gerentes y acdis",
                 version = "1.0.0"
         ),
         servers = {

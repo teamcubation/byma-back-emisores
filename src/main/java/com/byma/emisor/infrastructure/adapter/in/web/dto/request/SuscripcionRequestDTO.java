@@ -14,7 +14,6 @@ import java.time.LocalDateTime;
 public class SuscripcionRequestDTO {
 
     private String estado;
-    private LocalDateTime fechaAlta;
     private int nroCertificado;
     private long idEspecie;
     private int cantCuotapartes;
