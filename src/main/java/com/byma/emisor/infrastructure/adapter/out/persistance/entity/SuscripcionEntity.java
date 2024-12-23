@@ -80,7 +80,7 @@ public class SuscripcionEntity {
     private boolean obligacionDePagoGenerada;
 
     @Column(name = "ID_BILLETERA")
-    private long idBilletera;
+    private Long idBilletera;
 
     @Column(name = "FECHA_SINCRONIZACION")
     private String fechaSincronizacion;

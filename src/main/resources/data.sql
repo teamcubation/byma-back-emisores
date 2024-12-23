@@ -11,16 +11,16 @@ VALUES
     ('ORG008', 'Acdi Octava', false, true, true, 'Octava carga de prueba', '2023-01-08 12:00:00', 'acdi8@example.com', 0);
 
 -- Tabla: BILLETERA
---INSERT INTO BILLETERAS (MAIL, ID_CUENTA, DENOMINACION, LIQUIDA_EN_BYMA, HABILITADO, FECHA_ALTA, OBSERVACIONES, ID_ACDI)
---VALUES
---    ( 'usuario1@example.com', 101, 'Cuenta A', true, true, '2023-01-01 12:00:00', 'Usuario principal', 1),
---    ( 'usuario2@example.com', 102, 'Cuenta B', false, true, '2023-01-02 12:00:00', 'Usuario secundario', 2),
---    ('usuario3@example.com', 103, 'Cuenta C', true, false, '2023-01-03 12:00:00', 'Usuario terciario', 3),
---    ('usuario4@example.com', 104, 'Cuenta D', false, false, '2023-01-04 12:00:00', 'Usuario cuaternario', 4),
---    ('usuario5@example.com', 105, 'Cuenta E', true, true, '2023-01-05 12:00:00', 'Usuario quinto', 5),
---    ('usuario6@example.com', 106, 'Cuenta F', false, true, '2023-01-06 12:00:00', 'Usuario sexto', 6),
---    ('usuario7@example.com', 107, 'Cuenta G', true, false, '2023-01-07 12:00:00', 'Usuario septimo', 7),
---    ('usuario8@example.com', 108, 'Cuenta H', false, false, '2023-01-08 12:00:00', 'Usuario octavo', 8);
+INSERT INTO BILLETERAS (MAIL, ID_CUENTA, DENOMINACION, LIQUIDA_EN_BYMA, HABILITADO, FECHA_ALTA, OBSERVACIONES, ID_ACDI)
+VALUES
+    ( 'usuario1@example.com', 101, 'Cuenta A', true, true, '2023-01-01 12:00:00', 'Usuario principal', 1),
+    ( 'usuario2@example.com', 102, 'Cuenta B', false, true, '2023-01-02 12:00:00', 'Usuario secundario', 2),
+    ('usuario3@example.com', 103, 'Cuenta C', true, false, '2023-01-03 12:00:00', 'Usuario terciario', 3),
+    ('usuario4@example.com', 104, 'Cuenta D', false, false, '2023-01-04 12:00:00', 'Usuario cuaternario', 4),
+    ('usuario5@example.com', 105, 'Cuenta E', true, true, '2023-01-05 12:00:00', 'Usuario quinto', 5),
+    ('usuario6@example.com', 106, 'Cuenta F', false, true, '2023-01-06 12:00:00', 'Usuario sexto', 6),
+    ('usuario7@example.com', 107, 'Cuenta G', true, false, '2023-01-07 12:00:00', 'Usuario septimo', 7),
+    ('usuario8@example.com', 108, 'Cuenta H', false, false, '2023-01-08 12:00:00', 'Usuario octavo', 8);
 
 -- Tabla: EMISOR
 INSERT INTO EMISORES (DENOMINACION, EMAIL, FECHA_ALTA, CUENTA_EMISOR, ID_ORGANIZACION, ID_ENTIDAD_LEGAL)
