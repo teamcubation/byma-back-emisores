@@ -41,6 +41,7 @@ public class SuscripcionPersistenceMapper {
                 .mdwResponseMessage(suscripcionEntity.getMdwResponseMessage())
                 .mdwResponseDatetime(suscripcionEntity.getMdwResponseDatetime())
                 .nasdaqSiStatus(suscripcionEntity.getNasdaqSiStatus())
+                .precio(suscripcionEntity.getPrecio())
                 .build();
     }
 
@@ -77,6 +78,7 @@ public class SuscripcionPersistenceMapper {
                 .mdwResponseMessage(suscripcionModel.getMdwResponseMessage())
                 .mdwResponseDatetime(suscripcionModel.getMdwResponseDatetime())
                 .nasdaqSiStatus(suscripcionModel.getNasdaqSiStatus())
+                .precio(suscripcionModel.getPrecio())
                 .build();
     }
 

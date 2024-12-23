@@ -1,0 +1,15 @@
+com\byma\billetera\service\BilleteraServiceTest.class
+com\byma\emisor\application\service\GerenteServiceTest.class
+com\byma\emisor\application\service\AcdiServiceTest.class
+com\byma\suscripcion\service\SuscripcionServiceTest.class
+com\byma\emisor\EmisorApplicationTests.class
+com\byma\emisor\infrastructure\adapter\in\web\controller\impl\EmisorControllerTest.class
+com\byma\emisor\infrastructure\adapter\out\persistance\GerenteOutAdapterTest.class
+com\byma\emisor\infrastructure\adapter\in\web\controller\impl\AcdiControllerTest.class
+com\byma\suscripcion\adapter\SuscripcionAdapterTest.class
+com\byma\emisor\infrastructure\adapter\in\web\controller\impl\GerenteControllerTest.class
+com\byma\emisor\adapter\AcdiOutAdapterTest.class
+com\byma\billetera\adapter\BilleteraAdapterTest.class
+com\byma\suscripcion\controller\SuscripcionControllerTest.class
+com\byma\billetera\controller\BilleteraControllerTest.class
+com\byma\emisor\application\service\EmisorServiceTest.class

@@ -41,4 +41,5 @@ public class SuscripcionResponseDTO {
     private String mdwResponseMessage;
     private String mdwResponseDatetime;
     private String nasdaqSiStatus;
+    private double precio;
 }

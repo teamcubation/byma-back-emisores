@@ -42,4 +42,5 @@ public class SuscripcionModel {
     private String mdwResponseMessage;
     private String mdwResponseDatetime;
     private String nasdaqSiStatus;
+    private double precio;
 }
