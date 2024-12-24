@@ -14,8 +14,8 @@ import lombok.NoArgsConstructor;
 @Builder
 public class CrearAcdiRequest {
 
-    @NotBlank(message = "El ID de la organizacion es obligatorio")
-    private String idOrganizacion;
+    @NotNull(message = "El Codigo de Acdi es obligatorio")
+    private Integer codigoDeAcdi;
 
     @NotBlank(message = "La denominacion es obligatoria")
     private String denominacion;

@@ -36,7 +36,7 @@ public class AcdiOutAdapterTest {
         MockitoAnnotations.openMocks(this);
         acdi = Acdi.builder()
                 .idAcdi(1L)
-                .idOrganizacionAcdi("1234")
+                .codigoDeAcdi(1234)
                 .denominacion("Denominacion")
                 .liquidaEnByma(true)
                 .habilitado(true)
@@ -49,7 +49,7 @@ public class AcdiOutAdapterTest {
 
         acdiEntity = AcdiEntity.builder()
                 .idAcdi(1L)
-                .idOrganizacionAcdi("1234")
+                .codigoDeAcdi(1234)
                 .denominacion("Denominacion")
                 .liquidaEnByma(true)
                 .habilitado(true)
