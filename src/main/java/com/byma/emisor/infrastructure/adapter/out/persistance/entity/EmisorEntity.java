@@ -6,7 +6,7 @@ import lombok.*;
 import java.time.LocalDateTime;
 
 @Entity(name = "Emisor")
-@Table(name = "emisor")
+@Table(name = "emisores")
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
