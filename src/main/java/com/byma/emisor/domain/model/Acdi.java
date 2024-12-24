@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 public class Acdi {
 
     private long idAcdi;
-    private String idOrganizacionAcdi;
+    private Integer codigoDeAcdi;
     private String denominacion;
     private boolean liquidaEnByma = true;
     private boolean habilitado;

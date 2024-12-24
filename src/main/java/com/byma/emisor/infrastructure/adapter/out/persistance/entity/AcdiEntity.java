@@ -20,7 +20,7 @@ public class AcdiEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idAcdi;
-    private String idOrganizacionAcdi;
+    private Integer codigoDeAcdi;
     private String denominacion;
     private Boolean liquidaEnByma = true;
     private Boolean habilitado;
