@@ -16,6 +16,8 @@ public class SuscripcionControllerMapper {
                 .idEspecie(suscripcion.getIdEspecie())
                 .cantCuotapartes(suscripcion.getCantCuotapartes())
                 .idAcdi(suscripcion.getIdAcdi())
+                .codigoDeAcdi(suscripcion.getCodigoDeAcdi())
+                .cuentaOperativa(suscripcion.getCuentaOperativa())
                 .idEmisor(suscripcion.getIdEmisor())
                 .nroPedido(suscripcion.getNroPedido())
                 .nroSecuencia(suscripcion.getNroSecuencia())
@@ -38,6 +40,7 @@ public class SuscripcionControllerMapper {
                 .mdwResponseMessage(suscripcion.getMdwResponseMessage())
                 .mdwResponseDatetime(suscripcion.getMdwResponseDatetime())
                 .nasdaqSiStatus(suscripcion.getNasdaqSiStatus())
+                .precio(suscripcion.getPrecio())
                 .build();
     }
     public static SuscripcionModel suscripcionRequestDTOASuscripcionModel(SuscripcionRequestDTO requestDTO) {
@@ -48,6 +51,8 @@ public class SuscripcionControllerMapper {
                 .idEspecie(requestDTO.getIdEspecie())
                 .cantCuotapartes(requestDTO.getCantCuotapartes())
                 .idAcdi(requestDTO.getIdAcdi())
+                .codigoDeAcdi(requestDTO.getCodigoDeAcdi())
+                .cuentaOperativa(requestDTO.getCuentaOperativa())
                 .idEmisor(requestDTO.getIdEmisor())
                 .nroPedido(requestDTO.getNroPedido())
                 .nroSecuencia(requestDTO.getNroSecuencia())

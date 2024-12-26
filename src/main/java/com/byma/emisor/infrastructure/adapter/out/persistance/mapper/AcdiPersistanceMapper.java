@@ -13,7 +13,7 @@ public class AcdiPersistanceMapper {
         Validador.validarNoNulo(acdiEntity);
         return Acdi.builder()
                 .idAcdi(acdiEntity.getIdAcdi())
-                .idOrganizacionAcdi(acdiEntity.getIdOrganizacionAcdi())
+                .codigoDeAcdi(acdiEntity.getCodigoDeAcdi())
                 .denominacion(acdiEntity.getDenominacion())
                 .liquidaEnByma(acdiEntity.getLiquidaEnByma())
                 .habilitado(acdiEntity.getHabilitado())
@@ -29,7 +29,7 @@ public class AcdiPersistanceMapper {
         Validador.validarNoNulo(acdi);
         return AcdiEntity.builder()
                 .idAcdi(acdi.getIdAcdi())
-                .idOrganizacionAcdi(acdi.getIdOrganizacionAcdi())
+                .codigoDeAcdi(acdi.getCodigoDeAcdi())
                 .denominacion(acdi.getDenominacion())
                 .liquidaEnByma(acdi.acdiLiquidaEnByma())
                 .habilitado(acdi.acdiEstaHabilitado())

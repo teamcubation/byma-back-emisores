@@ -23,7 +23,7 @@ public class AcdiServiceTest {
 
     public static final Long ACDI_ID_1 = 1L;
     public static final Long ACDI_ID_999 = 999L;
-    public static final String ORGANIZACION = "1234";
+    public static final Integer ORGANIZACION = 1234;
     public static final String DENOMINACION = "Denominacion";
     public static final String MAIL_TEST = "mail@mail.com";
     public static final String MAIL_NUEVO = "nuevo@mail.com";
@@ -47,7 +47,7 @@ public class AcdiServiceTest {
         MockitoAnnotations.openMocks(this);
         acdiMock = Acdi.builder()
                 .idAcdi(ACDI_ID_1)
-                .idOrganizacionAcdi(ORGANIZACION)
+                .codigoDeAcdi(ORGANIZACION)
                 .denominacion(DENOMINACION)
                 .liquidaEnByma(LIQUIDA_EN_BYMA)
                 .habilitado(HABILITADO)

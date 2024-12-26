@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 public class AcdiResponseDTO {
 
     private Long idAcdi;
-    private String idOrganizacion;
+    private Integer codigoDeAcdi;
     private String denominacion;
     private Boolean liquidaEnByma;
     private Boolean habilitado;

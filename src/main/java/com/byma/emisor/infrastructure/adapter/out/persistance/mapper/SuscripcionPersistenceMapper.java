@@ -19,6 +19,8 @@ public class SuscripcionPersistenceMapper {
                 .idEspecie(suscripcionEntity.getIdEspecie())
                 .cantCuotapartes(suscripcionEntity.getCantCuotapartes())
                 .idAcdi(suscripcionEntity.getIdAcdi())
+                .codigoDeAcdi(suscripcionEntity.getCodigoDeAcdi())
+                .cuentaOperativa(suscripcionEntity.getCuentaOperativa())
                 .idEmisor(suscripcionEntity.getIdEmisor())
                 .nroPedido(suscripcionEntity.getNroPedido())
                 .nroSecuencia(suscripcionEntity.getNroSecuencia())
@@ -41,6 +43,7 @@ public class SuscripcionPersistenceMapper {
                 .mdwResponseMessage(suscripcionEntity.getMdwResponseMessage())
                 .mdwResponseDatetime(suscripcionEntity.getMdwResponseDatetime())
                 .nasdaqSiStatus(suscripcionEntity.getNasdaqSiStatus())
+                .precio(suscripcionEntity.getPrecio())
                 .build();
     }
 
@@ -55,6 +58,8 @@ public class SuscripcionPersistenceMapper {
                 .idEspecie(suscripcionModel.getIdEspecie())
                 .cantCuotapartes(suscripcionModel.getCantCuotapartes())
                 .idAcdi(suscripcionModel.getIdAcdi())
+                .codigoDeAcdi(suscripcionModel.getCodigoDeAcdi())
+                .cuentaOperativa(suscripcionModel.getCuentaOperativa())
                 .idEmisor(suscripcionModel.getIdEmisor())
                 .nroPedido(suscripcionModel.getNroPedido())
                 .nroSecuencia(suscripcionModel.getNroSecuencia())
@@ -77,6 +82,7 @@ public class SuscripcionPersistenceMapper {
                 .mdwResponseMessage(suscripcionModel.getMdwResponseMessage())
                 .mdwResponseDatetime(suscripcionModel.getMdwResponseDatetime())
                 .nasdaqSiStatus(suscripcionModel.getNasdaqSiStatus())
+                .precio(suscripcionModel.getPrecio())
                 .build();
     }
 
