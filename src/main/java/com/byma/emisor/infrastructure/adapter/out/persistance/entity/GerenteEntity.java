@@ -15,20 +15,28 @@ import java.time.LocalDateTime;
 @Builder
 public class GerenteEntity {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID_GERENTE")
     private Long idGerente;
-    @Column(nullable = false)
+
+    @Column(name = "DENOMINACION", nullable = false)
     private String denominacion;
-    @Column(nullable = false)
+
+    @Column(name = "LIQUIDA_EN_BYMA", nullable = false)
     private Boolean liquidaEnByma = true;
-    @Column(nullable = false)
+
+    @Column(name = "HABILITADO", nullable = false)
     private Boolean habilitado;
-    @Column(nullable = false)
+
+    @Column(name = "OBSERVACIONES", nullable = false)
     private String observaciones;
+
+    @Column(name = "MAIL_GERENTE")
     private String mailGerente;
+
     @CreationTimestamp
-    @Column(nullable = false)
+    @Column(name = "FECHA_DE_ALTA", nullable = false)
     private LocalDateTime fechaDeAlta;
+
 }
