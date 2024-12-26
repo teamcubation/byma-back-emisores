@@ -1,5 +1,6 @@
 package com.byma.emisor.application.validation;
 
+import com.byma.emisor.application.exception.CuotaParteEsCeroException;
 import com.byma.emisor.application.exception.IdNuloException;
 import com.byma.emisor.application.exception.ObjetoNuloException;
 import com.byma.emisor.domain.model.SuscripcionModel;
@@ -13,6 +14,7 @@ public class ValidacionSuscripcion {
     public static void validarSuscripcion(SuscripcionModel suscripcion) throws ObjetoNuloException {
         validarObjetoNotNull(suscripcion);
         validarAtributosNulos(suscripcion);
+        validarCuotaParteDiferenteDeCero(suscripcion.getCantCuotapartes());
     }
 
     public static void validarObjetoNotNull(Object object) throws ObjetoNuloException {
@@ -23,5 +25,10 @@ public class ValidacionSuscripcion {
 
     public static void validarAtributosNulos(SuscripcionModel suscripcion) {
 
+    }
+    public static void validarCuotaParteDiferenteDeCero(int cuotaPartes){
+        if (cuotaPartes == 0){
+            throw new CuotaParteEsCeroException("La cantidad de cuotaPartes no puede ser cero");
+        }
     }
 }

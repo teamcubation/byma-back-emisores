@@ -25,7 +25,8 @@ public class AcdiEntity {
     @Column(name = "ID_ORGANIZACION_ACDI")
     private String idOrganizacionAcdi;
 
-    @Column(name = "DENOMINACION")
+    private Integer codigoDeAcdi;
+  @Column(name = "DENOMINACION")
     private String denominacion;
 
     @Column(name = "LIQUIDA_EN_BYMA")

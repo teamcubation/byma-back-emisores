@@ -36,7 +36,11 @@ public class SuscripcionEntity {
 
     @Column(name = "ID_ACDI")
     private long idAcdi;
-
+  
+    private long codigoDeAcdi;
+  
+    private long cuentaOperativa;
+  
     @Column(name = "ID_EMISOR")
     private long idEmisor;
 
@@ -103,4 +107,5 @@ public class SuscripcionEntity {
     @Column(name = "NASDAQ_SI_STATUS")
     private String nasdaqSiStatus;
 
+    private double precio;
 }

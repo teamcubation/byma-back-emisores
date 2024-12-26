@@ -9,6 +9,8 @@ import com.byma.emisor.domain.model.SuscripcionModel;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -22,8 +24,10 @@ public class SuscripcionService implements SuscripcionInPort {
     public SuscripcionModel crear(SuscripcionModel suscripcion) {
         ValidacionSuscripcion.validarSuscripcion(suscripcion);
         suscripcion.setFechaAlta(LocalDateTime.now());
+        setPrecio(suscripcion);
         return suscripcionOutPort.crear(suscripcion);
     }
+
 
     @Override
     public List<SuscripcionModel> listarSuscripciones() {
@@ -43,8 +47,17 @@ public class SuscripcionService implements SuscripcionInPort {
         ValidacionSuscripcion.validarIdNotNull(idSuscripcion);
         SuscripcionModel suscripcionAActualizar = this.obtenerPorId(idSuscripcion);
         suscripcion.setFechaAlta(suscripcionAActualizar.getFechaAlta());
+        suscripcion.setPrecio(suscripcionAActualizar.getPrecio());
+        setPrecio(suscripcion);
         suscripcion.setIdSuscripcion(idSuscripcion);
         return suscripcionOutPort.actualizar(suscripcion);
+    }
+
+    private static void setPrecio(SuscripcionModel suscripcion) {
+        double precio = suscripcion.getMonto() / suscripcion.getCantCuotapartes();
+        BigDecimal precioRedondeado = BigDecimal.valueOf(precio)
+                .setScale(2, RoundingMode.HALF_UP);
+        suscripcion.setPrecio(precioRedondeado.doubleValue());
     }
 
     @Override

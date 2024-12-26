@@ -5,8 +5,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
 @Data
 @Builder
 @NoArgsConstructor
@@ -18,6 +16,8 @@ public class SuscripcionRequestDTO {
     private long idEspecie;
     private int cantCuotapartes;
     private long idAcdi;
+    private long codigoDeAcdi;
+    private long cuentaOperativa;
     private long idEmisor;
     private int nroPedido;
     private int nroSecuencia;

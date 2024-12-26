@@ -39,7 +39,7 @@ public class AcdiControllerTest {
     public static final String API_URL_BAJA = "/api/v1/acdis/{id}/baja";
     public static final String API_URL_BY_ID = "/api/v1/acdis/{id}";
 
-    public static final String ORGANIZACION_1 = "Org1";
+    public static final Integer CODIGO_DE_ACDI = 12345;
     public static final String DENOMINACION_1 = "Denom1";
     public static final String MAIL_TEST = "test@mail.com";
     public static final String MAIL_NUEVO = "nuevo@mail.com";
@@ -73,7 +73,7 @@ public class AcdiControllerTest {
     @Test
     void deberiaCrearAcdiCuandoEsValido() throws Exception {
         CrearAcdiRequest crearAcdiRequest = CrearAcdiRequest.builder()
-                .idOrganizacion(ORGANIZACION_1)
+                .codigoDeAcdi(CODIGO_DE_ACDI)
                 .denominacion(DENOMINACION_1)
                 .liquidaEnByma(LIQUIDA_EN_BYMA)
                 .habilitado(HABILITADO)
@@ -82,7 +82,7 @@ public class AcdiControllerTest {
 
         Acdi acdiCreado = Acdi.builder()
                 .idAcdi(ACDI_ID_1)
-                .idOrganizacionAcdi(ORGANIZACION_1)
+                .codigoDeAcdi(CODIGO_DE_ACDI)
                 .denominacion(DENOMINACION_1)
                 .liquidaEnByma(LIQUIDA_EN_BYMA)
                 .habilitado(HABILITADO)
@@ -98,14 +98,14 @@ public class AcdiControllerTest {
                         .content(objectMapper.writeValueAsString(crearAcdiRequest)))
                 .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.idAcdi").value(ACDI_ID_1))
-                .andExpect(jsonPath("$.idOrganizacion").value(ORGANIZACION_1))
+                .andExpect(jsonPath("$.idOrganizacion").value(CODIGO_DE_ACDI))
                 .andExpect(jsonPath("$.denominacion").value(DENOMINACION_1));
     }
 
     @Test
     void deberiaDevolverError400CuandoCrearAcdiEsInvalido() throws Exception {
         CrearAcdiRequest crearAcdiRequest = CrearAcdiRequest.builder()
-                .idOrganizacion("") // Invalid data
+                .codigoDeAcdi(null) // Invalid data
                 .denominacion(DENOMINACION_1)
                 .liquidaEnByma(LIQUIDA_EN_BYMA)
                 .habilitado(HABILITADO)
@@ -128,7 +128,7 @@ public class AcdiControllerTest {
 
         Acdi acdiActualizado = Acdi.builder()
                 .idAcdi(ACDI_ID_1)
-                .idOrganizacionAcdi(ORGANIZACION_1)
+                .codigoDeAcdi(CODIGO_DE_ACDI)
                 .denominacion(DENOMINACION_1)
                 .liquidaEnByma(false)
                 .habilitado(HABILITADO)
@@ -165,8 +165,8 @@ public class AcdiControllerTest {
     @Test
     void deberiaObtenerTodosLosAcdisExitosamente() throws Exception {
         List<Acdi> acdis = Arrays.asList(
-                Acdi.builder().idAcdi(ACDI_ID_1).idOrganizacionAcdi(ORGANIZACION_1).fechaAlta(LocalDateTime.now()).build(),
-                Acdi.builder().idAcdi(2L).idOrganizacionAcdi("Org2").fechaAlta(LocalDateTime.now()).build()
+                Acdi.builder().idAcdi(ACDI_ID_1).codigoDeAcdi(CODIGO_DE_ACDI).fechaAlta(LocalDateTime.now()).build(),
+                Acdi.builder().idAcdi(2L).codigoDeAcdi(222).fechaAlta(LocalDateTime.now()).build()
         );
 
         when(acdiInPort.obtenerTodosLosAcdis()).thenReturn(acdis);
@@ -174,7 +174,7 @@ public class AcdiControllerTest {
         mockMvc.perform(get(API_URL))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.length()").value(2))
-                .andExpect(jsonPath("$[0].idOrganizacion").value(ORGANIZACION_1));
+                .andExpect(jsonPath("$[0].codigoDeAcdi").value(CODIGO_DE_ACDI));
     }
 
     @Test
@@ -190,7 +190,7 @@ public class AcdiControllerTest {
     void deberiaObtenerAcdiPorIdCuandoExiste() throws Exception {
         Acdi acdi = Acdi.builder()
                 .idAcdi(ACDI_ID_1)
-                .idOrganizacionAcdi(ORGANIZACION_1)
+                .codigoDeAcdi(CODIGO_DE_ACDI)
                 .denominacion(DENOMINACION_1)
                 .liquidaEnByma(LIQUIDA_EN_BYMA)
                 .habilitado(HABILITADO)
@@ -203,7 +203,7 @@ public class AcdiControllerTest {
         mockMvc.perform(get(API_URL_BY_ID, ACDI_ID_1))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.idAcdi").value(ACDI_ID_1))
-                .andExpect(jsonPath("$.idOrganizacion").value(ORGANIZACION_1));
+                .andExpect(jsonPath("$.codigoDeAcdi").value(CODIGO_DE_ACDI));
     }
 
     @Test
@@ -234,7 +234,7 @@ public class AcdiControllerTest {
     void deberiaDevolverOkCuandoDarDeBajaEsExitoso() throws Exception {
         Acdi acdiBajado = Acdi.builder()
                 .idAcdi(ACDI_ID_1)
-                .idOrganizacionAcdi("1234")
+                .codigoDeAcdi(1234)
                 .denominacion("Denominacion")
                 .liquidaEnByma(LIQUIDA_EN_BYMA)
                 .habilitado(HABILITADO)

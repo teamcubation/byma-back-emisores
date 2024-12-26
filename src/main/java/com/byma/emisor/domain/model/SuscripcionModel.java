@@ -20,6 +20,8 @@ public class SuscripcionModel {
     private long idEspecie;
     private int cantCuotapartes;
     private long idAcdi;
+    private long codigoDeAcdi;
+    private long cuentaOperativa;
     private long idEmisor;
     private int nroPedido;
     private int nroSecuencia;
@@ -42,4 +44,5 @@ public class SuscripcionModel {
     private String mdwResponseMessage;
     private String mdwResponseDatetime;
     private String nasdaqSiStatus;
+    private double precio;
 }
