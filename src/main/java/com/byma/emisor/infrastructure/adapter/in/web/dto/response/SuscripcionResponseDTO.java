@@ -33,7 +33,7 @@ public class SuscripcionResponseDTO {
     private boolean procesadoLiquidacionesSlyq;
     private long idGerente;
     private boolean obligacionDePagoGenerada;
-    private long idBilletera;
+    private Long idBilletera;
     private String fechaSincronizacion;
     private String nasdaqSiStatusReason;
     private int mdwStatusCode;
