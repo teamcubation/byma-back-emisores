@@ -1,0 +1,15 @@
+C:\Users\mz4389\OneDrive - BYMA\Documents\GitHub\byma-back-emisores\src\test\java\com\byma\billetera\adapter\BilleteraAdapterTest.java
+C:\Users\mz4389\OneDrive - BYMA\Documents\GitHub\byma-back-emisores\src\test\java\com\byma\billetera\controller\BilleteraControllerTest.java
+C:\Users\mz4389\OneDrive - BYMA\Documents\GitHub\byma-back-emisores\src\test\java\com\byma\billetera\service\BilleteraServiceTest.java
+C:\Users\mz4389\OneDrive - BYMA\Documents\GitHub\byma-back-emisores\src\test\java\com\byma\emisor\adapter\AcdiOutAdapterTest.java
+C:\Users\mz4389\OneDrive - BYMA\Documents\GitHub\byma-back-emisores\src\test\java\com\byma\emisor\application\service\AcdiServiceTest.java
+C:\Users\mz4389\OneDrive - BYMA\Documents\GitHub\byma-back-emisores\src\test\java\com\byma\emisor\application\service\EmisorServiceTest.java
+C:\Users\mz4389\OneDrive - BYMA\Documents\GitHub\byma-back-emisores\src\test\java\com\byma\emisor\application\service\GerenteServiceTest.java
+C:\Users\mz4389\OneDrive - BYMA\Documents\GitHub\byma-back-emisores\src\test\java\com\byma\emisor\EmisorApplicationTests.java
+C:\Users\mz4389\OneDrive - BYMA\Documents\GitHub\byma-back-emisores\src\test\java\com\byma\emisor\infrastructure\adapter\in\web\controller\impl\AcdiControllerTest.java
+C:\Users\mz4389\OneDrive - BYMA\Documents\GitHub\byma-back-emisores\src\test\java\com\byma\emisor\infrastructure\adapter\in\web\controller\impl\EmisorControllerTest.java
+C:\Users\mz4389\OneDrive - BYMA\Documents\GitHub\byma-back-emisores\src\test\java\com\byma\emisor\infrastructure\adapter\in\web\controller\impl\GerenteControllerTest.java
+C:\Users\mz4389\OneDrive - BYMA\Documents\GitHub\byma-back-emisores\src\test\java\com\byma\emisor\infrastructure\adapter\out\persistance\GerenteOutAdapterTest.java
+C:\Users\mz4389\OneDrive - BYMA\Documents\GitHub\byma-back-emisores\src\test\java\com\byma\suscripcion\adapter\SuscripcionAdapterTest.java
+C:\Users\mz4389\OneDrive - BYMA\Documents\GitHub\byma-back-emisores\src\test\java\com\byma\suscripcion\controller\SuscripcionControllerTest.java
+C:\Users\mz4389\OneDrive - BYMA\Documents\GitHub\byma-back-emisores\src\test\java\com\byma\suscripcion\service\SuscripcionServiceTest.java

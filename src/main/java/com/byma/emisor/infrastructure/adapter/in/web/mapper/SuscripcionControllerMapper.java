@@ -40,6 +40,7 @@ public class SuscripcionControllerMapper {
                 .mdwResponseMessage(suscripcion.getMdwResponseMessage())
                 .mdwResponseDatetime(suscripcion.getMdwResponseDatetime())
                 .nasdaqSiStatus(suscripcion.getNasdaqSiStatus())
+                .precio(suscripcion.getPrecio())
                 .build();
     }
     public static SuscripcionModel suscripcionRequestDTOASuscripcionModel(SuscripcionRequestDTO requestDTO) {

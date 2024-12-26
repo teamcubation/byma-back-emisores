@@ -31,6 +31,12 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     public ErrorMessageResponse handleEmisorNoEncontradoException(EmisorNoEncontradoException exception, HttpServletRequest request) {
         return this.createErrorMessageResponse(exception, request, HttpStatus.NOT_FOUND);
     }
+    @ExceptionHandler(CuotaParteEsCeroException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public ErrorMessageResponse handleCuotaParteEsCeroException(CuotaParteEsCeroException exception, HttpServletRequest request){
+        return this.createErrorMessageResponse(exception, request, HttpStatus.CONFLICT);
+
+    }
 
     @ExceptionHandler(BilleteraNoEncontradoException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)

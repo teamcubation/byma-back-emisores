@@ -1,27 +1,27 @@
-# Etapa 1: Construcción
-FROM maven:3.9.5-eclipse-temurin-21 AS builder
 
-# Establecer directorio de trabajo
-WORKDIR /app
+FROM nexus.cajval.sba.com.ar:9005/ubi8/openjdk-21:1.18
 
-# Copiar archivos del proyecto
-COPY pom.xml .
-COPY src ./src
+USER root
+ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en'
+ENV TZ=America/Argentina/Buenos_Aires
 
-# Construir el proyecto
-RUN mvn clean package -DskipTests
+# Configurar zona horaria y actualizar paquetes
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
+    echo $TZ > /etc/timezone && \
+    /bin/microdnf update tzdata -y
 
-# Etapa 2: Ejecución
-FROM eclipse-temurin:21-jre
+# Copiar el archivo JAR con permisos
+COPY --chown=185 target/emisor-*.jar /deployments/app.jar
 
-# Establecer directorio de trabajo
-WORKDIR /app
-
-# Copiar el archivo JAR desde la etapa de construcción
-COPY --from=builder /app/target/emisor-*.jar app.jar
-
-# Exponer el puerto en el que corre Spring Boot (por defecto es 8080)
+# Exponer el puerto por defecto de Spring Boot
 EXPOSE 8080
 
+# Cambiar a un usuario no privilegiado
+USER 185
+
+# Configurar variables de entorno
+ENV JAVA_OPTS="-Xms1g -Xmx8g"
+ENV JAVA_APP_JAR="/deployments/app.jar"
+
 # Comando para ejecutar la aplicación
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "/deployments/app.jar"]
