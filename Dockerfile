@@ -1,3 +1,4 @@
+
 FROM nexus.cajval.sba.com.ar:9005/ubi8/openjdk-21:1.18
 
 USER root
