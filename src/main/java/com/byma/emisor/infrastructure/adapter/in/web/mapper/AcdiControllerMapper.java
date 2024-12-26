@@ -16,7 +16,7 @@ public class AcdiControllerMapper {
     public static Acdi mapRequestToModel(CrearAcdiRequest crearAcdiRequest) {
         Validador.validarNoNulo(crearAcdiRequest);
         return Acdi.builder()
-                .idOrganizacionAcdi(crearAcdiRequest.getIdOrganizacion())
+                .codigoDeAcdi(crearAcdiRequest.getCodigoDeAcdi())
                 .denominacion(crearAcdiRequest.getDenominacion())
                 .liquidaEnByma(crearAcdiRequest.getLiquidaEnByma())
                 .habilitado(crearAcdiRequest.getHabilitado())
@@ -32,7 +32,7 @@ public class AcdiControllerMapper {
         Validador.validarNoNulo(acdi);
         return AcdiResponseDTO.builder()
                 .idAcdi(acdi.getIdAcdi())
-                .idOrganizacion(acdi.getIdOrganizacionAcdi())
+                .codigoDeAcdi(acdi.getCodigoDeAcdi())
                 .denominacion(acdi.getDenominacion())
                 .liquidaEnByma(acdi.acdiLiquidaEnByma())
                 .habilitado(acdi.acdiEstaHabilitado())
