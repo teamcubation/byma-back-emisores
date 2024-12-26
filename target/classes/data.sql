@@ -1,5 +1,5 @@
 -- Tabla: ACDI
-INSERT INTO ACDI (ID_ORGANIZACION_ACDI, DENOMINACION, LIQUIDA_EN_BYMA, HABILITADO, BILLETERAS, OBSERVACIONES, FECHA_ALTA, MAIL, ESTADO)
+INSERT INTO ACDIS (ID_ORGANIZACION_ACDI, DENOMINACION, LIQUIDA_EN_BYMA, HABILITADO, BILLETERAS, OBSERVACIONES, FECHA_ALTA, MAIL, ESTADO)
 VALUES
     ('ORG001', 'Acdi Principal', true, true, false, 'Primera carga de prueba', '2023-01-01 12:00:00', 'acdi@example.com', 0),
     ('ORG002', 'Acdi Secundaria', false, true, true, 'Segunda carga de prueba', '2023-01-02 12:00:00', 'acdi2@example.com', 0),
