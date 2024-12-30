@@ -1,16 +1,16 @@
 {
 	"info": {
-		"_postman_id": "43d050cc-2fb0-4686-813e-27b6267f6214",
+		"_postman_id": "6ee2154a-2e1f-4736-b7ae-983174513388",
 		"name": "Fondos BYMA UP",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "21367853"
+		"_exporter_id": "16068899"
 	},
 	"item": [
 		{
 			"name": "Emisor",
 			"item": [
 				{
-					"name": "obtener todos los emisores",
+					"name": "Obtener todos los emisores",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -43,12 +43,12 @@
 					"response": []
 				},
 				{
-					"name": "obtener inexistente",
+					"name": "Obtener inexistente",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/emisores/99",
+							"raw": "http://localhost:8080/api/v1/emisores/9999",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -58,14 +58,14 @@
 								"api",
 								"v1",
 								"emisores",
-								"99"
+								"9999"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "obtener emisor por id",
+					"name": "Obtener emisor por id",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -87,13 +87,13 @@
 					"response": []
 				},
 				{
-					"name": "crear emisor",
+					"name": "Crear emisor 1",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"denominacion\": \"Nombre de la entidad\",\r\n  \"email\": \"correo@ejemplo.com\",\r\n  \"cuentaEmisor\": \"Cuenta123\",\r\n  \"idOrganizacion\": 12345,\r\n  \"idEntidadLegal\": 67890\r\n}\r\n",
+							"raw": "    {\r\n        \"denominacion\": \"Org Principal\",\r\n        \"email\": \"org1@example.com\",\r\n        \"cuentaEmisor\": \"CuentaOrg1\",\r\n        \"idOrganizacion\": 1001,\r\n        \"idEntidadLegal\": 2001\r\n    }\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -117,13 +117,13 @@
 					"response": []
 				},
 				{
-					"name": "crear emisor duplciado",
+					"name": "Crear emisor 2",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"denominacion\": \"Nombre de la entidad\",\r\n  \"email\": \"correo@ejemplo.com\",\r\n  \"cuentaEmisor\": \"Cuenta123\",\r\n  \"idOrganizacion\": 12345,\r\n  \"idEntidadLegal\": 67890\r\n}\r\n",
+							"raw": "    {\r\n        \"denominacion\": \"Org Secundaria\",\r\n        \"email\": \"org2@example.com\",\r\n        \"cuentaEmisor\": \"CuentaOrg2\",\r\n        \"idOrganizacion\": 1002,\r\n        \"idEntidadLegal\": 2002\r\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -147,7 +147,217 @@
 					"response": []
 				},
 				{
-					"name": "eliminar emisor por id",
+					"name": "Crear emisor 3",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"denominacion\": \"Org Terciaria\",\r\n        \"email\": \"org3@example.com\",\r\n        \"cuentaEmisor\": \"CuentaOrg3\",\r\n        \"idOrganizacion\": 1003,\r\n        \"idEntidadLegal\": 2003\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/emisores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"emisores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear emisor 4",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"denominacion\": \"Org Cuaternaria\",\r\n        \"email\": \"org4@example.com\",\r\n        \"cuentaEmisor\": \"CuentaOrg4\",\r\n        \"idOrganizacion\": 1004,\r\n        \"idEntidadLegal\": 2004\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/emisores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"emisores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear emisor 5",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"denominacion\": \"Org Quinta\",\r\n        \"email\": \"org5@example.com\",\r\n        \"cuentaEmisor\": \"CuentaOrg5\",\r\n        \"idOrganizacion\": 1005,\r\n        \"idEntidadLegal\": 2005\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/emisores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"emisores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear emisor 6",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"denominacion\": \"Org Sexta\",\r\n        \"email\": \"org6@example.com\",\r\n        \"cuentaEmisor\": \"CuentaOrg6\",\r\n        \"idOrganizacion\": 1006,\r\n        \"idEntidadLegal\": 2006\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/emisores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"emisores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear emisor 7",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"denominacion\": \"Org Septima\",\r\n        \"email\": \"org7@example.com\",\r\n        \"cuentaEmisor\": \"CuentaOrg7\",\r\n        \"idOrganizacion\": 1007,\r\n        \"idEntidadLegal\": 2007\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/emisores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"emisores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear emisor 8",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"denominacion\": \"Org Octava\",\r\n        \"email\": \"org8@example.com\",\r\n        \"cuentaEmisor\": \"CuentaOrg8\",\r\n        \"idOrganizacion\": 1008,\r\n        \"idEntidadLegal\": 2008\r\n    }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/emisores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"emisores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear emisor duplicado",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"denominacion\": \"Org Principal\",\r\n        \"email\": \"org1@example.com\",\r\n        \"cuentaEmisor\": \"CuentaOrg1\",\r\n        \"idOrganizacion\": 1001,\r\n        \"idEntidadLegal\": 2001\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/emisores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"emisores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar emisor por id",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -169,7 +379,7 @@
 					"response": []
 				},
 				{
-					"name": "eliminar emisor inexistente",
+					"name": "Eliminar emisor inexistente",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -200,13 +410,13 @@
 					"response": []
 				},
 				{
-					"name": "actualizar emisor por id",
+					"name": "Actualizar emisor por id",
 					"request": {
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 2,\r\n    \"denominacion\": \"EDITADO\",\r\n    \"email\": \"ASDASD@ejemplo.com\",\r\n    \"fechaAlta\": \"2024-11-13T16:46:24.75726\",\r\n    \"cuentaEmisor\": \"Cuenta123\",\r\n    \"idOrganizacion\": 999,\r\n    \"idEntidadLegal\": 67890\r\n}",
+							"raw": "{\r\n    \"denominacion\": \"EDITADO\",\r\n    \"email\": \"update@ejemplo.com\",\r\n    \"fechaAlta\": \"2024-11-13T16:46:24.75726\",\r\n    \"cuentaEmisor\": \"Cuenta2\",\r\n    \"idOrganizacion\": 999,\r\n    \"idEntidadLegal\": 67890\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -214,7 +424,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/emisores/2",
+							"raw": "http://localhost:8080/api/v1/emisores/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -224,7 +434,7 @@
 								"api",
 								"v1",
 								"emisores",
-								"2"
+								"1"
 							]
 						}
 					},
@@ -236,7 +446,7 @@
 			"name": "Especies",
 			"item": [
 				{
-					"name": "obtener todas las especies",
+					"name": "Obtener todas las especies",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -275,7 +485,7 @@
 					"response": []
 				},
 				{
-					"name": "obtener especie inexistente por id",
+					"name": "Obtener especie inexistente por id",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -315,7 +525,7 @@
 					"response": []
 				},
 				{
-					"name": "crear especie",
+					"name": "Crear especie 1",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -330,7 +540,287 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"codigoCVSA\": \"1234\",\r\n  \"denominacion\": \"Especie A\",\r\n  \"laminaMinima\": 100,\r\n  \"precio\": 200.5,\r\n  \"cafci\": \"CAF123\",\r\n  \"cuentaDeEmision\": \"CTA456\",\r\n  \"estado\": \"ACTIVO\",\r\n  \"idEmisor\": 1,\r\n  \"idGerente\": 2,\r\n  \"vigencia\": \"2024-12-31\",\r\n  \"plazoDeLiquidacion\": \"2024-12-15\",\r\n  \"codigoCNV\": \"CNV001\",\r\n  \"isin\": \"ISIN123456789\",\r\n  \"familiaDeFondos\": \"FONDO1\",\r\n  \"observaciones\": \"Observación ejemplo\",\r\n  \"idMoneda\": 1,\r\n  \"fechaAlta\": \"2024-12-01\"\r\n}",
+							"raw": "    {\r\n        \"codigoCVSA\": \"CVSA001\",\r\n        \"denominacion\": \"Especie A\",\r\n        \"laminaMinima\": 10,\r\n        \"precio\": 100.50,\r\n        \"cafci\": \"CAF001\",\r\n        \"cuentaDeEmision\": \"CuentaEsp1\",\r\n        \"estado\": \"ACTIVO\",\r\n        \"idEmisor\": 1,\r\n        \"idGerente\": 1,\r\n        \"vigencia\": \"2024-01-01\",\r\n        \"plazoDeLiquidacion\": \"2024-12-31\",\r\n        \"codigoCNV\": \"CNV001\",\r\n        \"isin\": \"ISIN001\",\r\n        \"familiaDeFondos\": \"Fondo A\",\r\n        \"observaciones\": \"Especie principal\",\r\n        \"idMoneda\": 1\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/especies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"especies"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST \"http://localhost:8080/api/especies\" \\\r\n-H \"accept: application/json\" \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"codigoCVSA\": \"1234\",\r\n  \"denominacion\": \"Especie A\",\r\n  \"laminaMinima\": 100,\r\n  \"precio\": 200.5,\r\n  \"cafci\": \"CAF123\",\r\n  \"cuentaDeEmision\": \"CTA456\",\r\n  \"estado\": \"ACTIVO\",\r\n  \"idEmisor\": 1,\r\n  \"idGerente\": 2,\r\n  \"vigencia\": \"2024-12-31\",\r\n  \"plazoDeLiquidacion\": \"2024-12-15\",\r\n  \"codigoCNV\": \"CNV001\",\r\n  \"isin\": \"ISIN123456789\",\r\n  \"familiaDeFondos\": \"FONDO1\",\r\n  \"observaciones\": \"Observación ejemplo\",\r\n  \"idMoneda\": 1,\r\n  \"fechaAlta\": \"2024-12-01\"\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear especie 2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"codigoCVSA\": \"CVSA002\",\r\n        \"denominacion\": \"Especie B\",\r\n        \"laminaMinima\": 20,\r\n        \"precio\": 200.75,\r\n        \"cafci\": \"CAF002\",\r\n        \"cuentaDeEmision\": \"CuentaEsp2\",\r\n        \"estado\": \"ACTIVO\",\r\n        \"idEmisor\": 2,\r\n        \"idGerente\": 2,\r\n        \"vigencia\": \"2024-02-01\",\r\n        \"plazoDeLiquidacion\": \"2024-11-30\",\r\n        \"codigoCNV\": \"CNV002\",\r\n        \"isin\": \"ISIN002\",\r\n        \"familiaDeFondos\": \"Fondo B\",\r\n        \"observaciones\": \"Especie secundaria\",\r\n        \"idMoneda\": 2\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/especies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"especies"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST \"http://localhost:8080/api/especies\" \\\r\n-H \"accept: application/json\" \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"codigoCVSA\": \"1234\",\r\n  \"denominacion\": \"Especie A\",\r\n  \"laminaMinima\": 100,\r\n  \"precio\": 200.5,\r\n  \"cafci\": \"CAF123\",\r\n  \"cuentaDeEmision\": \"CTA456\",\r\n  \"estado\": \"ACTIVO\",\r\n  \"idEmisor\": 1,\r\n  \"idGerente\": 2,\r\n  \"vigencia\": \"2024-12-31\",\r\n  \"plazoDeLiquidacion\": \"2024-12-15\",\r\n  \"codigoCNV\": \"CNV001\",\r\n  \"isin\": \"ISIN123456789\",\r\n  \"familiaDeFondos\": \"FONDO1\",\r\n  \"observaciones\": \"Observación ejemplo\",\r\n  \"idMoneda\": 1,\r\n  \"fechaAlta\": \"2024-12-01\"\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear especie 3",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"codigoCVSA\": \"CVSA003\",\r\n        \"denominacion\": \"Especie C\",\r\n        \"laminaMinima\": 15,\r\n        \"precio\": 300.25,\r\n        \"cafci\": \"CAF003\",\r\n        \"cuentaDeEmision\": \"CuentaEsp3\",\r\n        \"estado\": \"INACTIVO\",\r\n        \"idEmisor\": 3,\r\n        \"idGerente\": 3,\r\n        \"vigencia\": \"2024-03-01\",\r\n        \"plazoDeLiquidacion\": \"2024-10-31\",\r\n        \"codigoCNV\": \"CNV003\",\r\n        \"isin\": \"ISIN003\",\r\n        \"familiaDeFondos\": \"Fondo C\",\r\n        \"observaciones\": \"Especie terciaria\",\r\n        \"idMoneda\": 3\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/especies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"especies"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST \"http://localhost:8080/api/especies\" \\\r\n-H \"accept: application/json\" \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"codigoCVSA\": \"1234\",\r\n  \"denominacion\": \"Especie A\",\r\n  \"laminaMinima\": 100,\r\n  \"precio\": 200.5,\r\n  \"cafci\": \"CAF123\",\r\n  \"cuentaDeEmision\": \"CTA456\",\r\n  \"estado\": \"ACTIVO\",\r\n  \"idEmisor\": 1,\r\n  \"idGerente\": 2,\r\n  \"vigencia\": \"2024-12-31\",\r\n  \"plazoDeLiquidacion\": \"2024-12-15\",\r\n  \"codigoCNV\": \"CNV001\",\r\n  \"isin\": \"ISIN123456789\",\r\n  \"familiaDeFondos\": \"FONDO1\",\r\n  \"observaciones\": \"Observación ejemplo\",\r\n  \"idMoneda\": 1,\r\n  \"fechaAlta\": \"2024-12-01\"\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear especie 4",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"codigoCVSA\": \"CVSA004\",\r\n        \"denominacion\": \"Especie D\",\r\n        \"laminaMinima\": 25,\r\n        \"precio\": 400.00,\r\n        \"cafci\": \"CAF004\",\r\n        \"cuentaDeEmision\": \"CuentaEsp4\",\r\n        \"estado\": \"ACTIVO\",\r\n        \"idEmisor\": 4,\r\n        \"idGerente\": 4,\r\n        \"vigencia\": \"2024-04-01\",\r\n        \"plazoDeLiquidacion\": \"2024-09-30\",\r\n        \"codigoCNV\": \"CNV004\",\r\n        \"isin\": \"ISIN004\",\r\n        \"familiaDeFondos\": \"Fondo D\",\r\n        \"observaciones\": \"Especie cuaternaria\",\r\n        \"idMoneda\": 4\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/especies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"especies"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST \"http://localhost:8080/api/especies\" \\\r\n-H \"accept: application/json\" \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"codigoCVSA\": \"1234\",\r\n  \"denominacion\": \"Especie A\",\r\n  \"laminaMinima\": 100,\r\n  \"precio\": 200.5,\r\n  \"cafci\": \"CAF123\",\r\n  \"cuentaDeEmision\": \"CTA456\",\r\n  \"estado\": \"ACTIVO\",\r\n  \"idEmisor\": 1,\r\n  \"idGerente\": 2,\r\n  \"vigencia\": \"2024-12-31\",\r\n  \"plazoDeLiquidacion\": \"2024-12-15\",\r\n  \"codigoCNV\": \"CNV001\",\r\n  \"isin\": \"ISIN123456789\",\r\n  \"familiaDeFondos\": \"FONDO1\",\r\n  \"observaciones\": \"Observación ejemplo\",\r\n  \"idMoneda\": 1,\r\n  \"fechaAlta\": \"2024-12-01\"\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear especie 5",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"codigoCVSA\": \"CVSA005\",\r\n        \"denominacion\": \"Especie E\",\r\n        \"laminaMinima\": 30,\r\n        \"precio\": 500.50,\r\n        \"cafci\": \"CAF005\",\r\n        \"cuentaDeEmision\": \"CuentaEsp5\",\r\n        \"estado\": \"ACTIVO\",\r\n        \"idEmisor\": 5,\r\n        \"idGerente\": 5,\r\n        \"vigencia\": \"2024-05-01\",\r\n        \"plazoDeLiquidacion\": \"2024-08-31\",\r\n        \"codigoCNV\": \"CNV005\",\r\n        \"isin\": \"ISIN005\",\r\n        \"familiaDeFondos\": \"Fondo E\",\r\n        \"observaciones\": \"Especie quinta\",\r\n        \"idMoneda\": 5\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/especies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"especies"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST \"http://localhost:8080/api/especies\" \\\r\n-H \"accept: application/json\" \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"codigoCVSA\": \"1234\",\r\n  \"denominacion\": \"Especie A\",\r\n  \"laminaMinima\": 100,\r\n  \"precio\": 200.5,\r\n  \"cafci\": \"CAF123\",\r\n  \"cuentaDeEmision\": \"CTA456\",\r\n  \"estado\": \"ACTIVO\",\r\n  \"idEmisor\": 1,\r\n  \"idGerente\": 2,\r\n  \"vigencia\": \"2024-12-31\",\r\n  \"plazoDeLiquidacion\": \"2024-12-15\",\r\n  \"codigoCNV\": \"CNV001\",\r\n  \"isin\": \"ISIN123456789\",\r\n  \"familiaDeFondos\": \"FONDO1\",\r\n  \"observaciones\": \"Observación ejemplo\",\r\n  \"idMoneda\": 1,\r\n  \"fechaAlta\": \"2024-12-01\"\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear especie 6",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"codigoCVSA\": \"CVSA006\",\r\n        \"denominacion\": \"Especie F\",\r\n        \"laminaMinima\": 35,\r\n        \"precio\": 600.75,\r\n        \"cafci\": \"CAF006\",\r\n        \"cuentaDeEmision\": \"CuentaEsp6\",\r\n        \"estado\": \"INACTIVO\",\r\n        \"idEmisor\": 6,\r\n        \"idGerente\": 6,\r\n        \"vigencia\": \"2024-06-01\",\r\n        \"plazoDeLiquidacion\": \"2024-07-31\",\r\n        \"codigoCNV\": \"CNV006\",\r\n        \"isin\": \"ISIN006\",\r\n        \"familiaDeFondos\": \"Fondo F\",\r\n        \"observaciones\": \"Especie sexta\",\r\n        \"idMoneda\": 6\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/especies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"especies"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST \"http://localhost:8080/api/especies\" \\\r\n-H \"accept: application/json\" \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"codigoCVSA\": \"1234\",\r\n  \"denominacion\": \"Especie A\",\r\n  \"laminaMinima\": 100,\r\n  \"precio\": 200.5,\r\n  \"cafci\": \"CAF123\",\r\n  \"cuentaDeEmision\": \"CTA456\",\r\n  \"estado\": \"ACTIVO\",\r\n  \"idEmisor\": 1,\r\n  \"idGerente\": 2,\r\n  \"vigencia\": \"2024-12-31\",\r\n  \"plazoDeLiquidacion\": \"2024-12-15\",\r\n  \"codigoCNV\": \"CNV001\",\r\n  \"isin\": \"ISIN123456789\",\r\n  \"familiaDeFondos\": \"FONDO1\",\r\n  \"observaciones\": \"Observación ejemplo\",\r\n  \"idMoneda\": 1,\r\n  \"fechaAlta\": \"2024-12-01\"\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear especie 7",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"codigoCVSA\": \"CVSA007\",\r\n        \"denominacion\": \"Especie G\",\r\n        \"laminaMinima\": 40,\r\n        \"precio\": 700.25,\r\n        \"cafci\": \"CAF007\",\r\n        \"cuentaDeEmision\": \"CuentaEsp7\",\r\n        \"estado\": \"ACTIVO\",\r\n        \"idEmisor\": 7,\r\n        \"idGerente\": 7,\r\n        \"vigencia\": \"2024-07-01\",\r\n        \"plazoDeLiquidacion\": \"2024-06-30\",\r\n        \"codigoCNV\": \"CNV007\",\r\n        \"isin\": \"ISIN007\",\r\n        \"familiaDeFondos\": \"Fondo G\",\r\n        \"observaciones\": \"Especie septima\",\r\n        \"idMoneda\": 7\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/especies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"especies"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST \"http://localhost:8080/api/especies\" \\\r\n-H \"accept: application/json\" \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"codigoCVSA\": \"1234\",\r\n  \"denominacion\": \"Especie A\",\r\n  \"laminaMinima\": 100,\r\n  \"precio\": 200.5,\r\n  \"cafci\": \"CAF123\",\r\n  \"cuentaDeEmision\": \"CTA456\",\r\n  \"estado\": \"ACTIVO\",\r\n  \"idEmisor\": 1,\r\n  \"idGerente\": 2,\r\n  \"vigencia\": \"2024-12-31\",\r\n  \"plazoDeLiquidacion\": \"2024-12-15\",\r\n  \"codigoCNV\": \"CNV001\",\r\n  \"isin\": \"ISIN123456789\",\r\n  \"familiaDeFondos\": \"FONDO1\",\r\n  \"observaciones\": \"Observación ejemplo\",\r\n  \"idMoneda\": 1,\r\n  \"fechaAlta\": \"2024-12-01\"\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear especie 8",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"codigoCVSA\": \"CVSA008\",\r\n        \"denominacion\": \"Especie H\",\r\n        \"laminaMinima\": 45,\r\n        \"precio\": 800.00,\r\n        \"cafci\": \"CAF008\",\r\n        \"cuentaDeEmision\": \"CuentaEsp8\",\r\n        \"estado\": \"INACTIVO\",\r\n        \"idEmisor\": 8,\r\n        \"idGerente\": 8,\r\n        \"vigencia\": \"2024-08-01\",\r\n        \"plazoDeLiquidacion\": \"2024-05-31\",\r\n        \"codigoCNV\": \"CNV008\",\r\n        \"isin\": \"ISIN008\",\r\n        \"familiaDeFondos\": \"Fondo H\",\r\n        \"observaciones\": \"Especie octava\",\r\n        \"idMoneda\": 8\r\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -395,7 +885,7 @@
 					"response": []
 				},
 				{
-					"name": "actualizar especie por id",
+					"name": "Actualizar especie por id",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -418,7 +908,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/especies/2",
+							"raw": "http://localhost:8080/api/v1/especies/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -428,7 +918,7 @@
 								"api",
 								"v1",
 								"especies",
-								"2"
+								"1"
 							]
 						},
 						"description": "Generated from cURL: curl -X PUT \"http://localhost:8080/api/especies/1\" \\\r\n-H \"accept: application/json\" \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"codigoCVSA\": \"5678\",\r\n  \"denominacion\": \"Especie B\",\r\n  \"laminaMinima\": 200,\r\n  \"precio\": 300.75,\r\n  \"cafci\": \"CAF567\",\r\n  \"cuentaDeEmision\": \"CTA789\",\r\n  \"estado\": \"INACTIVO\",\r\n  \"idEmisor\": 3,\r\n  \"idGerente\": 4,\r\n  \"vigencia\": \"2025-01-01\",\r\n  \"plazoDeLiquidacion\": \"2025-01-10\",\r\n  \"codigoCNV\": \"CNV002\",\r\n  \"isin\": \"ISIN987654321\",\r\n  \"familiaDeFondos\": \"FONDO2\",\r\n  \"observaciones\": \"Actualización ejemplo\",\r\n  \"idMoneda\": 2,\r\n  \"fechaAlta\": \"2024-11-01\"\r\n}'\r\n"
@@ -477,7 +967,7 @@
 					"response": []
 				},
 				{
-					"name": "eliminar especie por id",
+					"name": "Eliminar especie por id",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -513,7 +1003,7 @@
 			"name": "Acdi",
 			"item": [
 				{
-					"name": "Crear ACDI",
+					"name": "Crear acdi 1",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -524,7 +1014,217 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"idOrganizacion\": \"ORG003\", \r\n    \"denominacion\": \"Denominación 3\", \r\n    \"liquidaEnByma\": true, \r\n    \"habilitado\": true,  \r\n    \"billeteras\": false, \r\n    \"observaciones\": \"Observaciones\", \r\n    \"mail\": \"pauDeJoseCPaz@email.com\"\r\n}"
+							"raw": "{\r\n    \"codigoDeAcdi\": 1, \r\n    \"denominacion\": \"Primer acdi\", \r\n    \"liquidaEnByma\": true, \r\n    \"habilitado\": true,  \r\n    \"billeteras\": false, \r\n    \"observaciones\": \"Primera carga de prueba\", \r\n    \"mail\": \"acdi1@example.com\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/acdis",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"acdis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear acdi 2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"codigoDeAcdi\": 2,\r\n        \"denominacion\": \"Segundo acdi\",\r\n        \"liquidaEnByma\": false,\r\n        \"habilitado\": true,\r\n        \"billeteras\": true,\r\n        \"observaciones\": \"Segunda carga de prueba\",\r\n        \"mail\": \"acdi2@example.com\"\r\n    }"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/acdis",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"acdis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear acdi 3",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"codigoDeAcdi\": 3,\r\n        \"denominacion\": \"Tercer acdi\",\r\n        \"liquidaEnByma\": true,\r\n        \"habilitado\": false,\r\n        \"billeteras\": true,\r\n        \"observaciones\": \"Tercer carga de prueba\",\r\n        \"mail\": \"acdi3@example.com\"\r\n    }"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/acdis",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"acdis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear acdi 4",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"codigoDeAcdi\": 4,\r\n        \"denominacion\": \"Cuarto acdi\",\r\n        \"liquidaEnByma\": false,\r\n        \"habilitado\": false,\r\n        \"billeteras\": false,\r\n        \"observaciones\": \"Cuarta carga de prueba\",\r\n        \"mail\": \"acdi4@example.com\"\r\n    }"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/acdis",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"acdis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear acdi 5",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"codigoDeAcdi\": 5,\r\n        \"denominacion\": \"Quinto acdi\",\r\n        \"liquidaEnByma\": true,\r\n        \"habilitado\": true,\r\n        \"billeteras\": true,\r\n        \"observaciones\": \"Quinta carga de prueba\",\r\n        \"mail\": \"acdi5@example.com\"\r\n    }"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/acdis",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"acdis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear acdi 6",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"codigoDeAcdi\": 6,\r\n        \"denominacion\": \"Sexto acdi\",\r\n        \"liquidaEnByma\": true,\r\n        \"habilitado\": true,\r\n        \"billeteras\": false,\r\n        \"observaciones\": \"Sexta carga de prueba\",\r\n        \"mail\": \"acdi6@example.com\"\r\n    }"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/acdis",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"acdis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear acdi 7",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"codigoDeAcdi\": 7,\r\n        \"denominacion\": \"Septimo acdi\",\r\n        \"liquidaEnByma\": false,\r\n        \"habilitado\": true,\r\n        \"billeteras\": true,\r\n        \"observaciones\": \"Septima carga de prueba\",\r\n        \"mail\": \"acdi7@example.com\"\r\n    }"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/acdis",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"acdis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear acdi 8",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"codigoDeAcdi\": 8,\r\n        \"denominacion\": \"Octavo acdi\",\r\n        \"liquidaEnByma\": false,\r\n        \"habilitado\": false,\r\n        \"billeteras\": false,\r\n        \"observaciones\": \"Octava carga de prueba\",\r\n        \"mail\": \"acdi8@example.com\"\r\n    }"
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/v1/acdis",
@@ -665,7 +1365,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/acdis/2/baja",
+							"raw": "http://localhost:8080/api/v1/acdis/1/baja",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -675,7 +1375,7 @@
 								"api",
 								"v1",
 								"acdis",
-								"2",
+								"1",
 								"baja"
 							]
 						}
@@ -721,7 +1421,7 @@
 					"response": []
 				},
 				{
-					"name": "obtener gerente por id",
+					"name": "Obtener gerente por id",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -743,7 +1443,7 @@
 					"response": []
 				},
 				{
-					"name": "crear gerente",
+					"name": "Crear gerente 1",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -754,7 +1454,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"denominacion\": \"Gerente General\",\r\n  \"liquidaEnByma\": true,\r\n  \"habilitado\": true,\r\n  \"observaciones\": \"Gerente principal con permisos completos\",\r\n  \"mailGerente\": \"gerente@empresa.com\"\r\n}",
+							"raw": "    {\r\n        \"denominacion\": \"Gerente A\",\r\n        \"liquidaEnByma\": true,\r\n        \"habilitado\": true,\r\n        \"observaciones\": \"Gerente principal\",\r\n        \"mailGerente\": \"gerente1@example.com\"\r\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -775,6 +1475,216 @@
 							]
 						},
 						"description": "Generated from cURL: curl -X POST \"http://localhost:8080/api/gerentes\" \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"denominacion\": \"Gerente General\",\r\n  \"liquidaEnByma\": true,\r\n  \"habilitado\": true,\r\n  \"observaciones\": \"Gerente principal con permisos completos\",\r\n  \"mailGerente\": \"gerente@empresa.com\"\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear gerente 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"denominacion\": \"Gerente B\",\r\n        \"liquidaEnByma\": false,\r\n        \"habilitado\": true,\r\n        \"observaciones\": \"Gerente secundario\",\r\n        \"mailGerente\": \"gerente2@example.com\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/gerentes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"gerentes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear gerente 3",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"denominacion\": \"Gerente C\",\r\n        \"liquidaEnByma\": true,\r\n        \"habilitado\": false,\r\n        \"observaciones\": \"Gerente terciario\",\r\n        \"mailGerente\": \"gerente3@example.com\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/gerentes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"gerentes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear gerente 4",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"denominacion\": \"Gerente D\",\r\n        \"liquidaEnByma\": false,\r\n        \"habilitado\": false,\r\n        \"observaciones\": \"Gerente cuaternario\",\r\n        \"mailGerente\": \"gerente4@example.com\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/gerentes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"gerentes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear gerente 5",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"denominacion\": \"Gerente E\",\r\n        \"liquidaEnByma\": true,\r\n        \"habilitado\": true,\r\n        \"observaciones\": \"Gerente quinto\",\r\n        \"mailGerente\": \"gerente5@example.com\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/gerentes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"gerentes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear gerente 6",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"denominacion\": \"Gerente F\",\r\n        \"liquidaEnByma\": false,\r\n        \"habilitado\": true,\r\n        \"observaciones\": \"Gerente sexto\",\r\n        \"mailGerente\": \"gerente6@example.com\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/gerentes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"gerentes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear gerente 7",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"denominacion\": \"Gerente G\",\r\n        \"liquidaEnByma\": true,\r\n        \"habilitado\": false,\r\n        \"observaciones\": \"Gerente séptimo\",\r\n        \"mailGerente\": \"gerente7@example.com\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/gerentes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"gerentes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear gerente 8",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"denominacion\": \"Gerente H\",\r\n        \"liquidaEnByma\": false,\r\n        \"habilitado\": false,\r\n        \"observaciones\": \"Gerente octavo\",\r\n        \"mailGerente\": \"gerente8@example.com\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/gerentes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"gerentes"
+							]
+						}
 					},
 					"response": []
 				},
@@ -815,7 +1725,7 @@
 					"response": []
 				},
 				{
-					"name": "actualizar gerente por id",
+					"name": "Actualizar gerente por id",
 					"request": {
 						"method": "PATCH",
 						"header": [
@@ -889,9 +1799,9 @@
 					"response": []
 				},
 				{
-					"name": "eliminar gerente por id",
+					"name": "Eliminar gerente por id",
 					"request": {
-						"method": "DELETE",
+						"method": "PATCH",
 						"header": [
 							{
 								"key": "Accept",
@@ -908,7 +1818,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/gerentes/1",
+							"raw": "http://localhost:8080/api/v1/gerentes/toggle-habilitar/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -918,6 +1828,7 @@
 								"api",
 								"v1",
 								"gerentes",
+								"toggle-habilitar",
 								"1"
 							]
 						},
@@ -931,7 +1842,7 @@
 			"name": "Suscripcion",
 			"item": [
 				{
-					"name": "Crear suscripcion",
+					"name": "Crear suscripcion 1",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -942,7 +1853,259 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"estado\": \"Activo\",\r\n    \"nroCertificado\": 12345,\r\n    \"idEspecie\": 1,\r\n    \"cantCuotapartes\": 100,\r\n    \"idAcdi\": 2,\r\n    \"idEmisor\": 3,\r\n    \"nroPedido\": 10,\r\n    \"nroSecuencia\": 1,\r\n    \"fechaCambioDeEstado\": \"2023-12-09T12:00:00\",\r\n    \"rolIngresante\": \"ADMIN\",\r\n    \"monto\": 5000.00,\r\n    \"liquidaEnByma\": true,\r\n    \"numeroReferencia\": 101,\r\n    \"procesadoCustodia\": false,\r\n    \"ultimoError\": null,\r\n    \"command\": \"CREATE\",\r\n    \"procesadoLiquidacionesSlyq\": false,\r\n    \"idGerente\": 10,\r\n    \"obligacionDePagoGenerada\": true,\r\n    \"idBilletera\": 5,\r\n    \"fechaSincronizacion\": \"2023-12-09T12:00:00\",\r\n    \"nasdaqSiStatusReason\": null,\r\n    \"mdwStatusCode\": 0,\r\n    \"mdwBusinessMessageId\": null,\r\n    \"mdwResponseMessage\": null,\r\n    \"mdwResponseDatetime\": null,\r\n    \"nasdaqSiStatus\": null\r\n}",
+							"raw": "    {\r\n        \"estado\": \"ACTIVO\",\r\n        \"nroCertificado\": 123456,\r\n        \"idEspecie\": 1,\r\n        \"precio\": 2001,\r\n        \"cantCuotapartes\": 5,\r\n        \"codigoDeAcdi\": 1,\r\n        \"cuentaOperativa\": 101111111111,\r\n        \"idAcdi\": 1,\r\n        \"idEmisor\": 1,\r\n        \"nroPedido\": 1001,\r\n        \"nroSecuencia\": 10,\r\n        \"fechaCambioDeEstado\": \"2024-12-17\",\r\n        \"rolIngresante\": \"ADMIN\",\r\n        \"monto\": 1000.50,\r\n        \"liquidaEnByma\": true,\r\n        \"numeroReferencia\": 1234567,\r\n        \"procesadoCustodia\": true,\r\n        \"ultimoError\": \"No error\",\r\n        \"command\": \"command_123\",\r\n        \"procesadoLiquidacionesSlyq\": false,\r\n        \"idGerente\": 1,\r\n        \"obligacionDePagoGenerada\": false,\r\n        \"idBilletera\": 1,\r\n        \"fechaSincronizacion\": \"2024-12-17 14:35:00\",\r\n        \"nasdaqSiStatusReason\": \"Reason\",\r\n        \"mdwStatusCode\": 200,\r\n        \"mdwBusinessMessageId\": \"msg123\",\r\n        \"mdwResponseMessage\": \"response_msg\",\r\n        \"mdwResponseDatetime\": \"2024-12-17 14:36:00\",\r\n        \"nasdaqSiStatus\": \"Active\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/suscripcion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"suscripcion"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST http://localhost:8080/api/v1/suscripcion \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n    \"estado\": \"Activo\",\r\n    \"nroCertificado\": 12345,\r\n    \"idEspecie\": 1,\r\n    \"cantCuotapartes\": 100,\r\n    \"idAcdi\": 2,\r\n    \"idEmisor\": 3,\r\n    \"nroPedido\": 10,\r\n    \"nroSecuencia\": 1,\r\n    \"fechaCambioDeEstado\": \"2023-12-09T12:00:00\",\r\n    \"rolIngresante\": \"ADMIN\",\r\n    \"monto\": 5000.00,\r\n    \"liquidaEnByma\": true,\r\n    \"numeroReferencia\": 101,\r\n    \"procesadoCustodia\": false,\r\n    \"ultimoError\": null,\r\n    \"command\": \"CREATE\",\r\n    \"procesadoLiquidacionesSlyq\": false,\r\n    \"idGerente\": 10,\r\n    \"obligacionDePagoGenerada\": true,\r\n    \"idBilletera\": 5,\r\n    \"fechaSincronizacion\": \"2023-12-09T12:00:00\",\r\n    \"nasdaqSiStatusReason\": null,\r\n    \"mdwStatusCode\": 0,\r\n    \"mdwBusinessMessageId\": null,\r\n    \"mdwResponseMessage\": null,\r\n    \"mdwResponseDatetime\": null,\r\n    \"nasdaqSiStatus\": null\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear suscripcion 2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"estado\": \"INACTIVO\",\r\n        \"nroCertificado\": 654321,\r\n        \"idEspecie\": 2,\r\n        \"precio\": 2002,\r\n        \"cantCuotapartes\": 3,\r\n        \"codigoDeAcdi\": 2,\r\n        \"cuentaOperativa\": 101111111111,\r\n        \"idAcdi\": 2,\r\n        \"idEmisor\": 2,\r\n        \"nroPedido\": 2002,\r\n        \"nroSecuencia\": 20,\r\n        \"fechaCambioDeEstado\": \"2024-11-10\",\r\n        \"rolIngresante\": \"USER\",\r\n        \"monto\": 500.75,\r\n        \"liquidaEnByma\": false,\r\n        \"numeroReferencia\": 2345678,\r\n        \"procesadoCustodia\": false,\r\n        \"ultimoError\": \"Timeout error\",\r\n        \"command\": \"command_456\",\r\n        \"procesadoLiquidacionesSlyq\": true,\r\n        \"idGerente\": 2,\r\n        \"obligacionDePagoGenerada\": true,\r\n        \"idBilletera\": 2,\r\n        \"fechaSincronizacion\": \"2024-11-10 10:20:00\",\r\n        \"nasdaqSiStatusReason\": \"Disconnected\",\r\n        \"mdwStatusCode\": 201,\r\n        \"mdwBusinessMessageId\": \"msg456\",\r\n        \"mdwResponseMessage\": \"error_msg\",\r\n        \"mdwResponseDatetime\": \"2024-11-10 10:25:00\",\r\n        \"nasdaqSiStatus\": \"Inactive\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/suscripcion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"suscripcion"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST http://localhost:8080/api/v1/suscripcion \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n    \"estado\": \"Activo\",\r\n    \"nroCertificado\": 12345,\r\n    \"idEspecie\": 1,\r\n    \"cantCuotapartes\": 100,\r\n    \"idAcdi\": 2,\r\n    \"idEmisor\": 3,\r\n    \"nroPedido\": 10,\r\n    \"nroSecuencia\": 1,\r\n    \"fechaCambioDeEstado\": \"2023-12-09T12:00:00\",\r\n    \"rolIngresante\": \"ADMIN\",\r\n    \"monto\": 5000.00,\r\n    \"liquidaEnByma\": true,\r\n    \"numeroReferencia\": 101,\r\n    \"procesadoCustodia\": false,\r\n    \"ultimoError\": null,\r\n    \"command\": \"CREATE\",\r\n    \"procesadoLiquidacionesSlyq\": false,\r\n    \"idGerente\": 10,\r\n    \"obligacionDePagoGenerada\": true,\r\n    \"idBilletera\": 5,\r\n    \"fechaSincronizacion\": \"2023-12-09T12:00:00\",\r\n    \"nasdaqSiStatusReason\": null,\r\n    \"mdwStatusCode\": 0,\r\n    \"mdwBusinessMessageId\": null,\r\n    \"mdwResponseMessage\": null,\r\n    \"mdwResponseDatetime\": null,\r\n    \"nasdaqSiStatus\": null\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear suscripcion 3",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"estado\": \"PENDIENTE\",\r\n        \"nroCertificado\": 345678,\r\n        \"idEspecie\": 3,\r\n        \"precio\": 2003,\r\n        \"cantCuotapartes\": 7,\r\n        \"codigoDeAcdi\": 3,\r\n        \"cuentaOperativa\": 101111111111,\r\n        \"idAcdi\": 3,\r\n        \"idEmisor\": 3,\r\n        \"nroPedido\": 3003,\r\n        \"nroSecuencia\": 30,\r\n        \"fechaCambioDeEstado\": \"2024-12-15\",\r\n        \"rolIngresante\": \"SUPERVISOR\",\r\n        \"monto\": 1200.25,\r\n        \"liquidaEnByma\": true,\r\n        \"numeroReferencia\": 3456789,\r\n        \"procesadoCustodia\": true,\r\n        \"ultimoError\": \"Invalid data\",\r\n        \"command\": \"command_789\",\r\n        \"procesadoLiquidacionesSlyq\": false,\r\n        \"idGerente\": 3,\r\n        \"obligacionDePagoGenerada\": false,\r\n        \"idBilletera\": 3,\r\n        \"fechaSincronizacion\": \"2024-12-15 12:05:00\",\r\n        \"nasdaqSiStatusReason\": \"Pending approval\",\r\n        \"mdwStatusCode\": 202,\r\n        \"mdwBusinessMessageId\": \"msg789\",\r\n        \"mdwResponseMessage\": \"pending_msg\",\r\n        \"mdwResponseDatetime\": \"2024-12-15 12:10:00\",\r\n        \"nasdaqSiStatus\": \"Pending\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/suscripcion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"suscripcion"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST http://localhost:8080/api/v1/suscripcion \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n    \"estado\": \"Activo\",\r\n    \"nroCertificado\": 12345,\r\n    \"idEspecie\": 1,\r\n    \"cantCuotapartes\": 100,\r\n    \"idAcdi\": 2,\r\n    \"idEmisor\": 3,\r\n    \"nroPedido\": 10,\r\n    \"nroSecuencia\": 1,\r\n    \"fechaCambioDeEstado\": \"2023-12-09T12:00:00\",\r\n    \"rolIngresante\": \"ADMIN\",\r\n    \"monto\": 5000.00,\r\n    \"liquidaEnByma\": true,\r\n    \"numeroReferencia\": 101,\r\n    \"procesadoCustodia\": false,\r\n    \"ultimoError\": null,\r\n    \"command\": \"CREATE\",\r\n    \"procesadoLiquidacionesSlyq\": false,\r\n    \"idGerente\": 10,\r\n    \"obligacionDePagoGenerada\": true,\r\n    \"idBilletera\": 5,\r\n    \"fechaSincronizacion\": \"2023-12-09T12:00:00\",\r\n    \"nasdaqSiStatusReason\": null,\r\n    \"mdwStatusCode\": 0,\r\n    \"mdwBusinessMessageId\": null,\r\n    \"mdwResponseMessage\": null,\r\n    \"mdwResponseDatetime\": null,\r\n    \"nasdaqSiStatus\": null\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear suscripcion 4",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"estado\": \"ACTIVO\",\r\n        \"nroCertificado\": 987654,\r\n        \"idEspecie\": 4,\r\n        \"precio\": 2004,\r\n        \"cantCuotapartes\": 10,\r\n        \"codigoDeAcdi\": 4,\r\n        \"cuentaOperativa\": 101111111111,\r\n        \"idAcdi\": 4,\r\n        \"idEmisor\": 4,\r\n        \"nroPedido\": 4004,\r\n        \"nroSecuencia\": 40,\r\n        \"fechaCambioDeEstado\": \"2024-12-16\",\r\n        \"rolIngresante\": \"ADMIN\",\r\n        \"monto\": 2000.99,\r\n        \"liquidaEnByma\": true,\r\n        \"numeroReferencia\": 4567890,\r\n        \"procesadoCustodia\": false,\r\n        \"ultimoError\": \"No error\",\r\n        \"command\": \"command_321\",\r\n        \"procesadoLiquidacionesSlyq\": true,\r\n        \"idGerente\": 4,\r\n        \"obligacionDePagoGenerada\": true,\r\n        \"idBilletera\": 4,\r\n        \"fechaSincronizacion\": \"2024-12-16 08:50:00\",\r\n        \"nasdaqSiStatusReason\": \"Confirmed\",\r\n        \"mdwStatusCode\": 203,\r\n        \"mdwBusinessMessageId\": \"msg321\",\r\n        \"mdwResponseMessage\": \"success_msg\",\r\n        \"mdwResponseDatetime\": \"2024-12-16 08:55:00\",\r\n        \"nasdaqSiStatus\": \"Active\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/suscripcion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"suscripcion"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST http://localhost:8080/api/v1/suscripcion \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n    \"estado\": \"Activo\",\r\n    \"nroCertificado\": 12345,\r\n    \"idEspecie\": 1,\r\n    \"cantCuotapartes\": 100,\r\n    \"idAcdi\": 2,\r\n    \"idEmisor\": 3,\r\n    \"nroPedido\": 10,\r\n    \"nroSecuencia\": 1,\r\n    \"fechaCambioDeEstado\": \"2023-12-09T12:00:00\",\r\n    \"rolIngresante\": \"ADMIN\",\r\n    \"monto\": 5000.00,\r\n    \"liquidaEnByma\": true,\r\n    \"numeroReferencia\": 101,\r\n    \"procesadoCustodia\": false,\r\n    \"ultimoError\": null,\r\n    \"command\": \"CREATE\",\r\n    \"procesadoLiquidacionesSlyq\": false,\r\n    \"idGerente\": 10,\r\n    \"obligacionDePagoGenerada\": true,\r\n    \"idBilletera\": 5,\r\n    \"fechaSincronizacion\": \"2023-12-09T12:00:00\",\r\n    \"nasdaqSiStatusReason\": null,\r\n    \"mdwStatusCode\": 0,\r\n    \"mdwBusinessMessageId\": null,\r\n    \"mdwResponseMessage\": null,\r\n    \"mdwResponseDatetime\": null,\r\n    \"nasdaqSiStatus\": null\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear suscripcion 5",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"estado\": \"INACTIVO\",\r\n        \"nroCertificado\": 112233,\r\n        \"idEspecie\": 5,\r\n        \"precio\": 2005,\r\n        \"cantCuotapartes\": 8,\r\n        \"codigoDeAcdi\": 5,\r\n        \"cuentaOperativa\": 101111111111,\r\n        \"idAcdi\": 5,\r\n        \"idEmisor\": 5,\r\n        \"nroPedido\": 5005,\r\n        \"nroSecuencia\": 50,\r\n        \"fechaCambioDeEstado\": \"2024-12-18\",\r\n        \"rolIngresante\": \"ADMIN\",\r\n        \"monto\": 1500.75,\r\n        \"liquidaEnByma\": false,\r\n        \"numeroReferencia\": 5678901,\r\n        \"procesadoCustodia\": false,\r\n        \"ultimoError\": \"Network error\",\r\n        \"command\": \"command_555\",\r\n        \"procesadoLiquidacionesSlyq\": true,\r\n        \"idGerente\": 5,\r\n        \"obligacionDePagoGenerada\": false,\r\n        \"idBilletera\": 5,\r\n        \"fechaSincronizacion\": \"2024-12-18 09:05:00\",\r\n        \"nasdaqSiStatusReason\": \"Disconnected\",\r\n        \"mdwStatusCode\": 204,\r\n        \"mdwBusinessMessageId\": \"msg555\",\r\n        \"mdwResponseMessage\": \"disconnected_msg\",\r\n        \"mdwResponseDatetime\": \"2024-12-18 09:10:00\",\r\n        \"nasdaqSiStatus\": \"Inactive\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/suscripcion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"suscripcion"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST http://localhost:8080/api/v1/suscripcion \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n    \"estado\": \"Activo\",\r\n    \"nroCertificado\": 12345,\r\n    \"idEspecie\": 1,\r\n    \"cantCuotapartes\": 100,\r\n    \"idAcdi\": 2,\r\n    \"idEmisor\": 3,\r\n    \"nroPedido\": 10,\r\n    \"nroSecuencia\": 1,\r\n    \"fechaCambioDeEstado\": \"2023-12-09T12:00:00\",\r\n    \"rolIngresante\": \"ADMIN\",\r\n    \"monto\": 5000.00,\r\n    \"liquidaEnByma\": true,\r\n    \"numeroReferencia\": 101,\r\n    \"procesadoCustodia\": false,\r\n    \"ultimoError\": null,\r\n    \"command\": \"CREATE\",\r\n    \"procesadoLiquidacionesSlyq\": false,\r\n    \"idGerente\": 10,\r\n    \"obligacionDePagoGenerada\": true,\r\n    \"idBilletera\": 5,\r\n    \"fechaSincronizacion\": \"2023-12-09T12:00:00\",\r\n    \"nasdaqSiStatusReason\": null,\r\n    \"mdwStatusCode\": 0,\r\n    \"mdwBusinessMessageId\": null,\r\n    \"mdwResponseMessage\": null,\r\n    \"mdwResponseDatetime\": null,\r\n    \"nasdaqSiStatus\": null\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear suscripcion 6",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"estado\": \"ACTIVO\",\r\n        \"nroCertificado\": 223344,\r\n        \"idEspecie\": 6,\r\n        \"precio\": 2006,\r\n        \"cantCuotapartes\": 6,\r\n        \"codigoDeAcdi\": 6,\r\n        \"cuentaOperativa\": 101111111111,\r\n        \"idAcdi\": 6,\r\n        \"idEmisor\": 6,\r\n        \"nroPedido\": 6006,\r\n        \"nroSecuencia\": 60,\r\n        \"fechaCambioDeEstado\": \"2024-12-19\",\r\n        \"rolIngresante\": \"USER\",\r\n        \"monto\": 900.50,\r\n        \"liquidaEnByma\": true,\r\n        \"numeroReferencia\": 6789012,\r\n        \"procesadoCustodia\": true,\r\n        \"ultimoError\": \"No error\",\r\n        \"command\": \"command_666\",\r\n        \"procesadoLiquidacionesSlyq\": false,\r\n        \"idGerente\": 6,\r\n        \"obligacionDePagoGenerada\": true,\r\n        \"idBilletera\": 6,\r\n        \"fechaSincronizacion\": \"2024-12-19 10:05:00\",\r\n        \"nasdaqSiStatusReason\": \"Connection successful\",\r\n        \"mdwStatusCode\": 205,\r\n        \"mdwBusinessMessageId\": \"msg666\",\r\n        \"mdwResponseMessage\": \"connected_msg\",\r\n        \"mdwResponseDatetime\": \"2024-12-19 10:10:00\",\r\n        \"nasdaqSiStatus\": \"Active\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/suscripcion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"suscripcion"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST http://localhost:8080/api/v1/suscripcion \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n    \"estado\": \"Activo\",\r\n    \"nroCertificado\": 12345,\r\n    \"idEspecie\": 1,\r\n    \"cantCuotapartes\": 100,\r\n    \"idAcdi\": 2,\r\n    \"idEmisor\": 3,\r\n    \"nroPedido\": 10,\r\n    \"nroSecuencia\": 1,\r\n    \"fechaCambioDeEstado\": \"2023-12-09T12:00:00\",\r\n    \"rolIngresante\": \"ADMIN\",\r\n    \"monto\": 5000.00,\r\n    \"liquidaEnByma\": true,\r\n    \"numeroReferencia\": 101,\r\n    \"procesadoCustodia\": false,\r\n    \"ultimoError\": null,\r\n    \"command\": \"CREATE\",\r\n    \"procesadoLiquidacionesSlyq\": false,\r\n    \"idGerente\": 10,\r\n    \"obligacionDePagoGenerada\": true,\r\n    \"idBilletera\": 5,\r\n    \"fechaSincronizacion\": \"2023-12-09T12:00:00\",\r\n    \"nasdaqSiStatusReason\": null,\r\n    \"mdwStatusCode\": 0,\r\n    \"mdwBusinessMessageId\": null,\r\n    \"mdwResponseMessage\": null,\r\n    \"mdwResponseDatetime\": null,\r\n    \"nasdaqSiStatus\": null\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear suscripcion 7",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"estado\": \"PENDIENTE\",\r\n        \"nroCertificado\": 334455,\r\n        \"idEspecie\": 7,\r\n        \"precio\": 2007,\r\n        \"cantCuotapartes\": 4,\r\n        \"codigoDeAcdi\": 7,\r\n        \"cuentaOperativa\": 101111111111,\r\n        \"idAcdi\": 7,\r\n        \"idEmisor\": 7,\r\n        \"nroPedido\": 7007,\r\n        \"nroSecuencia\": 70,\r\n        \"fechaCambioDeEstado\": \"2024-12-20\",\r\n        \"rolIngresante\": \"SUPERVISOR\",\r\n        \"monto\": 1200.10,\r\n        \"liquidaEnByma\": true,\r\n        \"numeroReferencia\": 7890123,\r\n        \"procesadoCustodia\": true,\r\n        \"ultimoError\": \"Invalid request\",\r\n        \"command\": \"command_777\",\r\n        \"procesadoLiquidacionesSlyq\": false,\r\n        \"idGerente\": 7,\r\n        \"obligacionDePagoGenerada\": false,\r\n        \"idBilletera\": 7,\r\n        \"fechaSincronizacion\": \"2024-12-20 11:15:00\",\r\n        \"nasdaqSiStatusReason\": \"Pending request\",\r\n        \"mdwStatusCode\": 206,\r\n        \"mdwBusinessMessageId\": \"msg777\",\r\n        \"mdwResponseMessage\": \"request_pending\",\r\n        \"mdwResponseDatetime\": \"2024-12-20 11:20:00\",\r\n        \"nasdaqSiStatus\": \"Pending\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/suscripcion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"suscripcion"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST http://localhost:8080/api/v1/suscripcion \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n    \"estado\": \"Activo\",\r\n    \"nroCertificado\": 12345,\r\n    \"idEspecie\": 1,\r\n    \"cantCuotapartes\": 100,\r\n    \"idAcdi\": 2,\r\n    \"idEmisor\": 3,\r\n    \"nroPedido\": 10,\r\n    \"nroSecuencia\": 1,\r\n    \"fechaCambioDeEstado\": \"2023-12-09T12:00:00\",\r\n    \"rolIngresante\": \"ADMIN\",\r\n    \"monto\": 5000.00,\r\n    \"liquidaEnByma\": true,\r\n    \"numeroReferencia\": 101,\r\n    \"procesadoCustodia\": false,\r\n    \"ultimoError\": null,\r\n    \"command\": \"CREATE\",\r\n    \"procesadoLiquidacionesSlyq\": false,\r\n    \"idGerente\": 10,\r\n    \"obligacionDePagoGenerada\": true,\r\n    \"idBilletera\": 5,\r\n    \"fechaSincronizacion\": \"2023-12-09T12:00:00\",\r\n    \"nasdaqSiStatusReason\": null,\r\n    \"mdwStatusCode\": 0,\r\n    \"mdwBusinessMessageId\": null,\r\n    \"mdwResponseMessage\": null,\r\n    \"mdwResponseDatetime\": null,\r\n    \"nasdaqSiStatus\": null\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear suscripcion 8",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"estado\": \"INACTIVO\",\r\n        \"nroCertificado\": 445566,\r\n        \"idEspecie\": 8,\r\n        \"precio\": 2008,\r\n        \"cantCuotapartes\": 2,\r\n        \"codigoDeAcdi\": 8,\r\n        \"cuentaOperativa\": 101111111111,\r\n        \"idAcdi\": 8,\r\n        \"idEmisor\": 8,\r\n        \"nroPedido\": 8008,\r\n        \"nroSecuencia\": 80,\r\n        \"fechaCambioDeEstado\": \"2024-12-21\",\r\n        \"rolIngresante\": \"ADMIN\",\r\n        \"monto\": 1800.80,\r\n        \"liquidaEnByma\": false,\r\n        \"numeroReferencia\": 8901234,\r\n        \"procesadoCustodia\": false,\r\n        \"ultimoError\": \"Server error\",\r\n        \"command\": \"command_888\",\r\n        \"procesadoLiquidacionesSlyq\": true,\r\n        \"idGerente\": 8,\r\n        \"obligacionDePagoGenerada\": true,\r\n        \"idBilletera\": 8,\r\n        \"fechaSincronizacion\": \"2024-12-21 12:25:00\",\r\n        \"nasdaqSiStatusReason\": \"Server issue\",\r\n        \"mdwStatusCode\": 207,\r\n        \"mdwBusinessMessageId\": \"msg888\",\r\n        \"mdwResponseMessage\": \"server_error\",\r\n        \"mdwResponseDatetime\": \"2024-12-21 12:30:00\",\r\n        \"nasdaqSiStatus\": \"Inactive\"\r\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1099,7 +2262,7 @@
 					"response": []
 				},
 				{
-					"name": "crear billetera",
+					"name": "Crear billetera 1",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -1110,7 +2273,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"mail\": \"usuario@ejemplo.com\",\n  \"idCuenta\": \"123456\",\n  \"denominacion\": \"Cuenta Principal\",\n  \"liquidaEnByma\": true,\n  \"habilitado\": true,\n  \"observaciones\": \"Sin observaciones\",\n  \"idAcdi\": \"A98765\"\n}\n",
+							"raw": "    {\n        \"mail\": \"usuario1@example.com\",\n        \"idCuenta\": 101,\n        \"denominacion\": \"Cuenta A\",\n        \"liquidaEnByma\": true,\n        \"habilitado\": true,\n        \"observaciones\": \"Usuario principal\",\n        \"idAcdi\": 1\n    }\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1135,7 +2298,259 @@
 					"response": []
 				},
 				{
-					"name": "actualizar billetera",
+					"name": "Crear billetera 2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"mail\": \"usuario2@example.com\",\n        \"idCuenta\": 102,\n        \"denominacion\": \"Cuenta B\",\n        \"liquidaEnByma\": false,\n        \"habilitado\": true,\n        \"observaciones\": \"Usuario secundario\",\n        \"idAcdi\": 2\n    }\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/billeteras",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"billeteras"
+							]
+						},
+						"description": "Generated from cURL: curl --location 'http://localhost:8080/api/v1/billeteras' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n  \"mail\": \"usuario@ejemplo.com\",\n  \"idCuenta\": \"123456\",\n  \"denominacion\": \"Cuenta Principal\",\n  \"liquidaEnByma\": true,\n  \"habilitado\": true,\n  \"observaciones\": \"Sin observaciones\",\n  \"idAcdi\": \"A98765\"\n}\n'"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear billetera 3",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"mail\": \"usuario3@example.com\",\n        \"idCuenta\": 103,\n        \"denominacion\": \"Cuenta C\",\n        \"liquidaEnByma\": true,\n        \"habilitado\": false,\n        \"observaciones\": \"Usuario terciario\",\n        \"idAcdi\": 3\n    }\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/billeteras",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"billeteras"
+							]
+						},
+						"description": "Generated from cURL: curl --location 'http://localhost:8080/api/v1/billeteras' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n  \"mail\": \"usuario@ejemplo.com\",\n  \"idCuenta\": \"123456\",\n  \"denominacion\": \"Cuenta Principal\",\n  \"liquidaEnByma\": true,\n  \"habilitado\": true,\n  \"observaciones\": \"Sin observaciones\",\n  \"idAcdi\": \"A98765\"\n}\n'"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear billetera 4",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"mail\": \"usuario4@example.com\",\n        \"idCuenta\": 104,\n        \"denominacion\": \"Cuenta D\",\n        \"liquidaEnByma\": false,\n        \"habilitado\": false,\n        \"observaciones\": \"Usuario cuaternario\",\n        \"idAcdi\": 4\n    }\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/billeteras",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"billeteras"
+							]
+						},
+						"description": "Generated from cURL: curl --location 'http://localhost:8080/api/v1/billeteras' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n  \"mail\": \"usuario@ejemplo.com\",\n  \"idCuenta\": \"123456\",\n  \"denominacion\": \"Cuenta Principal\",\n  \"liquidaEnByma\": true,\n  \"habilitado\": true,\n  \"observaciones\": \"Sin observaciones\",\n  \"idAcdi\": \"A98765\"\n}\n'"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear billetera 5",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"mail\": \"usuario5@example.com\",\n        \"idCuenta\": 105,\n        \"denominacion\": \"Cuenta E\",\n        \"liquidaEnByma\": true,\n        \"habilitado\": true,\n        \"observaciones\": \"Usuario quinto\",\n        \"idAcdi\": 5\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/billeteras",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"billeteras"
+							]
+						},
+						"description": "Generated from cURL: curl --location 'http://localhost:8080/api/v1/billeteras' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n  \"mail\": \"usuario@ejemplo.com\",\n  \"idCuenta\": \"123456\",\n  \"denominacion\": \"Cuenta Principal\",\n  \"liquidaEnByma\": true,\n  \"habilitado\": true,\n  \"observaciones\": \"Sin observaciones\",\n  \"idAcdi\": \"A98765\"\n}\n'"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear billetera 6",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"mail\": \"usuario6@example.com\",\n        \"idCuenta\": 106,\n        \"denominacion\": \"Cuenta F\",\n        \"liquidaEnByma\": false,\n        \"habilitado\": true,\n        \"observaciones\": \"Usuario sexto\",\n        \"idAcdi\": 6\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/billeteras",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"billeteras"
+							]
+						},
+						"description": "Generated from cURL: curl --location 'http://localhost:8080/api/v1/billeteras' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n  \"mail\": \"usuario@ejemplo.com\",\n  \"idCuenta\": \"123456\",\n  \"denominacion\": \"Cuenta Principal\",\n  \"liquidaEnByma\": true,\n  \"habilitado\": true,\n  \"observaciones\": \"Sin observaciones\",\n  \"idAcdi\": \"A98765\"\n}\n'"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear billetera 7",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"mail\": \"usuario7@example.com\",\n        \"idCuenta\": 107,\n        \"denominacion\": \"Cuenta G\",\n        \"liquidaEnByma\": true,\n        \"habilitado\": false,\n        \"observaciones\": \"Usuario septimo\",\n        \"idAcdi\": 7\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/billeteras",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"billeteras"
+							]
+						},
+						"description": "Generated from cURL: curl --location 'http://localhost:8080/api/v1/billeteras' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n  \"mail\": \"usuario@ejemplo.com\",\n  \"idCuenta\": \"123456\",\n  \"denominacion\": \"Cuenta Principal\",\n  \"liquidaEnByma\": true,\n  \"habilitado\": true,\n  \"observaciones\": \"Sin observaciones\",\n  \"idAcdi\": \"A98765\"\n}\n'"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear billetera 8",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"mail\": \"usuario8@example.com\",\n        \"idCuenta\": 108,\n        \"denominacion\": \"Cuenta H\",\n        \"liquidaEnByma\": false,\n        \"habilitado\": false,\n        \"observaciones\": \"Usuario octavo\",\n        \"idAcdi\": 8\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/billeteras",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"billeteras"
+							]
+						},
+						"description": "Generated from cURL: curl --location 'http://localhost:8080/api/v1/billeteras' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n  \"mail\": \"usuario@ejemplo.com\",\n  \"idCuenta\": \"123456\",\n  \"denominacion\": \"Cuenta Principal\",\n  \"liquidaEnByma\": true,\n  \"habilitado\": true,\n  \"observaciones\": \"Sin observaciones\",\n  \"idAcdi\": \"A98765\"\n}\n'"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar billetera",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -1146,7 +2561,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"mail\": \"nuevo_mail@ejemplo.com\",\n  \"idCuenta\": \"123456\",\n  \"denominacion\": \"Cuenta Principal\",\n  \"liquidaEnByma\": true,\n  \"habilitado\": true,\n  \"observaciones\": \"Sin observaciones\",\n  \"idAcdi\": \"A98765\"\n}\n",
+							"raw": "{\n  \"mail\": \"update_mail@ejemplo.com\",\n  \"idCuenta\": \"123456\",\n  \"denominacion\": \"Cuenta Principal\",\n  \"liquidaEnByma\": true,\n  \"habilitado\": true,\n  \"observaciones\": \"Sin observaciones\",\n  \"idAcdi\": 6\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1197,7 +2612,21 @@
 					"name": "Obtener inexistente",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/billeteras/9999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"billeteras",
+								"9999"
+							]
+						}
 					},
 					"response": []
 				},
