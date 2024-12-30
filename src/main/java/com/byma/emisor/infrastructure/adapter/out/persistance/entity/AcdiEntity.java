@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "acdi")
+@Table(name = "acdis")
 @Data
 @Builder
 @NoArgsConstructor
@@ -22,11 +22,10 @@ public class AcdiEntity {
     @Column(name = "ID_ACDI") // Nombre de la columna en mayúsculas con _
     private Long idAcdi;
 
-    @Column(name = "ID_ORGANIZACION_ACDI")
-    private String idOrganizacionAcdi;
-
+    @Column(name = "CODIGO_DE_ACDI")
     private Integer codigoDeAcdi;
-  @Column(name = "DENOMINACION")
+
+    @Column(name = "DENOMINACION")
     private String denominacion;
 
     @Column(name = "LIQUIDA_EN_BYMA")
